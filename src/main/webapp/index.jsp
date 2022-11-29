@@ -13,11 +13,11 @@
     <link href="<%=request.getContextPath() %> ./css/style.css>">
 </head>
 <body>
+
 <h1>Ceregement</h1>
 <div class="button">
     <a href="${pageContext.request.contextPath}/Login">ログイン</a>
 </div>
-
 
 </body>
 </html>
