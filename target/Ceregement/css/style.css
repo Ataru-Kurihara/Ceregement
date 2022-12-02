@@ -3,6 +3,14 @@ h1 {
     text-align: center;
     font-size: 500px;
 }
+
+.title {
+    text-align: center;
+    color: pink;
+}
+/*
+
+
 .button a {
     border-radius: 3px;
     position: relative;
@@ -27,3 +35,6 @@ h1 {
 p {
     text-align: center;
 }
+
+
+ */
