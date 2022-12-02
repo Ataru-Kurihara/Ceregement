@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>login</title>
+<<<<<<< HEAD
 
     <style>
 
@@ -93,6 +94,9 @@
 
     </style>
 
+=======
+    <link rel="stylesheet" href="css/style.css">
+>>>>>>> origin/master
 </head>
 <body>
 <%
@@ -117,7 +121,7 @@
     <button type="submit" name="login">ログイン</button>
 </form>
 <div class="button">
-    <a href="./emailRegister.jsp">新規登録</a>
+    <a href="EmailRegister">新規登録</a>
 </div>
 </body>
 </html>

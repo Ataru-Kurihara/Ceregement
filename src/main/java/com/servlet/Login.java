@@ -43,7 +43,7 @@ public class Login extends HttpServlet {
         if (result) {
             session.setAttribute("user", user);
 //            getServletContext().getRequestDispatcher("/organizerSelection").forward(request, response);
-            response.sendRedirect("/Ceregement/organizerSelection");
+            response.sendRedirect("/Ceregement/OrganizerSelection");
         } else {
             getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
         }

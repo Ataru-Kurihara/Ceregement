@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 
 h1 {
@@ -38,3 +39,46 @@ p {
 
 
 
+=======
+
+h1 {
+    font-family: "BIZ UDゴシック";
+    text-align: center;
+    font-size: 500px;
+}
+
+.title {
+    text-align: center;
+    color: pink;
+}
+/*
+
+
+.button a {
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 220px;
+    padding: 10px 25px;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: rgb(149,202,252);
+    background: linear-gradient(270deg, rgba(149,202,252,1) 0%, rgba(107,182,255,1) 100%);
+}
+
+.button a:hover {
+    background: rgb(117,188,255);
+    background: linear-gradient(270deg, rgba(117,188,255,1) 0%, rgba(62,159,252,1) 100%);
+}
+
+p {
+    text-align: center;
+}
+
+
+ */
+>>>>>>> origin/master
