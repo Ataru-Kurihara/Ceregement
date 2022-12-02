@@ -32,5 +32,8 @@
     <div class="button">
         <a href="">送信</a>
     </div>
+    <div class="button">
+        <a href="">送信</a>
+    </div>
 </body>
 </html>
