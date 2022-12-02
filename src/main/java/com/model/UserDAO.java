@@ -32,4 +32,38 @@ public class UserDAO {
         }
         return result;
     }
+
+    public static boolean set(User user) throws SQLException {
+        boolean result = false;
+        Connection connection;
+        String sql = "insert into public.user(mailaddress, password) values(?, ?, ?)";
+        try {
+            Class.forName(driverClassName);
+            connection = DriverManager.getConnection(url, dbUser, password);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, user.getNewMailAddress());
+            preparedStatement.setString(2, user.getNewPassWord());
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public static int checkIndex(User user) throws SQLException {
+        int index = 0;
+        Connection connection;
+        String sql = "select count(*) from public.user";
+        try {
+            Class.forName(driverClassName);
+            connection = DriverManager.getConnection(url, dbUser, password);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                index = resultSet.getInt("count");
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return index;
+    }
 }
