@@ -12,9 +12,15 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Ceregement</title>
 <%--  <link rel="stylesheet" href="%7B%7Burl_for('static',%20filename='css/style.css')}}">--%>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<<<<<<< HEAD
+<p>pre</p>
+<h1>Ceregement</h1>
+=======
 <h1 class="title">Ceregement</h1>
+>>>>>>> origin/master
 <div class="button">
   <a href="Ceregement/Login">ログイン画面へ</a>
 </div>

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+@charset "UTF-8";
+=======
 /*h1{*/
 /*    text-align: center;*/
 /*    font-size: 500px;*/
@@ -26,6 +29,7 @@
 /*p {*/
 /*    text-align: center;*/
 /*}*/
+>>>>>>> origin/master
 
 h1 {
 <<<<<<< HEAD
@@ -33,12 +37,19 @@ h1 {
     text-align: center;
     font-size: 500px;
 }
+<<<<<<< HEAD
+p{
+	color:pink;
+}
+
+=======
 
 .title {
     text-align: center;
     color: pink;
 }
 /*
+>>>>>>> origin/master
 
 
 .button a {
@@ -67,8 +78,12 @@ p {
 }
 
 
+<<<<<<< HEAD
+
+=======
  */
 =======
     color: blue;
 }
 >>>>>>> master
+>>>>>>> origin/master
