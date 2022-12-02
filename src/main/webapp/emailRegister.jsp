@@ -18,14 +18,16 @@
         <li>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURKLが届きます。</li>
     </ul>
     <form method="get" action="Output">
-        <input type="text" name="email">
+        <label>
+            <input type="text" name="email">
+        </label>
         <div class="button">
             <p>ID(メールアドレス)</p>
-            <a href="./emailRegisterd.jsp">送信</a>
+            <a href="EmailRegistered">送信</a>
         </div>
     </form>
     <div class="button">
-        <a href="./login.jsp">戻る</a>
+        <a href="Login">戻る</a>
     </div>
     <div class="button">
         <a href="">送信</a>

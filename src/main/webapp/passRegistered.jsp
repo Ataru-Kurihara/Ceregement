@@ -19,10 +19,10 @@
   <br>
   <p>パスワードを登録しました<br></p>
   <p>トップページに戻り、ログインを行ってください。</p>
-  <p>ID(メールアドレス):<%=email%></p>
-  <p>パスワード:<%=newPassWord%></p>
+  <p>ID(メールアドレス):<%=request.getAttribute("email")%></p>
+  <p>パスワード:<%=request.getAttribute("pass")%></p>
   <div class="button">
-    <a href="./login.jsp">ログイン画面へ</a>
+    <a href="Login">ログイン画面へ</a>
   </div>
 </body>
 </html>

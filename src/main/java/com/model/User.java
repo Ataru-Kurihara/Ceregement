@@ -26,7 +26,8 @@ public class User implements Serializable {
     public String getPassword() {
         return passWord;
     }
-
+    public String getNewMailAddress() {return newMailAddress;}
+    public String getNewPassWord() {return newPassWord;}
     public void setSecretId(String secretId) {
         secretId = secretId;
     }
@@ -38,4 +39,6 @@ public class User implements Serializable {
     public void setPassword(String passWord) {
         this.passWord = passWord;
     }
+    public void setNewMailAddress(String newMailAddress) {this.newMailAddress = newMailAddress;}
+    public void setNewPassWord(String newPassWord) {this.newPassWord = newPassWord;}
 }

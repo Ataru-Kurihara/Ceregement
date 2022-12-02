@@ -13,9 +13,9 @@
 <body>
   <h1>選択してください</h1>
   <div class="button">
-      <a href="./funnelRegister.jsp">葬儀の計画</a>
+      <a href="FunnelRegister">葬儀の計画</a>
       <a href="./">葬儀の閲覧</a>
-      <a href="./login.jsp">ログアウト</a>
+      <a href="Login">ログアウト</a>
   </div>
 </body>
 </html>

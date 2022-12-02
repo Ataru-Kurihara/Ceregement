@@ -34,7 +34,7 @@
     <button type="submit" name="login">ログイン</button>
 </form>
 <div class="button">
-    <a href="./emailRegister.jsp">新規登録</a>
+    <a href="EmailRegister">新規登録</a>
 </div>
 </body>
 </html>

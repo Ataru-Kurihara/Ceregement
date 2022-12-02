@@ -16,14 +16,9 @@
   メールに記載のURLからログインし、<br>
   登録を完了させてください。
   </p>
-  <form method="get" action="Output">
-    <p>新しいパスワード</p>
-    <input type="password" name="newPassWord"><br>
-    <p>新しいパスワード(確認用)</p>
-    <input type="password" name="新しいパスワード(確認用)">
-    <div class="button">
-      <a href="./passRegistered.jsp">ログイン画面へ</a>
-    </div>
-  </form>
+  <button type="button" name="Close">
+    <a href="PassRegister">閉じる</a>
+  </button>
 </body>
 </html>
+>>>>>>> master:src/main/webapp/emailRegistered.jsp
