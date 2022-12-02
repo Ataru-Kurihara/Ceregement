@@ -1,10 +1,14 @@
+@charset "UTF-8";
+
 h1 {
     font-family: "BIZ UDゴシック";
     text-align: center;
     font-size: 500px;
 }
+p{
+	color:pink;
+}
 
-/*
 
 
 .button a {
@@ -33,4 +37,4 @@ p {
 }
 
 
- */
+

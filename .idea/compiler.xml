@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Ceregement" />
+        <module name="Ceregement1" />
       </profile>
     </annotationProcessing>
   </component>

@@ -11,8 +11,10 @@
   <meta charset="UTF-8">
   <title>Ceregement</title>
 <%--  <link rel="stylesheet" href="%7B%7Burl_for('static',%20filename='css/style.css')}}">--%>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<p>pre</p>
 <h1>Ceregement</h1>
 <div class="button">
   <a href="Ceregement/Login">ログイン画面へ</a>

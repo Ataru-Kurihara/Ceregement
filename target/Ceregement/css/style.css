@@ -1,8 +1,16 @@
+@charset "UTF-8";
+
 h1 {
     font-family: "BIZ UDゴシック";
     text-align: center;
     font-size: 500px;
 }
+p{
+	color:pink;
+}
+
+
+
 .button a {
     border-radius: 3px;
     position: relative;
@@ -27,3 +35,6 @@ h1 {
 p {
     text-align: center;
 }
+
+
+
