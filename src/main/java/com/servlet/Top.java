@@ -21,6 +21,6 @@ public class Top extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        getServletContext().getRequestDispatcher("jsp/index.jsp").forward(request,response);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
     }
 }

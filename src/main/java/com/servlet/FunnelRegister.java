@@ -13,7 +13,7 @@ public class FunnelRegister extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public FunnelRegister() {super();}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("jsp/funnelRegister.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/funnelRegister.jsp").forward(request, response);
         request.setCharacterEncoding("UTF-8");
         String deceasedFamilyName = "";
         String deceasedFirstName = "";

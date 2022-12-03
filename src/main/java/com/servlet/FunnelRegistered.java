@@ -13,11 +13,11 @@ public class FunnelRegistered extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public FunnelRegistered() {super();}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        getServletContext().getRequestDispatcher("jsp/funnelRegistered.jsp");
+        getServletContext().getRequestDispatcher("/funnelRegistered.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        getServletContext().getRequestDispatcher("jsp/funnelRegistered.jsp");
+        getServletContext().getRequestDispatcher("/funnelRegistered.jsp").forward(request, response);
     }
 }

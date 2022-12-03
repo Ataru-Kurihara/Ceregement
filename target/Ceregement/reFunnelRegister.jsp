@@ -17,7 +17,7 @@
         <a href="FunnelRegister">修正</a>
     </button>
     <button type="button" name="registaration">
-        <a href="">登録</a>
+        <a href="FunnelRegistered">登録</a>
     </button>
 </body>
 </html>

@@ -21,4 +21,4 @@
   </button>
 </body>
 </html>
->>>>>>> master:src/main/webapp/emailRegistered.jsp
+

@@ -15,7 +15,7 @@
   <p1>招待者の方に以下のURLを送ってください。</p1>
   <p1>URL</p1>
   <button type="button" name="funnelRegistered">
-      <a href="">メニューへ</a>
+      <a href="OrganizerSelection">メニューへ</a>
   </button>
 </body>
 </html>

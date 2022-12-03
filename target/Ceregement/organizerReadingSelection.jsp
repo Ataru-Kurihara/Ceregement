@@ -13,10 +13,10 @@
 <body>
   <h1>選択してください</h1>
   <button type="button" name="funnelInformation">
-      <a href="">葬儀情報</a>
+      <a href="FunnelReading">葬儀情報</a>
   </button>
   <button type="button" name="participantInformation">
-      <a href="">参列情報</a>
+      <a href="ParticipantListReading">参列情報</a>
   </button>
   <button type="button" name="back">
     <a href="OrganizerSelection">戻る</a>
