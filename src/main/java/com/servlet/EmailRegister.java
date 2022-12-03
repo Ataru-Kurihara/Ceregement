@@ -13,11 +13,11 @@ public class EmailRegister extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public EmailRegister() {super();}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/emailRegister.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("jsp/emailRegister.jsp").forward(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        getServletContext().getRequestDispatcher("/emailRegister.jsp").forward(request,response);
+        getServletContext().getRequestDispatcher("jsp/emailRegister.jsp").forward(request,response);
     }
 }

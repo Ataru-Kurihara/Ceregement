@@ -11,11 +11,11 @@ public class PassRegister extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public PassRegister() {super();}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-        getServletContext().getRequestDispatcher("/passRegister.jsp");
+        getServletContext().getRequestDispatcher("jsp/passRegister.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         request.setCharacterEncoding("UTF-8");
-        getServletContext().getRequestDispatcher("/passRegister.jsp");
+        getServletContext().getRequestDispatcher("jsp/passRegister.jsp");
     }
 }

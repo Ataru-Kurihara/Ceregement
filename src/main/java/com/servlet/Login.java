@@ -45,7 +45,7 @@ public class Login extends HttpServlet {
 //            getServletContext().getRequestDispatcher("/organizerSelection").forward(request, response);
             response.sendRedirect("/Ceregement/OrganizerSelection");
         } else {
-            getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("jsp/login.jsp").forward(request, response);
         }
     }
 }
