@@ -3,9 +3,9 @@ package com.model;
 import java.sql.*;
 
 public class UserDAO {
-    final private static String dbname = "ceregementdb";
+    final private static String dbname = "tutorial";
     final private static String dbUser = "postgres";
-    final private static String password = "20fi035";
+    final private static String password = "mimi0901";
     final private static String sqlHostname = "localhost";
     final private static String url = "jdbc:postgresql://" + sqlHostname + "/" + dbname;
     final private static String driverClassName = "org.postgresql.Driver";
@@ -13,7 +13,7 @@ public class UserDAO {
     public static boolean check(User user) throws SQLException {
         boolean result = false;
         Connection connection;
-        String sql = "select * from public.user where mailaddress=? and password=?";
+        String sql = "select * from account where id=? and password=?";
         try {
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(url, dbUser, password);

@@ -9,6 +9,33 @@
 
 <html>
 <head>
+    <Style>
+        body {
+            background: linear-gradient(white, mediumpurple);
+            background-size: cover;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        a {
+            font-size: 250%;
+            width: 300px;
+            height: 100px;
+            border: 2px solid #000;
+            border-radius: 0;
+            background: #fff;
+            -webkit-box-shadow: 4px 4px 0 #000;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        a:hover {
+            -webkit-box-shadow: -10px -4px 0 #000;
+            box-shadow: -10px -4px 0 #000;
+        }
+
+    </Style>
+<html>
+<head>
     <title>emailRegister</title>
 </head>
 <body>
