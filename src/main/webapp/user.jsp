@@ -1,4 +1,4 @@
-<%@ page import="com.model.User" %><%--
+<%@ page import="com.model.user.User" %><%--
   Created by IntelliJ IDEA.
   User: ataru
   Date: 2022/11/20

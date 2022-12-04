@@ -13,26 +13,14 @@ public class FunnelRegister extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public FunnelRegister() {super();}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/funnelRegister.jsp").forward(request, response);
         request.setCharacterEncoding("UTF-8");
-        String deceasedFamilyName = "";
-        String deceasedFirstName = "";
-        String deathYear = "";
-        String deathMonth = "";
-        String deathDay = "";
-        String funnelPlace = "";
-        String funnelPlaceAddress = "";
-        String funnelYear = "";
-        String funnelMonth = "";
-        String funnelDay = "";
-        String funnelHour = "";
-        String funnelMinute = "";
-        String BereavementFamilyName = "";
-        String BereavementFirstName = "";
-        String postalCode = "";
-        String address = "";
-        String phoneNumber = "";
-        deceasedFirstName = request.getParameter("deceasedFirstName");
+        String deceasedFamilyName = "", deceasedFirstName = "", deceasedFullName = "";
+        String deathYear = "", deathMonth = "", deathDay = "", deathData = "";
+        String funnelPlace = "", funnelPlaceAddress = "";
+        String funnelYear = "", funnelMonth = "", funnelDay = "", funnelHour = "", funnelMinute = "",funnelTime = "";
+        String bereavementFamilyName = "", bereavementFirstName = "", bereavementFullName = "";
+        String postalcode = "", address = "";
+        String phonenumber = "";        deceasedFirstName = request.getParameter("deceasedFirstName");
         deceasedFamilyName = request.getParameter("deceasedFamilyName");
         deathYear = request.getParameter("deathYear");
         deathMonth = request.getParameter("deathMonth");
@@ -44,11 +32,13 @@ public class FunnelRegister extends HttpServlet {
         funnelDay = request.getParameter("funnelDay");
         funnelHour = request.getParameter("funnelHour");
         funnelMinute = request.getParameter("funnelMinute");
-        BereavementFamilyName = request.getParameter("BereavementFamilyName");
-        BereavementFirstName = request.getParameter("BereavementFirstName");
-        postalCode = request.getParameter("postalCode");
+        bereavementFamilyName = request.getParameter("BereavementFamilyName");
+        bereavementFirstName = request.getParameter("BereavementFirstName");
+        postalcode = request.getParameter("postalCode");
         address = request.getParameter("address");
-        phoneNumber = request.getParameter("phoneNumber");
+        phonenumber = request.getParameter("phoneNumber");
+        getServletContext().getRequestDispatcher("/funnelRegister.jsp").forward(request, response);
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
