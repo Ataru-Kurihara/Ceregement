@@ -8,18 +8,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
+    <style>
+        body {
+            background: linear-gradient(white, mediumpurple);
+            background-size: cover;
+            font-family: sans-serif;
+            text-align: center;
+        }
+    </style>
+
     <title>participantSelection</title>
 </head>
 <body>
-  <h1>選択してください</h1>
-  <button type="button" name="funnelInformation">
+<h1>選択してください</h1>
+<button type="button" name="funnelInformation">
     <a href="FunnelReading">葬儀の詳細を知りたい</a>
-  </button>
-  <button type="button" name="participantInformation">
+</button>
+<button type="button" name="participantInformation">
     <a href="ParticipantRegister">出席登録</a>
-  </button>
-  <button type="button" name="back">
+</button>
+<button type="button" name="back">
     <a href="Login">ログアウト</a>
-  </button>
+</button>
 </body>
 </html>
