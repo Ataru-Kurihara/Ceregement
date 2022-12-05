@@ -11,20 +11,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Ceregement</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<h1 class="title">Ceregement</h1>
-=======
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/style.css">
+    <link rel=”stylesheet” type=”text/css” href=”../css/style.css”>
 <%--    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">--%>
 </head>
 <body>
 
 <h1>Ceregement</h1>
->>>>>>> master
 <div class="button">
     <a href="${pageContext.request.contextPath}/Login">ログイン</a>
 </div>
