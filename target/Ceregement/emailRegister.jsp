@@ -42,22 +42,21 @@
     <h1>入力してください</h1>
     <ul>
         <li>新しく登録するメールアドレスを入力してください。</li>
-        <li>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURKLが届きます。</li>
+        <li>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</li>
     </ul>
     <form method="get" action="Output">
         <label>
+            <p>ID(メールアドレス)</p>
             <input type="text" name="email">
         </label>
         <div class="button">
-            <p>ID(メールアドレス)</p>
+
             <a href="EmailRegistered">送信</a>
         </div>
     </form>
     <div class="button">
         <a href="Login">戻る</a>
     </div>
-    <div class="button">
-        <a href="">送信</a>
-    </div>
+
 </body>
 </html>
