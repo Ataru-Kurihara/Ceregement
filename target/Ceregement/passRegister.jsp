@@ -1,13 +1,14 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ataru
-  Date: 2022/12/01
-  Time: 15:27
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%-- Created by IntelliJ IDEA. User: ataru Date: 2022/12/01 Time: 15:27 To change this template use File | Settings |
+    File Templates. --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page import="com.model.tempUser.TempUser"%>
 <html>
+<%
+String id = ((TempUser) session.getAttribute("temp")).getEmail();
+%>
+
 <head>
+<<<<<<< HEAD
 
     <style>
         body {
@@ -36,8 +37,14 @@
     </style>
 
     <title>passRegister</title>
+=======
+<meta charset="UTF-8">
+<title>passRegister</title>
+>>>>>>> master
 </head>
+
 <body>
+<<<<<<< HEAD
 <h1>パスワード新規登録</h1>
 <p1>エラーメッセージ</p1>
 <h2>新しいパスワード</h2>
@@ -56,5 +63,21 @@
 <button type="button" name="registration">
     <a href="PassRegistered">登録</a>
 </button>
+=======
+	<p>アカウントを登録します</p>
+	<p>
+		あなたのidは:<%=id%>です
+	</p>
+	<form action="PassRegister" method="post">
+		<dl>
+			<dt>パスワード</dt>
+			<dd>
+				<input type="password" name="password" />
+			</dd>
+		</dl>
+		<button type="submit" name="passRegister">登録</button>
+	</form>
+>>>>>>> master
 </body>
+
 </html>

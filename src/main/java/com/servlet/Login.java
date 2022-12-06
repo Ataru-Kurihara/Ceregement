@@ -1,7 +1,7 @@
 package com.servlet;
 
-import com.model.User;
-import com.model.UserDAO;
+import com.model.user.User;
+import com.model.user.UserDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
