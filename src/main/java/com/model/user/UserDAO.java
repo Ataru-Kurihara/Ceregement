@@ -74,14 +74,15 @@ public class UserDAO {
 
 	public void insert(User u) {
 		Connection connection;
-		String sql = "INSERT INTO account (id, password) VALUES (?, ?)";
+		String sql = "INSERT INTO public.user (secretid, mailAddress, password) VALUES (?, ?, ?)";
 
 		try {
 			Class.forName(driverClassName);
 			connection = DriverManager.getConnection(url, dbUser, password);
 			PreparedStatement pstmt = connection.prepareStatement(sql);
-			pstmt.setString(1, u.getMailAddress());
-			pstmt.setString(2, u.getPassword());
+			pstmt.setInt(1, u.getSecretId());
+			pstmt.setString(2, u.getMailAddress());
+			pstmt.setString(3, u.getPassword());
 			pstmt.executeUpdate();
 			System.out.println("UserDAO.javaでINSERT実行");
 			connection.close();

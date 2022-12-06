@@ -50,7 +50,7 @@ a:hover {
 	<form action="emailRegister" method="post">
 		<p>ID(メールアドレス)</p>
 		<input type="text" name="email">
-		<button type="submit" name="emailRegisterd">送信</button>
+		<button type="submit" name="emailRegistered">送信</button>
 	</form>
 	<div class="button">
 		<a href="./login.jsp">戻る</a>
