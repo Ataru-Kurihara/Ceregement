@@ -74,6 +74,7 @@ public class EmailRegister extends HttpServlet {
 
 		//nullチェック
 		if (Objects.isNull(email)) {
+			System.out.println("EmailRegister.java");
 			System.out.println("nullである");
 			state = false;
 		}
@@ -108,7 +109,7 @@ public class EmailRegister extends HttpServlet {
 			}
 
 			//成功した画面遷移
-			getServletContext().getRequestDispatcher("/emailRegisterd.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/emailRegistered.jsp").forward(request, response);
 		} else {
 			//	失敗した画面遷移
 			getServletContext().getRequestDispatcher("/emailRegister.jsp").forward(request, response);

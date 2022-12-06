@@ -4,16 +4,16 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
-    private String secretId;
+    private int secretId;
     private String mailAddress;
     private String passWord;
     public User() {
-        secretId = "";
+        secretId = 0;
         mailAddress = "";
         passWord = "";
     }
 
-    public String getSecretId() {
+    public int getSecretId() {
         return secretId;
     }
 
@@ -24,7 +24,7 @@ public class User implements Serializable {
     public String getPassword() {
         return passWord;
     }
-    public void setSecretId(String secretId) {
+    public void setSecretId(int secretId) {
         this.secretId = secretId;
     }
 
