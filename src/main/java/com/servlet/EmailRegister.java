@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
 
 import com.model.tempUser.TempUserDAO;
 
-@WebServlet("/emailRegister")
+@WebServlet("/EmailRegister")
 public class EmailRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	final String subject = "JavaMail テストメール"; //	メールの件名

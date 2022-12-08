@@ -64,6 +64,32 @@
 
 
     </style>
+<<<<<<< HEAD
+
+    <title>login</title>
+</head>
+<body>
+<%
+    if (session.getAttribute("login") != null && !(Boolean)session.getAttribute("login")) {
+        out.println("<p>ユーザ名またはパスワードが違います</p>");
+    } else {
+        out.println("");
+    }
+%>
+    <p>ログインします</p>
+    <form action="Login" method="post">
+        <dl>
+            <dt>ユーザID(メールアドレス)</dt>
+            <dd><input type="text" name="mailAddress"/></dd>
+            <dt>パスワード</dt>
+            <dd><input type="text" name="passWord"></dd>
+        </dl>
+        <button type="submit" name="login">ログイン</button>
+    </form>
+    <div class="button">
+        <a href="EmailRegister">新規登録</a>
+    </div>
+=======
     <%--
       Created by IntelliJ IDEA.
       User: ataru
@@ -101,5 +127,6 @@
 <div class="button">
     <a href="EmailRegister">新規登録</a>
 </div>
+>>>>>>> master
 </body>
 </html>
