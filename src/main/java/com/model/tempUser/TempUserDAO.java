@@ -17,7 +17,7 @@ public class TempUserDAO {
 	public boolean check(String email) throws SQLException, ClassNotFoundException {
 		boolean result = false;
 		Connection connection;
-		String sql = "SELECT * FROM account WHERE id = ?";
+		String sql = "SELECT * FROM public.user WHERE mailAddress = ?";
 		Class.forName(driverClassName);
 		connection = DriverManager.getConnection(url, user, password);
 		PreparedStatement pstmt = connection.prepareStatement(sql);

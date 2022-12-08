@@ -61,6 +61,13 @@ public class PassRegister extends HttpServlet {
 			session.setAttribute("register", !result);
 			getServletContext().getRequestDispatcher("/passRegister.jsp").forward(request, response);
 		} else {
+			int secretId;
+			try {
+				secretId = u_dao.checkIndex(user) + 1;
+				user.setSecretId(secretId);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 			session.setAttribute("newUser", user);
 			u_dao.insert(user);
 			System.out.println("パスワード登録完了画面に遷移します");
