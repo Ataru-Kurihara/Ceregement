@@ -19,7 +19,7 @@
     <form method="GET" action="ReFunnelRegister">
         <input type="text" name="deceasedFamilyName">
         <p2>(名)</p2>
-        <input type="text" name="deceasedFirstName">
+        <input type="text" name="deceasedFirstName" value="太郎">
         <br>
         <h2>命日</h2>
         <select name="deathYear">
@@ -50,11 +50,11 @@
         </select><p2>日</p2>
         <h2>葬儀会場名</h2>
         <label>
-            <input type="text" name="funnelPlace">
+            <input type="text" name="funnelPlace" value="会場名">
         </label><br>
         <h2>葬儀会場住所</h2>
         <label>
-            <input type="text" name="funnelPlaceAddress">
+            <input type="text" name="funnelPlaceAddress" value="--県--市">
         </label><br>
 
         <h2>葬儀日時</h2>
@@ -104,30 +104,29 @@
         <h2>喪主氏名</h2>
         <p2>(姓)</p2>
         <label>
-            <input type="text" name="bereavementFamilyName">
+            <input type="text" name="bereavementFamilyName" value="電大">
         </label>
         <p2>(名)</p2>
         <label>
-            <input type="text" name="bereavementFirstName">
+            <input type="text" name="bereavementFirstName" value="花子">
         </label><br>
         <h2>住所</h2>
         <p2>〒</p2>
         <label>
-            <input type="text" name="postalcode">
+            <input type="text" name="postalcode" value="000-000">
         </label>
         <p2>(半角数字)</p2><br>
         <label>
-            <input type="text" name="address">
+            <input type="text" name="address" value="--県--市">
         </label><br>
         <h2>電話番号</h2>
         <label>
-            <input type="text" name="phonenumber">
+            <input type="text" name="phonenumber" value="08000000000">
         </label>
         <p2>(半角数字)</p2><br>
 
         <input type="submit" name="registration" value="登録">
             <a href="ReFunnelRegister"></a>
-        </input>
     </form>
     <button type="button" name="back">
         <a href="OrganizerSelection">戻る</a>

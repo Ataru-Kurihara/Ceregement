@@ -26,14 +26,15 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.setCharacterEncoding("UTF-8");
         User user = new User();
-        UserDAO userDAO = new UserDAO();
+        UserDAO dao = new UserDAO();
 //        user.setSecretId(request.getParameter("secretId"));
         user.setMailAddress(request.getParameter("mailAddress"));
         user.setPassword(request.getParameter("passWord"));
+        int secretId = UserDAO.getId(user);
 
         boolean result = false;
         try {
-            result = UserDAO.check(user);
+            result = dao.check(user);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -43,7 +44,12 @@ public class Login extends HttpServlet {
         if (result) {
             session.setAttribute("user", user);
 //            getServletContext().getRequestDispatcher("/organizerSelection").forward(request, response);
-            response.sendRedirect("/Ceregement/OrganizerSelection");
+            if (secretId == 1) {
+                response.sendRedirect("/Ceregement/OrganizerSelection");
+            }if (secretId == 0){
+                response.sendRedirect("/Ceregement/ParticipantSelection");
+            }
+
         } else {
             getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
         }
