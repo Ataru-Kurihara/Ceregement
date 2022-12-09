@@ -43,10 +43,13 @@ public class Login extends HttpServlet {
         session.setAttribute("login", result);
         if (result) {
             session.setAttribute("user", user);
+            System.out.println(secretId);
 //            getServletContext().getRequestDispatcher("/organizerSelection").forward(request, response);
             if (secretId == 1) {
+                System.out.println(secretId);
                 response.sendRedirect("/Ceregement/OrganizerSelection");
             }if (secretId == 0){
+                System.out.println(secretId);
                 response.sendRedirect("/Ceregement/ParticipantSelection");
             }
 

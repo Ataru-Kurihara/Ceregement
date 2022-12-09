@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 public class UserDAO {
 	final private static String dbname = "ceregementdb";
-	final private static String dbUser = "postgres";
-	final private static String password = "20fi035";
+	final private static String dbUser = "ceregement";
+	final private static String password = "ceregement";
 	final private static String sqlHostname = "localhost";
 	final private static String url = "jdbc:postgresql://" + sqlHostname + "/" + dbname;
 	final private static String driverClassName = "org.postgresql.Driver";
