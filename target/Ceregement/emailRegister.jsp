@@ -36,27 +36,6 @@ a:hover {
 </head>
 
 <body>
-<<<<<<< HEAD
-    <h1>入力してください</h1>
-    <ul>
-        <li>新しく登録するメールアドレスを入力してください。</li>
-        <li>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</li>
-    </ul>
-    <form method="get" action="Output">
-        <label>
-            <p>ID(メールアドレス)</p>
-            <input type="text" name="email">
-        </label>
-        <div class="button">
-
-            <a href="EmailRegistered">送信</a>
-        </div>
-    </form>
-    <div class="button">
-        <a href="Login">戻る</a>
-    </div>
-
-=======
 	<h1>入力してください</h1>
 	<%
 	if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")) {
@@ -68,15 +47,14 @@ a:hover {
 		<li>新しく登録するメールアドレスを入力してください。</li>
 		<li>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</li>
 	</ul>
-	<form action="emailRegister" method="post">
+	<form action="EmailRegister" method="post">
 		<p>ID(メールアドレス)</p>
 		<input type="text" name="email">
-		<button type="submit" name="emailRegisterd">送信</button>
+		<button type="submit" name="emailRegistered">送信</button>
 	</form>
 	<div class="button">
-		<a href="./login.jsp">戻る</a>
+		<a href="/Login">戻る</a>
 	</div>
->>>>>>> master
 </body>
 
 </html>
