@@ -7,9 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TempUserDAO {
-	final private static String dbname = "tutorial";
-	final private static String user = "nagahama";
-	final private static String password = "arifumi";
+//	final private static String dbname = "tutorial";
+//	final private static String user = "nagahama";
+//	final private static String password = "arifumi";
+	final private static String dbname = "ceregementdb";
+	final private static String user = "ceregement";
+	final private static String password = "ceregement";
 	final private static String sqlHostname = "localhost";
 	final private static String url = "jdbc:postgresql://" + sqlHostname + "/" + dbname;
 	final private static String driverClassName = "org.postgresql.Driver";
@@ -17,7 +20,7 @@ public class TempUserDAO {
 	public boolean check(String email) throws SQLException, ClassNotFoundException {
 		boolean result = false;
 		Connection connection;
-		String sql = "SELECT * FROM account WHERE id = ?";
+		String sql = "SELECT * FROM public.user WHERE mailAddress = ?";
 		Class.forName(driverClassName);
 		connection = DriverManager.getConnection(url, user, password);
 		PreparedStatement pstmt = connection.prepareStatement(sql);

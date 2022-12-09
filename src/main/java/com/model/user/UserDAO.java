@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 public class UserDAO {
 	final private static String dbname = "ceregementdb";
-	final private static String dbUser = "postgres";
-	final private static String password = "20fi035";
+	final private static String dbUser = "ceregement";
+	final private static String password = "ceregement";
 	final private static String sqlHostname = "localhost";
 	final private static String url = "jdbc:postgresql://" + sqlHostname + "/" + dbname;
 	final private static String driverClassName = "org.postgresql.Driver";
@@ -38,22 +38,26 @@ public class UserDAO {
 		return result;
 	}
 
-	//    public static boolean set(User user) throws SQLException {
-	//        boolean result = false;
-	//        Connection connection;
-	//        String sql = "insert into public.user(mailaddress, password) values(?, ?, ?)";
-	//        try {
-	//            Class.forName(driverClassName);
-	//            connection = DriverManager.getConnection(url, dbUser, password);
-	//            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-	//            preparedStatement.setString(1, user.getNewMailAddress());
-	//            preparedStatement.setString(2, user.getNewPassWord());
-	//        }catch (Exception e) {
-	//            e.printStackTrace();
-	//        }
-	//        return result;
-	//    }
+	public static int getId(User user) {
+		int id = 0;
+		Connection connection;
+		PreparedStatement preparedStatement;
+		String sql = "select secretid from public.user where mailaddress = ?";
+		try {
+			Class.forName(driverClassName);
+			connection = DriverManager.getConnection(url, dbUser, password);
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, user.getMailAddress());
 
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				id = resultSet.getInt("secretid");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return id;
+	}
 	public static int checkIndex(User user) throws SQLException {
 		int index = 0;
 		Connection connection;
@@ -74,14 +78,15 @@ public class UserDAO {
 
 	public void insert(User u) {
 		Connection connection;
-		String sql = "INSERT INTO account (id, password) VALUES (?, ?)";
+		String sql = "INSERT INTO public.user (secretid, mailAddress, password) VALUES (?, ?, ?)";
 
 		try {
 			Class.forName(driverClassName);
 			connection = DriverManager.getConnection(url, dbUser, password);
 			PreparedStatement pstmt = connection.prepareStatement(sql);
-			pstmt.setString(1, u.getMailAddress());
-			pstmt.setString(2, u.getPassword());
+			pstmt.setInt(1, u.getSecretId());
+			pstmt.setString(2, u.getMailAddress());
+			pstmt.setString(3, u.getPassword());
 			pstmt.executeUpdate();
 			System.out.println("UserDAO.javaでINSERT実行");
 			connection.close();

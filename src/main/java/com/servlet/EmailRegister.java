@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
 
 import com.model.tempUser.TempUserDAO;
 
-@WebServlet("/emailRegister")
+@WebServlet("/EmailRegister")
 public class EmailRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	final String subject = "JavaMail テストメール"; //	メールの件名
@@ -44,11 +44,12 @@ public class EmailRegister extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		try {
-			this.doPost(request, response);
-		} catch (ServletException | IOException e) {
-			e.printStackTrace();
-		}
+		getServletContext().getRequestDispatcher("/emailRegister.jsp").forward(request, response);
+//		try {
+//			this.doPost(request, response);
+//		} catch (ServletException | IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -74,6 +75,7 @@ public class EmailRegister extends HttpServlet {
 
 		//nullチェック
 		if (Objects.isNull(email)) {
+			System.out.println("EmailRegister.java");
 			System.out.println("nullである");
 			state = false;
 		}
@@ -108,7 +110,7 @@ public class EmailRegister extends HttpServlet {
 			}
 
 			//成功した画面遷移
-			getServletContext().getRequestDispatcher("/emailRegisterd.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/emailRegistered.jsp").forward(request, response);
 		} else {
 			//	失敗した画面遷移
 			getServletContext().getRequestDispatcher("/emailRegister.jsp").forward(request, response);
