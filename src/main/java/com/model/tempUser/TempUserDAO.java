@@ -7,9 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TempUserDAO {
-	final private static String dbname = "tutorial";
-	final private static String user = "nagahama";
-	final private static String password = "arifumi";
+//	final private static String dbname = "tutorial";
+//	final private static String user = "nagahama";
+//	final private static String password = "arifumi";
+	final private static String dbname = "ceregementdb";
+	final private static String user = "postgres";
+	final private static String password = "20fi035";
 	final private static String sqlHostname = "localhost";
 	final private static String url = "jdbc:postgresql://" + sqlHostname + "/" + dbname;
 	final private static String driverClassName = "org.postgresql.Driver";

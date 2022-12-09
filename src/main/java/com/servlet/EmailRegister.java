@@ -44,11 +44,12 @@ public class EmailRegister extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		try {
-			this.doPost(request, response);
-		} catch (ServletException | IOException e) {
-			e.printStackTrace();
-		}
+		getServletContext().getRequestDispatcher("/emailRegister.jsp").forward(request, response);
+//		try {
+//			this.doPost(request, response);
+//		} catch (ServletException | IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

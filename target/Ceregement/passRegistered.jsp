@@ -9,7 +9,7 @@ String password = ((User) session.getAttribute("newUser")).getPassword();
 <html>
 
 <head>
-<<<<<<< HEAD
+
 
   <style>
     body {
@@ -40,9 +40,6 @@ String password = ((User) session.getAttribute("newUser")).getPassword();
   </style>
 
     <title>passRegistered</title>
-=======
-<title>passRegistered</title>
->>>>>>> master
 </head>
 
 <body>

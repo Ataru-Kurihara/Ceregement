@@ -8,7 +8,7 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 %>
 
 <head>
-<<<<<<< HEAD
+
 
     <style>
         body {
@@ -37,33 +37,14 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
     </style>
 
     <title>passRegister</title>
-=======
+
 <meta charset="UTF-8">
 <title>passRegister</title>
->>>>>>> master
+
 </head>
 
 <body>
-<<<<<<< HEAD
-<h1>パスワード新規登録</h1>
-<p1>エラーメッセージ</p1>
-<h2>新しいパスワード</h2>
-<input type="text" name="pass">
-<h2>新しいパスワード(確認用)</h2>
-<input type="text" name="rePass">
-<br>
-<p2>(注意)パスワードに使える文字は半角数字とアルファベットです。</p2>
-<br>
-<p2>アルファベットは大文字、小文字の区別はありません。</p2>
-<br>
-<p2>パスワードは8文字以上16文字以下を指定してください。</p2>
-<br>
-<p2>★内容を確認したら「登録」ボタンを押してください</p2>
-<br>
-<button type="button" name="registration">
-    <a href="PassRegistered">登録</a>
-</button>
-=======
+
 	<p>アカウントを登録します</p>
 	<p>
 		あなたのidは:<%=id%>です
@@ -77,7 +58,7 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 		</dl>
 		<button type="submit" name="passRegister">登録</button>
 	</form>
->>>>>>> master
+
 </body>
 
 </html>

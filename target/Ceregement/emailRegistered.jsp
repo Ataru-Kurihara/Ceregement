@@ -2,7 +2,6 @@
     File Templates. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
-<<<<<<< HEAD
 <head>
 
   <style>
@@ -36,21 +35,7 @@
 
   </style>
 
-    <title>emailRegistered</title>
-</head>
-<body>
-  <p>
-    メールが送信されました。<br>
-  メールに記載のURLからログインし、<br>
-  登録を完了させてください。
-  </p>
-  <button type="button" name="Close">
-    <a href="PassRegister">閉じる</a>
-  </button>
-</body>
-</html>
-=======
->>>>>>> master
+
 
 <head>
 <title>emailRegistered</title>
