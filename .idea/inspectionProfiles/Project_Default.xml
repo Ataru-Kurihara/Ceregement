@@ -11,17 +11,12 @@
             <item index="3" class="java.lang.String" itemvalue="noscript" />
             <item index="4" class="java.lang.String" itemvalue="embed" />
             <item index="5" class="java.lang.String" itemvalue="script" />
-            <item index="6" class="java.lang.String" itemvalue="p2" />
-            <item index="7" class="java.lang.String" itemvalue="p1" />
+            <item index="6" class="java.lang.String" itemvalue="p1" />
+            <item index="7" class="java.lang.String" itemvalue="p2" />
           </list>
         </value>
       </option>
       <option name="myCustomValuesEnabled" value="true" />
     </inspection_tool>
-    <inspection_tool class="JavaeeApplicationDomInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
-    <inspection_tool class="MimeType" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
-    <inspection_tool class="SecurityRoles" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
-    <inspection_tool class="ServletWithoutMappingInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
-    <inspection_tool class="WebProperties" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
   </profile>
 </component>

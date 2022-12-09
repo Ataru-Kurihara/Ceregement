@@ -14,7 +14,11 @@
   <h1>選択してください</h1>
   <div class="button">
       <a href="FunnelRegister">葬儀の計画</a>
+<<<<<<< HEAD
       <a href="./">葬儀の閲覧</a>
+=======
+      <a href="OrganizerReadingSelection">葬儀の閲覧</a>
+>>>>>>> c99d19d98d8a12d935bcda4dba83a5f1a8ee0c63
       <a href="Login">ログアウト</a>
   </div>
 </body>

@@ -1,5 +1,5 @@
-import com.model.User;
-import com.model.UserDAO;
+import com.model.user.User;
+import com.model.user.UserDAO;
 
 import java.sql.*;
 
