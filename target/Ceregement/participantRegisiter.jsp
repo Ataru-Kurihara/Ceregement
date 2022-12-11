@@ -16,6 +16,41 @@
             font-family: sans-serif;
             text-align: center;
         }
+        h2{
+            border: 2px #808080 solid;
+        }
+        button{
+            position: relative;
+            aligin: center;
+            width: 200px;
+            height: 60px;
+            border: 2px solid #000;
+            border-radius: 0;
+            background: #fff;
+            -webkit-box-shadow: 4px 4px 0 #000;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        button:hover {
+            -webkit-box-shadow: -10px -4px 0 #000;
+            box-shadow: -10px -4px 0 #000;
+        }
+        a{
+            position: relative;
+            aligin: center;
+            width: 200px;
+            height: 60px;
+            border: 2px solid #000;
+            border-radius: 0;
+            background: #fff;
+            -webkit-box-shadow: 4px 4px 0 #000;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        a:hover {
+            -webkit-box-shadow: -10px -4px 0 #000;
+            box-shadow: -10px -4px 0 #000;
+        }
     </style>
 
     <title>participantRegister</title>
@@ -56,10 +91,13 @@
 </form>
 <br>
 <h2>贈り物</h2>
+<br>
 <input type="text" name="funeralGift">
+<br>
 <button type="button" name="back">
     <a href="ParticipantSelection">戻る</a>
 </button>
+<br>
 <button type="button" name="registration">
     <a href="ReParticipantRegister">登録</a>
 </button>

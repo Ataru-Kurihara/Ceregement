@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-<<<<<<< HEAD
 Built-By: ikana
 Build-Jdk: Eclipse Temurin version 11.0.15
-=======
-Built-By: ataru
-Build-Jdk: 18.0.1
->>>>>>> e6a49cd00492c5c7422e12b61356b8eb5c95b98a
 

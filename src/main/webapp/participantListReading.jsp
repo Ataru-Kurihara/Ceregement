@@ -18,6 +18,7 @@
 
         tr{
             text-align: center;
+            font-size: 200%;
         }
 
         button {
@@ -38,6 +39,14 @@
         }
         a{
             font-size: 250%;
+        }
+        h1{
+            font-size: 300%;
+            text-align: center;
+        }
+        th{
+            text-align: center;
+            border: 2px #808080 solid;
         }
     </style>
 
