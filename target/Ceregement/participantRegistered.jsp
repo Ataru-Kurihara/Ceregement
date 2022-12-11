@@ -8,12 +8,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
+    <style>
+        body {
+            background: linear-gradient(white, mediumpurple);
+            background-size: cover;
+            font-family: sans-serif;
+            text-align: center;
+        }
+    </style>
+
     <title>participantRegistered</title>
 </head>
 <body>
-  <h>参列者情報が正常に登録されました！</h>
-  <button type="button" name="menu">
-      <a href="ParticipantSelection">メニューへ</a>
-  </button>
+<h>参列者情報が正常に登録されました！</h>
+<button type="button" name="menu">
+    <a href="ParticipantSelection">メニューへ</a>
+</button>
 </body>
 </html>
