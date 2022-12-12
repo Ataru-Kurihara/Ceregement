@@ -55,7 +55,7 @@
 
 
 <h1>Ceregement</h1>
-<h2>お別れの時間を有意義に過ごすお手伝いをします!</h2>
+<h2>お別れの時間を有意義に過ごすお手伝いをします!!</h2>
 <div class="button">
     <a href="${pageContext.request.contextPath}/Login">ログイン</a>
 </div>
