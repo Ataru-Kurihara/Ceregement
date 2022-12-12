@@ -1,16 +1,17 @@
 package com.servlet;
 
-import com.model.user.User;
-import com.model.user.UserDAO;
+import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.sql.SQLException;
+
+import com.model.user.User;
+import com.model.user.UserDAO;
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {
@@ -20,7 +21,7 @@ public class Login extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.doPost(request, response);
+    	getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -30,7 +31,7 @@ public class Login extends HttpServlet {
 //        user.setSecretId(request.getParameter("secretId"));
         user.setMailAddress(request.getParameter("mailAddress"));
         user.setPassword(request.getParameter("passWord"));
-        int secretId = UserDAO.getId(user);
+        int regNumber = UserDAO.getId(user);
 
         boolean result = false;
         try {
@@ -43,13 +44,13 @@ public class Login extends HttpServlet {
         session.setAttribute("login", result);
         if (result) {
             session.setAttribute("user", user);
-            System.out.println(secretId);
+            System.out.println(regNumber);
 //            getServletContext().getRequestDispatcher("/organizerSelection").forward(request, response);
-            if (secretId == 1) {
-                System.out.println(secretId);
+            if (regNumber == 1) {
+                System.out.println(regNumber);
                 response.sendRedirect("/Ceregement/OrganizerSelection");
-            }if (secretId == 0){
-                System.out.println(secretId);
+            }if (regNumber == 0){
+                System.out.println(regNumber);
                 response.sendRedirect("/Ceregement/ParticipantSelection");
             }
 

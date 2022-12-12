@@ -21,11 +21,6 @@ public class Create extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		this.doPost(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
 		HttpSession session = request.getSession();
@@ -33,6 +28,7 @@ public class Create extends HttpServlet {
 		TempUser temp = new TempUser();//仮ユーザー
 
 		String email = request.getParameter("email");
+		String regNumber = request.getParameter("regNumber");
 
 		boolean result = false;
 
@@ -43,6 +39,7 @@ public class Create extends HttpServlet {
 		} else {
 			System.out.println("idは入力されている");
 			temp.setEmail(email);//email情報を保存
+			temp.setRegNumber(regNumber);
 		}
 
 		if (result) {
@@ -56,5 +53,9 @@ public class Create extends HttpServlet {
 			System.out.println("登録画面に遷移します");
 			getServletContext().getRequestDispatcher("/passRegister.jsp").forward(request, response);
 		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 	}
 }
