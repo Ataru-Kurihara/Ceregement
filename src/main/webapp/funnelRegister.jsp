@@ -59,7 +59,7 @@
     <p>※項目は必須入力です</p>
     <h2>故人の氏名</h2>
     <p2>(姓)</p2>
-    <form method="GET" action="ReFunnelRegister">
+    <form method="get" action="ReFunnelRegister">
         <input type="text" name="deceasedFamilyName">
         <p2>(名)</p2>
         <input type="text" name="deceasedFirstName" value="太郎">

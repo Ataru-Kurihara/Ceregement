@@ -1,3 +1,4 @@
+
 <%@ page import="java.util.Calendar" %><%--
   Created by IntelliJ IDEA.
   User: ataru
@@ -59,7 +60,7 @@
     <p>※項目は必須入力です</p>
     <h2>故人の氏名</h2>
     <p2>(姓)</p2>
-    <form method="GET" action="ReFunnelRegister">
+    <form method="get" action="ReFunnelRegister">
         <input type="text" name="deceasedFamilyName">
         <p2>(名)</p2>
         <input type="text" name="deceasedFirstName" value="太郎">
@@ -169,10 +170,11 @@
         <p2>(半角数字)</p2><br>
 
         <input type="submit" name="registration" value="登録">
-            <a href="reFunnelRegister.jsp"></a>
+            <a href="ReFunnelRegister"></a>
     </form>
     <button type="button" name="back">
-        <a href="organizerSelection.jsp">戻る</a>
+        <a href="OrganizerSelection">戻る</a>
     </button>
 </body>
 </html>
+

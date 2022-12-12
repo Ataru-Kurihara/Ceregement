@@ -65,8 +65,8 @@ public class PassRegister extends HttpServlet {
 		} else {
 			int secretId;
 			try {
-				secretId = u_dao.checkIndex(user) + 1;
-				user.setSecretId(Integer.toString(secretId));
+				secretId = u_dao.checkIndex() + 1;
+				user.setSecretId(secretId);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
