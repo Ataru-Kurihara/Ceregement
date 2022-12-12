@@ -85,7 +85,7 @@
 <p2>(半角数字)</p2>
 <br>
 <h2>※参加情報</h2>
-<form action="ReParticipantRegister" method="get">
+<form action="reParticipantRegister.jsp" method="get">
     <input type="radio" name="attendSelection" value="attend"> 出席
     <input type="radio" name="attendSelection" value="absence"> 欠席
 </form>
@@ -95,7 +95,7 @@
 <input type="text" name="funeralGift">
 <br>
 <button type="button" name="back">
-    <a href="ParticipantSelection">戻る</a>
+    <a href="participantSelection.jsp">戻る</a>
 </button>
 <br>
 <button type="button" name="registration">

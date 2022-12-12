@@ -7,7 +7,11 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/funnelRegister.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/jsp/participantRegisiter.jsp" value="file://$PROJECT_DIR$/src/main/webapp/jsp" />
+<<<<<<< HEAD
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/organizerSelection.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+=======
         <entry key="file://$PROJECT_DIR$/src/main/webapp/login.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+>>>>>>> e6a49cd00492c5c7422e12b61356b8eb5c95b98a
       </map>
     </option>
   </component>

@@ -17,9 +17,7 @@
       text-align: center;
     }
 
-    a{
-      margin: 25% auto;
-
+    button{
       width: 200px;
       height: 60px;
       border: 2px solid #000;
@@ -29,9 +27,13 @@
       box-shadow: 4px 4px 0 #000;
     }
 
-    a:hover {
+    button:hover {
       -webkit-box-shadow: -10px -4px 0 #000;
       box-shadow: -10px -4px 0 #000;
+    }
+
+    h2{
+      border: 2px #808080 solid;
     }
 
 
@@ -58,10 +60,11 @@
     <p2>香典30000円</p2>
   </div>
   <button type="button" name="revision">
-      <a href="ParticipantRegister">修正</a>
+      <a href="participantRegisiter.jsp">修正</a>
   </button>
+  <br>
   <button type="button" name="registration">
-      <a href="ParticipantRegistered">登録</a>
+      <a href="participantRegistered.jsp">登録</a>
   </button>
 </body>
 </html>

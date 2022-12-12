@@ -68,7 +68,7 @@
       <h2>住所</h2> <p1>〒000-111</p1><br><p1>住所</p1>
       <h2>電話番号</h2> <p1>090-0000-0000</p1><br>
       <button type="button" name="back">
-        <a href="OrganizerReadingSelection">戻る</a>
+        <a href="organizerReadingSelection.jsp">戻る</a>
       </button>
     </body>
     </html>
