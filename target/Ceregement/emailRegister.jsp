@@ -45,7 +45,7 @@ a:hover {
         </label>
         <div class="button">
             <p>ID(メールアドレス)</p>
-            <a href="EmailRegistered">送信</a>
+            <a href="emailRegistered.jsp">送信</a>
         </div>
     </form>
     <div class="button">
