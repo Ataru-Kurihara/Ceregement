@@ -33,6 +33,7 @@ public class PassRegister extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		String email = ((TempUser) session.getAttribute("temp")).getEmail();
+		String regNumber = ((TempUser) session.getAttribute("temp")).getRegNumber();
 		User user = new User();
 		UserDAO u_dao = new UserDAO();
 		boolean result = false;
@@ -48,6 +49,7 @@ public class PassRegister extends HttpServlet {
 			System.out.println("emailは入力されている");
 			user.setMailAddress(email);
 			user.setPassword(request.getParameter("password"));
+			user.setRegNumber(regNumber);
 
 			//入力された内容が登録されているかをチェック
 			try {
@@ -58,7 +60,7 @@ public class PassRegister extends HttpServlet {
 		}
 		if (result) {
 			System.out.println("エラーがあります。");
-			session.setAttribute("register", !result);
+			request.setAttribute("register", !result);
 			getServletContext().getRequestDispatcher("/passRegister.jsp").forward(request, response);
 		} else {
 			int secretId;

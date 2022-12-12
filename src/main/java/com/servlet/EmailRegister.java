@@ -38,18 +38,25 @@ public class EmailRegister extends HttpServlet {
 	final String port = "587";
 	final String starttls = "true";
 
+	String regNumber = "";
+
 	public EmailRegister() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		regNumber = request.getParameter("regNumber");
+
+		if (Objects.isNull(regNumber)) {
+			regNumber = "1";
+		}
+		if (!regNumber.equals("0") && !regNumber.equals("1")) {
+			regNumber = "1";
+		}
+
 		getServletContext().getRequestDispatcher("/emailRegister.jsp").forward(request, response);
-//		try {
-//			this.doPost(request, response);
-//		} catch (ServletException | IOException e) {
-//			e.printStackTrace();
-//		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -60,6 +67,7 @@ public class EmailRegister extends HttpServlet {
 
 		boolean state = true;//	falseになるときメールは送られない
 		request.setCharacterEncoding("UTF-8");
+
 		String email = request.getParameter("email"); //	入力されたメールアドレス
 		String to = email;//送信先
 		// メールの内容
@@ -68,7 +76,9 @@ public class EmailRegister extends HttpServlet {
 				+ "です。\n"
 				+ "http://localhost:8080/Ceregement/"
 				+ "Create?email="
-				+ email;
+				+ email
+				+ "&regNumber="
+				+ regNumber;
 
 		//入力されたemail
 		System.out.println(email);

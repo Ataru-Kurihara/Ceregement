@@ -42,7 +42,7 @@ public class UserDAO {
 		int id = 0;
 		Connection connection;
 		PreparedStatement preparedStatement;
-		String sql = "select secretid from public.user where mailaddress = ?";
+		String sql = "select regnumber from public.user where mailaddress = ?";
 		try {
 			Class.forName(driverClassName);
 			connection = DriverManager.getConnection(url, dbUser, password);
@@ -51,13 +51,14 @@ public class UserDAO {
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				id = resultSet.getInt("secretid");
+				id = resultSet.getInt("regnumber");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return id;
 	}
+
 	public static int checkIndex() throws SQLException {
 		int index = 0;
 		Connection connection;
@@ -78,15 +79,18 @@ public class UserDAO {
 
 	public void insert(User u) {
 		Connection connection;
-		String sql = "INSERT INTO public.user (secretid, mailAddress, password) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO public.user (secretid, mailAddress, password, regNumber) VALUES (?, ?, ?, ?)";
 
 		try {
 			Class.forName(driverClassName);
 			connection = DriverManager.getConnection(url, dbUser, password);
 			PreparedStatement pstmt = connection.prepareStatement(sql);
-			pstmt.setInt(1, u.getSecretId());
+			int secretIdInt = Integer.parseInt(u.getSecretId());
+			int regNumber = Integer.parseInt(u.getRegNumber());
+			pstmt.setInt(1, secretIdInt);
 			pstmt.setString(2, u.getMailAddress());
 			pstmt.setString(3, u.getPassword());
+			pstmt.setInt(4, regNumber);
 			pstmt.executeUpdate();
 			System.out.println("UserDAO.javaでINSERT実行");
 			connection.close();
