@@ -53,7 +53,7 @@ public class PassRegister extends HttpServlet {
 
 			//入力された内容が登録されているかをチェック
 			try {
-				result = u_dao.check(user);
+				result = UserDAO.check(user);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -65,8 +65,8 @@ public class PassRegister extends HttpServlet {
 		} else {
 			int secretId;
 			try {
-				secretId = u_dao.checkIndex() + 1;
-				user.setSecretId(secretId);
+				secretId = UserDAO.checkIndex() + 1;
+				user.setSecretId(Integer.toString(secretId));
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
