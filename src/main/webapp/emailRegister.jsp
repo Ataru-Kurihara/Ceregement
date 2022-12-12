@@ -88,6 +88,7 @@ a:hover {
 </head>
 
 <body>
+
 	<h1>入力してください</h1>
 	<%
 	if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")) {
@@ -107,6 +108,7 @@ a:hover {
 	<div class="button">
 		<a href="/Login">戻る</a>
 	</div>
+
 </body>
 
 </html>
