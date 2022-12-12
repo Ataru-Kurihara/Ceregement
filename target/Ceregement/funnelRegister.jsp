@@ -169,10 +169,10 @@
         <p2>(半角数字)</p2><br>
 
         <input type="submit" name="registration" value="登録">
-            <a href="ReFunnelRegister"></a>
+            <a href="reFunnelRegister.jsp"></a>
     </form>
     <button type="button" name="back">
-        <a href="OrganizerSelection">戻る</a>
+        <a href="organizerSelection.jsp">戻る</a>
     </button>
 </body>
 </html>

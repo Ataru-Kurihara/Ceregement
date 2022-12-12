@@ -72,7 +72,7 @@
     </tr>
 </table>
 <button type="button" name="back">
-    <a href="OrganizerReadingSelection">戻る</a>
+    <a href="organizerReadingSelection.jsp">戻る</a>
 </button>
 </body>
 </html>

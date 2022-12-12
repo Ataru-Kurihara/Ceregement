@@ -56,7 +56,7 @@ String password = ((User) session.getAttribute("newUser")).getPassword();
 		パスワード:<%=password%>
 	</p>
 	<div class="button">
-		<a href="./login.jsp">ログイン画面へ</a>
+		<a href="login.jsp">ログイン画面へ</a>
 	</div>
 </body>
 
