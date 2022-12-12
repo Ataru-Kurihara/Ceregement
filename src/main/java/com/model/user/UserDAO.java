@@ -58,7 +58,7 @@ public class UserDAO {
 		}
 		return id;
 	}
-	public static int checkIndex(User user) throws SQLException {
+	public static int checkIndex() throws SQLException {
 		int index = 0;
 		Connection connection;
 		String sql = "select count(*) from public.user";

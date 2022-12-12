@@ -17,7 +17,6 @@ public class OrganizerSelection extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
-        HttpSession session = request.getSession();
         getServletContext().getRequestDispatcher("/organizerSelection.jsp").forward(request,response);
     }
 
