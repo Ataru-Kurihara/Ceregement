@@ -18,6 +18,7 @@
     }
 
     button{
+      font-size: 200%;
       width: 200px;
       height: 60px;
       border: 2px solid #000;
