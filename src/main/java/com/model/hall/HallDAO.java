@@ -33,7 +33,7 @@ public class HallDAO {
         }
     }
 
-    public static void selectDatas() {
+    public static List<String> selectDatas() {
         Connection connection;
         PreparedStatement preparedStatement;
         String sql = "select deadname, deathday, address, hallname, funeralday from public.hall where ceregementid = ?";
@@ -53,14 +53,15 @@ public class HallDAO {
                 funeralDay = resultSet.getString("funeralday");
                 info.add(deadName);
                 info.add(deathDay);
-                info.add(address);
                 info.add(hallName);
+                info.add(address);
                 info.add(funeralDay);
             }
             preparedStatement.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return info;
     }
 
     public static String getCeregementId() throws SQLException {

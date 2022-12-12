@@ -35,7 +35,6 @@
             box-shadow: -10px -4px 0 #000;
         }
     </style>
-
     <title>participantSelection</title>
 </head>
 <body>

@@ -48,6 +48,14 @@
 <body>
     <% try {
         out.println("<h1>CeregementID: "+HallDAO.getCeregementId()+"の葬儀情報</h1>");
+        out.println("<h2>故人氏名</h2>　<p1>"+ HallDAO.selectDatas().get(0)+"</p1>");
+        out.println("<h2>命日</h2> <p1>" + HallDAO.selectDatas().get(1) + "</p1>");
+        out.println("<h2>葬儀会場名</h2> <p1>" + HallDAO.selectDatas().get(2) + "</p1>");
+        out.println("<h2>葬儀会場住所</h2> <p1>" + HallDAO.selectDatas().get(3) + "</p1>");
+        out.println("<h2>葬儀の日時</h2> <p1>" + HallDAO.selectDatas().get(4) + "</p1>");
+        out.println("<h2>喪主氏名</h2>　<p1>" + HallDAO.selectDatas().get(1) + "</p1>");
+        out.println("<h2>住所</h2> <p1>〒" + HallDAO.selectDatas().get(1) + "</p1>");
+        out.println("<h2>電話番号</h2> <p1>" + HallDAO.selectDatas().get(1) + "</p1>");
       } catch (java.sql.SQLException e) {
           throw new RuntimeException(e);
       }%>

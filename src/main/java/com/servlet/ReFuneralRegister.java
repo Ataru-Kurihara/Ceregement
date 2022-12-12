@@ -2,6 +2,8 @@ package com.servlet;
 
 import com.model.hall.Hall;
 import com.model.hall.HallDAO;
+import com.model.organizer.Organizer;
+import com.model.organizer.OrganizerDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -58,6 +60,7 @@ public class ReFuneralRegister extends HttpServlet {
         request.setAttribute("address", address);
         phonenumber = request.getParameter("phonenumber");
         request.setAttribute("phonenumber", phonenumber);
+
         Hall hall = new Hall();
         hall.setId("1");
         hall.setDeadName(deceasedFullName);
@@ -67,6 +70,17 @@ public class ReFuneralRegister extends HttpServlet {
         hall.setFuneralDay(funnelTime);
 
         HallDAO.addDatas(hall);
+
+//        Organizer organizer = new Organizer();
+//        organizer.setId("1");
+//        organizer.setName(bereavementFullName);
+//        organizer.setPostalcode(postalcode);
+//        organizer.setAddress(address);
+//        organizer.setTel(phonenumber);
+//        OrganizerDAO.addDatas(organizer);
+
+        getServletContext().getRequestDispatcher("/reFunnelRegister.jsp").forward(request, response);
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {
