@@ -17,14 +17,8 @@
             font-family: sans-serif;
             text-align: center;
         }
-        p{
-            font-size: 300%;
-            text-align: center;
-        }
-        dt{
-            font-size: 200%;
-            text-align: center;
-        }
+
+
         h1 {
             font-family: 'Homemade Apple', cursive;
             font-size: 800%;
@@ -37,7 +31,6 @@
         }
 
         button {
-            font-size: 250%;
             position: relative;
             aligin: center;
             width: 200px;
@@ -55,7 +48,7 @@
         }
 
         .button {
-            margin: auto;
+           margin: auto;
             width: 200px;
             height: 60px;
             border: 2px solid #000;
