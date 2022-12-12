@@ -49,7 +49,7 @@ a:hover {
         </div>
     </form>
     <div class="button">
-        <a href="Login">戻る</a>
+        <a href="login.jsp">戻る</a>
     </div>
  </body>
 

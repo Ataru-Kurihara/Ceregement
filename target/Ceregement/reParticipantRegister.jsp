@@ -58,10 +58,10 @@
     <p2>香典30000円</p2>
   </div>
   <button type="button" name="revision">
-      <a href="ParticipantRegister">修正</a>
+      <a href="participantRegisiter.jsp">修正</a>
   </button>
   <button type="button" name="registration">
-      <a href="ParticipantRegistered">登録</a>
+      <a href="participantRegistered.jsp">登録</a>
   </button>
 </body>
 </html>
