@@ -108,5 +108,4 @@ a:hover {
 		<a href="/Login">戻る</a>
 	</div>
 </body>
-
 </html>
