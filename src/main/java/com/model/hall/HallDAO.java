@@ -1,6 +1,7 @@
 package com.model.hall;
 
 import com.model.user.User;
+import com.model.user.UserDAO;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class HallDAO {
     final private static String url = "jdbc:postgresql://" + sqlHostname + "/" + dbname;
     final private static String driverClassName = "org.postgresql.Driver";
 
-    public static void addDatas(Hall hall) {
+    public static void addData(Hall hall) {
         Connection connection;
         PreparedStatement preparedStatement;
         String sql = "insert into public.hall values(?, ?, ?, ?, ?, ?)";
@@ -36,10 +37,9 @@ public class HallDAO {
         }
     }
 
-    public static List<String> getDatas(String id) {
+    public static List<String> getData(String id) {
         Connection connection;
         PreparedStatement preparedStatement;
-        User user = new User();
         String sql = "select deadname, deathday, address, hallname, funeralday from public.hall where id = ?";
         String deadName = "", deathDay = "", address = "", hallName = "", funeralDay = "";
         List<String> info = new ArrayList<>();
@@ -60,9 +60,7 @@ public class HallDAO {
                 info.add(hallName);
                 info.add(address);
                 info.add(funeralDay);
-                info.add(id);
             }
-            preparedStatement.executeUpdate();
             preparedStatement.close();
             connection.close();
         } catch (Exception e) {

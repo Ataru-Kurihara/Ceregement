@@ -1,9 +1,12 @@
 import com.model.hall.Hall;
 import com.model.hall.HallDAO;
+import com.model.organizer.Organizer;
 import com.model.user.User;
 import com.model.user.UserDAO;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.model.hall.HallDAO.getCeregementId;
 
@@ -16,6 +19,7 @@ public class dbTest {
     final private static String url = "jdbc:postgresql://" + sqlHostname + "/" + dbname;
     final private static String driverClassName = "org.postgresql.Driver";
     public static void main(String[] args) throws SQLException {
-        System.out.println(UserDAO.checkIndex());
+        Organizer organizer = new Organizer();
+        System.out.println(organizer.getId());
     }
 }

@@ -73,7 +73,7 @@ public class ReFuneralRegister extends HttpServlet {
         hall.setHallName(funnelPlace);
         hall.setFuneralDay(funnelTime);
 
-        HallDAO.addDatas(hall);
+        HallDAO.addData(hall);
 
         Organizer organizer = new Organizer();
         organizer.setId(id);
@@ -82,7 +82,7 @@ public class ReFuneralRegister extends HttpServlet {
         organizer.setAddress(address);
         organizer.setTel(phonenumber);
 
-        OrganizerDAO.addDatas(organizer);
+        OrganizerDAO.addData(organizer);
 
         getServletContext().getRequestDispatcher("/reFunnelRegister.jsp").forward(request, response);
 

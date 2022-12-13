@@ -23,7 +23,7 @@
 <body>
 <h>参列者情報が正常に登録されました！</h>
 <button type="button" name="menu">
-    <a href="participantSelection.jsp">メニューへ</a>
+    <a href="ParticipantSelection">メニューへ</a>
 </button>
 </body>
 </html>

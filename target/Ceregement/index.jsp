@@ -50,7 +50,7 @@
     </style>
     <meta charset="UTF-8">
     <title>Ceregement</title>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>./css/style.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 </head>
 
 

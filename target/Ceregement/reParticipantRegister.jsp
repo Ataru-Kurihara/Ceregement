@@ -17,7 +17,9 @@
       text-align: center;
     }
 
-    button{
+    a{
+      margin: 25% auto;
+
       width: 200px;
       height: 60px;
       border: 2px solid #000;
@@ -27,13 +29,9 @@
       box-shadow: 4px 4px 0 #000;
     }
 
-    button:hover {
+    a:hover {
       -webkit-box-shadow: -10px -4px 0 #000;
       box-shadow: -10px -4px 0 #000;
-    }
-
-    h2{
-      border: 2px #808080 solid;
     }
 
 
@@ -45,26 +43,18 @@
   <h1>登録内容確認画面</h1>
   <p1>以下の内容でよろしければ、「登録する」ボタンを押してください</p1>
 <%--  cssで枠組みお願いします--%>
-  <div class="box">
-    <h2>氏名</h2>　
-    <p2>(姓)電大</p2>
-    <p2>(名)太郎</p2><br>
-    <h2>住所</h2>　
-    <p2>〒000-0000</p2>
-    <p2>東京都。。。。</p2><br>
-    <h2>電話番号</h2>
-    <p2>0000-0000-0000</p2><br>
-    <h2>参加情報</h2>
-    <p2>出席</p2><br>
-    <h2>贈り物</h2>
-    <p2>香典30000円</p2>
+  <div class="box">　
+    <p2>氏名: <%= request.getAttribute("fullname")%></p2><br>　
+    <p2>住所: 〒<%= request.getAttribute("address")%></p2><br>
+    <p2>電話番号: <%= request.getAttribute("tel")%></p2><br>
+    <p2>参加情報: <%= request.getAttribute("attendSelection")%></p2><br>
+    <p2>贈り物: <%= request.getAttribute("funeralGift")%></p2>
   </div>
   <button type="button" name="revision">
-      <a href="participantRegisiter.jsp">修正</a>
+      <a href="ParticipantRegister">修正</a>
   </button>
-  <br>
   <button type="button" name="registration">
-      <a href="participantRegistered.jsp">登録</a>
+      <a href="ParticipantRegistered">登録</a>
   </button>
 </body>
 </html>

@@ -43,7 +43,9 @@ public class Login extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("login", result);
         session.setAttribute("mailAddress", user.getMailAddress());
-        session.setAttribute("id", UserDAO.getSecretIdRegNumber(user, "secretid"));
+        session.setAttribute("id", UserDAO.getSecretIdRegNumber(user, "id"));
+        session.setAttribute("regnumber", UserDAO.getSecretIdRegNumber(user, "regnumber"));
+        System.out.println(session.getAttribute("id"));
         if (result) {
             session.setAttribute("user", user);
 //            System.out.println(regNumber);
