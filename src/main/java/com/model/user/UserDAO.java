@@ -38,11 +38,13 @@ public class UserDAO {
 		return result;
 	}
 
-	public static int getId(User user) {
-		int id = 0;
+
+
+	public static String getSecretIdRegNumber(User user, String num) {
+		String id = "";
 		Connection connection;
 		PreparedStatement preparedStatement;
-		String sql = "select regnumber from public.user where mailaddress = ?";
+		String sql = "select " + num + " from public.user where mailaddress = ?";
 		try {
 			Class.forName(driverClassName);
 			connection = DriverManager.getConnection(url, dbUser, password);
@@ -51,7 +53,7 @@ public class UserDAO {
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				id = resultSet.getInt("regnumber");
+				id = resultSet.getString(num);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

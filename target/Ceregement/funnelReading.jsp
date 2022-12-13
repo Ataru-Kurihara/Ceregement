@@ -1,6 +1,10 @@
 <%@ page import="com.model.hall.HallDAO" %>
 <%@ page import="java.sql.SQLException"%>
-<%@ page import="com.model.hall.Hall" %><%--
+<%@ page import="com.model.hall.Hall" %>
+<%@ page import="com.model.user.UserDAO" %>
+<%@ page import="com.model.user.User" %>
+<%@ page import="com.model.organizer.OrganizerDAO" %>
+<%@ page import="javax.mail.Session" %><%--
   Created by IntelliJ IDEA.
   User: ataru
   Date: 2022/12/03
@@ -8,6 +12,27 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String id = session.getAttribute("id").toString();
+    String deadname = HallDAO.getDatas(id).get(0);
+    String deathday = HallDAO.getDatas(id).get(1);
+    String address = HallDAO.getDatas(id).get(2);
+    String hallname = HallDAO.getDatas(id).get(3);
+    String funeralday = HallDAO.getDatas(id).get(4);
+    String organizerPostalCode = OrganizerDAO.getDatas(id).get(0);
+    String organizerName = OrganizerDAO.getDatas(id).get(1);
+    String organizerAddress = OrganizerDAO.getDatas(id).get(2);
+    String organizerTel = OrganizerDAO.getDatas(id).get(3);
+    session.setAttribute("deadname", deadname);
+    session.setAttribute("deathday", deathday);
+    session.setAttribute("address", address);
+    session.setAttribute("hallname", hallname);
+    session.setAttribute("funeralday", funeralday);
+    session.setAttribute("organizerPostalCode", organizerPostalCode);
+    session.setAttribute("organizerName", organizerName);
+    session.setAttribute("organizerAddress", organizerAddress);
+    session.setAttribute("organizerTel", organizerTel);
+%>
 <html>
 <head>
     <style>
@@ -46,29 +71,17 @@
     <title>funnelReading</title>
 </head>
 <body>
-    <% try {
-        out.println("<h1>CeregementID: "+HallDAO.getCeregementId()+"の葬儀情報</h1>");
-        out.println("<h2>故人氏名</h2>　<p1>"+ HallDAO.selectDatas().get(0)+"</p1>");
-        out.println("<h2>命日</h2> <p1>" + HallDAO.selectDatas().get(1) + "</p1>");
-        out.println("<h2>葬儀会場名</h2> <p1>" + HallDAO.selectDatas().get(2) + "</p1>");
-        out.println("<h2>葬儀会場住所</h2> <p1>" + HallDAO.selectDatas().get(3) + "</p1>");
-        out.println("<h2>葬儀の日時</h2> <p1>" + HallDAO.selectDatas().get(4) + "</p1>");
-        out.println("<h2>喪主氏名</h2>　<p1>" + HallDAO.selectDatas().get(1) + "</p1>");
-        out.println("<h2>住所</h2> <p1>〒" + HallDAO.selectDatas().get(1) + "</p1>");
-        out.println("<h2>電話番号</h2> <p1>" + HallDAO.selectDatas().get(1) + "</p1>");
-      } catch (java.sql.SQLException e) {
-          throw new RuntimeException(e);
-      }%>
-      <h2>故人氏名</h2>　<p1>電大　太郎</p1>
-      <h2>命日</h2> <p1>2022年10月04日</p1>
-      <h2>葬儀会場名</h2>　<p1>電機葬儀会場</p1>
-      <h2>葬儀会場住所</h2> <p1>住所</p1>
-      <h2>葬儀の日時</h2> <p1>2022年10月07日13時00分より</p1>
-      <h2>喪主氏名</h2> <p1>電大　花子</p1>
-      <h2>住所</h2> <p1>〒000-111</p1><br><p1>住所</p1>
-      <h2>電話番号</h2> <p1>090-0000-0000</p1><br>
+
+      <h2>故人氏名</h2>　<p1><%= deadname %></p1>
+      <h2>命日</h2> <p1><%=deathday%></p1>
+      <h2>葬儀会場名</h2>　<p1><%=hallname%></p1>
+      <h2>葬儀会場住所</h2> <p1><%=address%></p1>
+      <h2>葬儀の日時</h2> <p1><%=funeralday%>より</p1>
+      <h2>喪主氏名</h2> <p1><%=organizerName%></p1>
+      <h2>住所</h2> <p1>〒<%=organizerPostalCode%>></p1><br><p1><%=organizerAddress%></p1>
+      <h2>電話番号</h2> <p1><%=organizerTel%></p1><br>
       <button type="button" name="back">
-        <a href="organizerReadingSelection.jsp">戻る</a>
+        <a href="OrganizerReadingSelection">戻る</a>
       </button>
     </body>
     </html>

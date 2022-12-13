@@ -15,5 +15,9 @@
 	<h1>葬儀情報が正常に登録されました！</h1>
 	<p1>招待者の方に以下のURLを送ってください。</p1>
 	<a href="http://localhost:8080/Ceregement/EmailRegister?regNumber=0">http://localhost:8080/Ceregement/EmailRegister?regNumber=0</a>
+
+	<button type="button" name="menu">
+		<a href="OrganizerSelection">メニューへ</a>
+	</button>
 </body>
 </html>

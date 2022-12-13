@@ -85,9 +85,15 @@
     </head>
 <body>
 <%
-    if (request.getAttribute("login") != null && !(Boolean) request.getAttribute("login")) {
+    if (session.getAttribute("login") != null && !(Boolean) session.getAttribute("login")) {
 %>
-<p>ユーザ名またはパスワードが違います</p>
+<%--            <p>ユーザ名またはパスワードが違います</p>--%>
+            <script type="text/javascript">
+                const msg = "ユーザ名またはパスワードが違います";
+
+                alert(msg)
+            </script>
+
 <%
     }
 %>

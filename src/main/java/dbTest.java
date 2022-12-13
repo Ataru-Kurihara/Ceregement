@@ -6,7 +6,7 @@ import com.model.user.UserDAO;
 import java.sql.*;
 
 import static com.model.hall.HallDAO.getCeregementId;
-import static com.model.user.UserDAO.getId;
+
 
 public class dbTest {
     final private static String dbname = "ceregementdb";
