@@ -1,5 +1,7 @@
 package com.model.hall;
 
+import com.model.user.User;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,24 +28,26 @@ public class HallDAO {
             preparedStatement.setString(4, hall.getAddress());
             preparedStatement.setString(5, hall.getHallName());
             preparedStatement.setString(6, hall.getFuneralDay());
-
+            preparedStatement.executeUpdate();
             preparedStatement.close();
+            connection.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static List<String> selectDatas() {
+    public static List<String> getDatas(String id) {
         Connection connection;
         PreparedStatement preparedStatement;
-        String sql = "select deadname, deathday, address, hallname, funeralday from public.hall where ceregementid = ?";
+        User user = new User();
+        String sql = "select deadname, deathday, address, hallname, funeralday from public.hall where id = ?";
         String deadName = "", deathDay = "", address = "", hallName = "", funeralDay = "";
         List<String> info = new ArrayList<>();
         try {
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(url, dbUser, password);
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, getCeregementId());
+            preparedStatement.setString(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 deadName = resultSet.getString("deadname");
@@ -56,8 +60,11 @@ public class HallDAO {
                 info.add(hallName);
                 info.add(address);
                 info.add(funeralDay);
+                info.add(id);
             }
+            preparedStatement.executeUpdate();
             preparedStatement.close();
+            connection.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

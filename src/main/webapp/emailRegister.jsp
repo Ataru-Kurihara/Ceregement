@@ -106,7 +106,7 @@ a:hover {
 		<button type="submit" name="emailRegistered">送信</button>
 	</form>
 	<div class="button">
-		<a href="/Login">戻る</a>
+		<a href="Login">戻る</a>
 	</div>
 
 </body>

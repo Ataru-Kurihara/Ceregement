@@ -2,6 +2,7 @@ package com.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Objects;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,29 +32,29 @@ public class Login extends HttpServlet {
 //        user.setSecretId(request.getParameter("secretId"));
         user.setMailAddress(request.getParameter("mailAddress"));
         user.setPassword(request.getParameter("passWord"));
-        int regNumber = UserDAO.getId(user);
+        String regNumber = UserDAO.getSecretIdRegNumber(user, "regnumber");
 
         boolean result = false;
         try {
-            result = dao.check(user);
+            result = UserDAO.check(user);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         HttpSession session = request.getSession();
         session.setAttribute("login", result);
+        session.setAttribute("mailAddress", user.getMailAddress());
+        session.setAttribute("id", UserDAO.getSecretIdRegNumber(user, "secretid"));
         if (result) {
             session.setAttribute("user", user);
-            System.out.println(regNumber);
+//            System.out.println(regNumber);
 //            getServletContext().getRequestDispatcher("/organizerSelection").forward(request, response);
-            if (regNumber == 1) {
+            if (Objects.equals(regNumber, "0")) {
                 System.out.println(regNumber);
                 response.sendRedirect("/Ceregement/OrganizerSelection");
-            }if (regNumber == 0){
+            }if (Objects.equals(regNumber, "1")){
                 System.out.println(regNumber);
                 response.sendRedirect("/Ceregement/ParticipantSelection");
             }
-
         } else {
             getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
         }

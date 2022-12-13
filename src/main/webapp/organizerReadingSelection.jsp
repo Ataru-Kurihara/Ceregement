@@ -79,7 +79,7 @@
       <a href="FunnelReading">葬儀情報</a>
   </button>
   <button type="button" name="participantInformation">
-      <a href="ParticipantListReading">参列情報</a>
+      <a href="ParticipantListReading">参列者情報</a>
   </button>
   <button type="button" name="back">
     <a href="OrganizerSelection">戻る</a>

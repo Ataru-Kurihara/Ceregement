@@ -16,7 +16,7 @@ import java.io.UnsupportedEncodingException;
 public class Top extends HttpServlet {
     public Top() {super();}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.doPost(request, response);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");

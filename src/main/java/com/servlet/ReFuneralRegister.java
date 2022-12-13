@@ -4,6 +4,8 @@ import com.model.hall.Hall;
 import com.model.hall.HallDAO;
 import com.model.organizer.Organizer;
 import com.model.organizer.OrganizerDAO;
+import com.model.user.User;
+import com.model.user.UserDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,7 +64,9 @@ public class ReFuneralRegister extends HttpServlet {
         request.setAttribute("phonenumber", phonenumber);
 
         Hall hall = new Hall();
-        hall.setId("1");
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("id");
+        hall.setId(id);
         hall.setDeadName(deceasedFullName);
         hall.setDeathDay(deathDate);
         hall.setAddress(funnelPlaceAddress);
@@ -71,13 +75,14 @@ public class ReFuneralRegister extends HttpServlet {
 
         HallDAO.addDatas(hall);
 
-//        Organizer organizer = new Organizer();
-//        organizer.setId("1");
-//        organizer.setName(bereavementFullName);
-//        organizer.setPostalcode(postalcode);
-//        organizer.setAddress(address);
-//        organizer.setTel(phonenumber);
-//        OrganizerDAO.addDatas(organizer);
+        Organizer organizer = new Organizer();
+        organizer.setId(id);
+        organizer.setPostalcode(postalcode);
+        organizer.setName(bereavementFullName);
+        organizer.setAddress(address);
+        organizer.setTel(phonenumber);
+
+        OrganizerDAO.addDatas(organizer);
 
         getServletContext().getRequestDispatcher("/reFunnelRegister.jsp").forward(request, response);
 

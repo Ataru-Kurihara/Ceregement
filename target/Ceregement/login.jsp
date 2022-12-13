@@ -7,8 +7,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <html>
- <!DOCTYPE html>
- <head>
+<head>
     <title>login</title>
     <style>
         body {
@@ -17,8 +16,14 @@
             font-family: sans-serif;
             text-align: center;
         }
-
-
+        p{
+            font-size: 300%;
+            text-align: center;
+        }
+        dt{
+            font-size: 200%;
+            text-align: center;
+        }
         h1 {
             font-family: 'Homemade Apple', cursive;
             font-size: 800%;
@@ -31,6 +36,7 @@
         }
 
         button {
+            font-size: 250%;
             position: relative;
             aligin: center;
             width: 200px;
@@ -62,19 +68,37 @@
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
-    </style>
- </head>
 
- <body>
+
+    </style>
+    <%--
+      Created by IntelliJ IDEA.
+      User: ataru
+      Date: 2022/11/20
+      Time: 15:40
+      To change this template use File | Settings | File Templates.
+    --%>
+    <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+    <!DOCTYPE html>
+    <head>
+        <title>login</title>
+    </head>
+<body>
 <%
-    if (request.getAttribute("login") != null && !(Boolean) request.getAttribute("login")) {
+    if (session.getAttribute("login") != null && !(Boolean) session.getAttribute("login")) {
 %>
-<p>ユーザ名またはパスワードが違います</p>
+<%--            <p>ユーザ名またはパスワードが違います</p>--%>
+            <script type="text/javascript">
+                const msg = "ユーザ名またはパスワードが違います";
+
+                alert(msg)
+            </script>
+
 <%
     }
 %>
 <p>ログインします</p>
-<form action="login.jsp" method="post">
+<form action="Login" method="post">
     <dl>
         <dt>ユーザID(メールアドレス)</dt>
         <dd><label>
@@ -88,7 +112,7 @@
     <button type="submit" name="login">ログイン</button>
 </form>
 <div class="button">
-    <a href="emailRegister.jsp">新規登録</a>
+    <a href="EmailRegister">新規登録</a>
 </div>
 </body>
 </html>

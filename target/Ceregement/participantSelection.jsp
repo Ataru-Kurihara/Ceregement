@@ -40,13 +40,13 @@
 <body>
 <h1>選択してください</h1>
 <button type="button" name="funnelInformation">
-    <a href="funnelReading.jsp">葬儀の詳細を知りたい</a>
+    <a href="FunnelReading">葬儀の詳細を知りたい</a>
 </button>
 <button type="button" name="participantInformation">
-    <a href="participantRegisiter.jsp">出席登録</a>
+    <a href="ParticipantRegister">出席登録</a>
 </button>
 <button type="button" name="back">
-    <a href="login.jsp">ログアウト</a>
+    <a href="Login">ログアウト</a>
 </button>
 </body>
 </html>
