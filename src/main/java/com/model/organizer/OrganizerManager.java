@@ -16,7 +16,7 @@ public class OrganizerManager {
         boolean result = false;
         Connection connection;
         UserDAO dao = new UserDAO();
-        String id  = UserDAO.getSecretIdRegNumber(user, "secretid");
+        String id  = UserDAO.getSecretIdRegNumber(user, "id");
         int count = 0;
         String sql = "select count(*) from public.organizer where id = ?";
         try {

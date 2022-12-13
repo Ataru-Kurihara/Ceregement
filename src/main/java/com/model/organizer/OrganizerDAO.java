@@ -11,8 +11,9 @@ import com.Utils.*;
 import com.model.user.User;
 import com.model.user.UserDAO;
 
+import javax.servlet.http.HttpSession;
+
 public class OrganizerDAO {
-    Scanner scanner = new Scanner(System.in);
     final private static String dbname = "ceregementdb";
     final private static String dbUser = "ceregement";
     final private static String password = "ceregement";
@@ -21,7 +22,7 @@ public class OrganizerDAO {
     final private static String driverClassName = "org.postgresql.Driver";
 
 
-    public static void addDatas(Organizer organizer) {
+    public static void addData(Organizer organizer) {
         Connection connection;
         PreparedStatement preparedStatement;
         String sql = "insert into ceregementdb.public.organizer values(?, ?, ?, ?, ?)";
@@ -42,7 +43,7 @@ public class OrganizerDAO {
         }
     }
 
-    public static List<String> getDatas(String id) {
+    public static List<String> getData(String id) {
         Connection connection;
         PreparedStatement preparedStatement;
         String sql = "select postalcode, name, address, tel from public.organizer where id = ?";
@@ -64,7 +65,7 @@ public class OrganizerDAO {
                 datas.add(address);
                 datas.add(tel);
             }
-            preparedStatement.executeUpdate();
+
             preparedStatement.close();
             connection.close();
         } catch (Exception e) {

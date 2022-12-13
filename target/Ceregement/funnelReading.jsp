@@ -4,7 +4,9 @@
 <%@ page import="com.model.user.UserDAO" %>
 <%@ page import="com.model.user.User" %>
 <%@ page import="com.model.organizer.OrganizerDAO" %>
-<%@ page import="javax.mail.Session" %><%--
+<%@ page import="javax.mail.Session" %>
+<%@ page import="com.model.organizer.Organizer" %>
+<%@ page import="java.util.Objects" %><%--
   Created by IntelliJ IDEA.
   User: ataru
   Date: 2022/12/03
@@ -14,15 +16,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String id = session.getAttribute("id").toString();
-    String deadname = HallDAO.getDatas(id).get(0);
-    String deathday = HallDAO.getDatas(id).get(1);
-    String address = HallDAO.getDatas(id).get(2);
-    String hallname = HallDAO.getDatas(id).get(3);
-    String funeralday = HallDAO.getDatas(id).get(4);
-    String organizerPostalCode = OrganizerDAO.getDatas(id).get(0);
-    String organizerName = OrganizerDAO.getDatas(id).get(1);
-    String organizerAddress = OrganizerDAO.getDatas(id).get(2);
-    String organizerTel = OrganizerDAO.getDatas(id).get(3);
+    String regnumber = session.getAttribute("regnumber").toString();
+    String deadname = HallDAO.getData(id).get(0);
+    String deathday = HallDAO.getData(id).get(1);
+    String hallname = HallDAO.getData(id).get(2);
+    String address = HallDAO.getData(id).get(3);
+    String funeralday = HallDAO.getData(id).get(4);
+    String organizerPostalCode = OrganizerDAO.getData(id).get(0);
+    String organizerName = OrganizerDAO.getData(id).get(1);
+    String organizerAddress = OrganizerDAO.getData(id).get(2);
+    String organizerTel = OrganizerDAO.getData(id).get(3);
     session.setAttribute("deadname", deadname);
     session.setAttribute("deathday", deathday);
     session.setAttribute("address", address);
@@ -32,6 +35,8 @@
     session.setAttribute("organizerName", organizerName);
     session.setAttribute("organizerAddress", organizerAddress);
     session.setAttribute("organizerTel", organizerTel);
+    session.setAttribute("id", id);
+    session.setAttribute("regnumber", regnumber);
 %>
 <html>
 <head>
@@ -81,7 +86,18 @@
       <h2>住所</h2> <p1>〒<%=organizerPostalCode%>></p1><br><p1><%=organizerAddress%></p1>
       <h2>電話番号</h2> <p1><%=organizerTel%></p1><br>
       <button type="button" name="back">
-        <a href="OrganizerReadingSelection">戻る</a>
+          <%
+            if (Objects.equals(regnumber, "0")) {
+                %>
+                    <a href="OrganizerSelection">戻る</a>
+          <%
+            } else {
+          %>
+                <a href="ParticipantSelection">戻る</a>
+          <%
+            }
+          %>
+
       </button>
     </body>
     </html>
