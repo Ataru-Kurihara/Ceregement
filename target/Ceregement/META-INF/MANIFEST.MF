@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-<<<<<<< HEAD
-Built-By: ataru
-=======
 Built-By: imagawaharuna
->>>>>>> master
 Build-Jdk: 18.0.1
 
