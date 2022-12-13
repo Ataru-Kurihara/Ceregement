@@ -3,9 +3,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 <html>
-<head>
-<Style>
-body {
+ <head>
+	 <title>emailRegister</title>
+ <Style>
+ body {
 	background: linear-gradient(white, mediumpurple);
 	background-size: cover;
 	font-family: sans-serif;
@@ -27,29 +28,52 @@ a:hover {
 	-webkit-box-shadow: -10px -4px 0 #000;
 	box-shadow: -10px -4px 0 #000;
 }
+h1{
+	font-size: 300%;
+	text-align: center;
+}
+li{
+	font-size: 200%;
+	text-align: center;
+}
+.button {
+	margin: auto;
+	width: 200px;
+	height: 60px;
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+}
+.button:hover {
+	-webkit-box-shadow: -10px -4px 0 #000;
+	box-shadow: -10px -4px 0 #000;
+}
 </Style>
-
-<title>emailRegister</title>
 </head>
 
 <body>
-    <h1>入力してください</h1>
-    <ul>
-        <p>新しく登録するメールアドレスを入力してください。</p>
-        <p>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</p>
-    </ul>
-    <form method="get" action="Output">
-        <label>
-            <input type="text" name="email">
-        </label>
-        <div class="button">
-            <p>ID(メールアドレス)</p>
-            <a href="emailRegistered.jsp">送信</a>
-        </div>
-    </form>
-    <div class="button">
-        <a href="login.jsp">戻る</a>
-    </div>
- </body>
+
+	<h1>入力してください</h1>
+	<%
+	if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")) {
+		out.println("<p>入力したemailはすでに登録されています。</p>");
+		out.println("<p>または空白です。</p>");
+	}
+	%>
+	<ul>
+		<p>新しく登録するメールアドレスを入力してください。</p>
+		<p>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</p>
+	</ul>
+	<form action="EmailRegister" method="post">
+		<p>ID(メールアドレス)</p>
+		<input type="text" name="email">
+		<button type="submit" name="emailRegistered">送信</button>
+	</form>
+	<div class="button">
+		<a href="login.jsp">戻る</a>
+	</div>
+</body>
 
 </html>

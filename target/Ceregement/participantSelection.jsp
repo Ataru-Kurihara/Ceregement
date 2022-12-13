@@ -43,7 +43,7 @@
     <a href="funnelReading.jsp">葬儀の詳細を知りたい</a>
 </button>
 <button type="button" name="participantInformation">
-    <a href="participantRegisiter.jsp.jsp">出席登録</a>
+    <a href="participantRegisiter.jsp">出席登録</a>
 </button>
 <button type="button" name="back">
     <a href="login.jsp">ログアウト</a>

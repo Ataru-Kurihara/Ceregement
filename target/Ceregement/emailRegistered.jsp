@@ -45,7 +45,7 @@
 	<p>
 		メールが送信されました。<br> メールに記載のURLからログインし、<br> 登録を完了させてください。
 	</p>
-	<a href="./emailRegister.jsp">メールアドレス入力画面へ</a>
+	<a href="emailRegister.jsp">メールアドレス入力画面へ</a>
 </body>
 
 </html>
