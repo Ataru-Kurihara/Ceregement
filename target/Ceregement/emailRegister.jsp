@@ -66,7 +66,7 @@ li{
 		<p>新しく登録するメールアドレスを入力してください。</p>
 		<p>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</p>
 	</ul>
-	<form action="EmailRegister" method="post">
+	<form action="emailRegistered.jsp" method="post">
 		<p>ID(メールアドレス)</p>
 		<input type="text" name="email">
 		<button type="submit" name="emailRegistered">送信</button>
