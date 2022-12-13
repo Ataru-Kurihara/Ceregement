@@ -32,7 +32,7 @@ public class Login extends HttpServlet {
         user.setMailAddress(request.getParameter("mailAddress"));
         user.setPassword(request.getParameter("passWord"));
         int regNumber = UserDAO.getId(user);
-
+        user.setRegNumber(Integer.toString(regNumber));
         boolean result = false;
         try {
             result = dao.check(user);

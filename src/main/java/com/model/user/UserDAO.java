@@ -39,7 +39,7 @@ public class UserDAO {
 	}
 
 	public static int getId(User user) {
-		int id = 0;
+		int regNumber = 0;
 		Connection connection;
 		PreparedStatement preparedStatement;
 		String sql = "select regnumber from public.user where mailaddress = ?";
@@ -51,12 +51,12 @@ public class UserDAO {
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
-				id = resultSet.getInt("regnumber");
+				regNumber = resultSet.getInt("regnumber");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return id;
+		return regNumber;
 	}
 
 	public static int checkIndex() throws SQLException {
