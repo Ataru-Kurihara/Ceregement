@@ -74,7 +74,7 @@
     }
 %>
 <p>ログインします</p>
-<form action="Login" method="post">
+<form action="login.jsp" method="post">
     <dl>
         <dt>ユーザID(メールアドレス)</dt>
         <dd><label>
