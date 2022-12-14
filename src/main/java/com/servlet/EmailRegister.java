@@ -66,6 +66,7 @@ public class EmailRegister extends HttpServlet {
 		session.setAttribute("email", true);
 
 		boolean state = true;//	falseになるときメールは送られない
+		String error = "";
 		request.setCharacterEncoding("UTF-8");
 
 		String email = request.getParameter("email"); //	入力されたメールアドレス
@@ -84,32 +85,40 @@ public class EmailRegister extends HttpServlet {
 		System.out.println(email);
 
 		//nullチェック
-		if (Objects.isNull(email)) {
+		if (email == null || email.isEmpty()) {
 			System.out.println("EmailRegister.java");
 			System.out.println("nullである");
+			error = "メールアドレスが入力されてません。";
 			state = false;
 		}
 
 		//正しいメールアドレスのチェック
 		String pattern = "^[a-zA-Z0-9_+-]+(.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\\.)+[a-zA-Z]{2,}$";
 		Pattern p = Pattern.compile(pattern);
-		if (!p.matcher(email).find()) {
-			System.out.println("正しいメールアドレスではない");
-			state = false;
+		if (state) {
+			if (!p.matcher(email).find()) {
+				System.out.println("正しいメールアドレスではない");
+				error = "正しいメールアドレスではありません。";
+				state = false;
+			}
 		}
 
 		//重複チェック
-		TempUserDAO t_dao = new TempUserDAO();
-		try {
-			state = t_dao.check(email);
-		} catch (ClassNotFoundException | SQLException e1) {
-			e1.printStackTrace();
-		}
-		if (!state) {
-			System.out.println("重複したemailが入力");
+		if (state) {
+			TempUserDAO t_dao = new TempUserDAO();
+			try {
+				state = t_dao.check(email);
+			} catch (ClassNotFoundException | SQLException e1) {
+				e1.printStackTrace();
+			}
+			if (!state) {
+				System.out.println("重複したemailが入力");
+				error = "登録されているメールアドレスが入されました。";
+			}
 		}
 
 		session.setAttribute("email", state);
+		request.setAttribute("error", error);
 
 		if (state) {
 			//メールを送る

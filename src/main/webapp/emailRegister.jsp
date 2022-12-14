@@ -31,57 +31,61 @@ a:hover {
 </Style>
 <html>
 <Style>
-	body {
-		background: linear-gradient(white, mediumpurple);
-		background-size: cover;
-		font-family: sans-serif;
-		text-align: center;
-	}
-	h1{
-		font-size: 300%;
-		text-align: center;
-	}
-	li{
-		font-size: 200%;
-		text-align: center;
-	}
-	.button {
-		display: block;
-		margin: auto;
-		position: relative;
-		aligin: center;
-		width: 200px;
-		height: 60px;
-		border: 2px solid #000;
-		border-radius: 0;
-		background: #fff;
-		-webkit-box-shadow: 4px 4px 0 #000;
-		box-shadow: 4px 4px 0 #000;
-	}
+body {
+	background: linear-gradient(white, mediumpurple);
+	background-size: cover;
+	font-family: sans-serif;
+	text-align: center;
+}
 
-	.button:hover {
-		-webkit-box-shadow: -10px -4px 0 #000;
-		box-shadow: -10px -4px 0 #000;
-	}
-	a {
-		font-size: 250%;
-		display: block;
-		margin: auto;
-		position: relative;
-		aligin: center;
-		width: 200px;
-		height: 60px;
-		border: 2px solid #000;
-		border-radius: 0;
-		background: #fff;
-		-webkit-box-shadow: 4px 4px 0 #000;
-		box-shadow: 4px 4px 0 #000;
-	}
+h1 {
+	font-size: 300%;
+	text-align: center;
+}
 
-	a:hover {
-		-webkit-box-shadow: -10px -4px 0 #000;
-		box-shadow: -10px -4px 0 #000;
-	}
+li {
+	font-size: 200%;
+	text-align: center;
+}
+
+.button {
+	display: block;
+	margin: auto;
+	position: relative;
+	aligin: center;
+	width: 200px;
+	height: 60px;
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+}
+
+.button:hover {
+	-webkit-box-shadow: -10px -4px 0 #000;
+	box-shadow: -10px -4px 0 #000;
+}
+
+a {
+	font-size: 250%;
+	display: block;
+	margin: auto;
+	position: relative;
+	aligin: center;
+	width: 200px;
+	height: 60px;
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+}
+
+a:hover {
+	-webkit-box-shadow: -10px -4px 0 #000;
+	box-shadow: -10px -4px 0 #000;
+}
 </Style>
 <head>
 <title>emailRegister</title>
@@ -91,9 +95,11 @@ a:hover {
 
 	<h1>入力してください</h1>
 	<%
-	if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")) {
-		out.println("<p>入力したemailはすでに登録されています。</p>");
-		out.println("<p>または空白です。</p>");
+	if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")
+			&& request.getAttribute("error") != null) {
+		out.println("<p>");
+		out.println(request.getAttribute("error"));
+		out.println("</p>");
 	}
 	%>
 	<ul>
@@ -102,7 +108,7 @@ a:hover {
 	</ul>
 	<form action="EmailRegister" method="post">
 		<p>ID(メールアドレス)</p>
-		<input type="text" name="email">
+		<input type="text" name="email" placeholder="xxx@example.com">
 		<button type="submit" name="emailRegistered">送信</button>
 	</form>
 	<div class="button">
