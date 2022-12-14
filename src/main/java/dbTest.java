@@ -23,11 +23,9 @@ public class dbTest {
     public static void main(String[] args) throws SQLException {
         Organizer organizer = new Organizer();
         Participant participant = new Participant();
-        System.out.println(ParticipantDAO.getData(participant, "name"));
-        System.out.println(ParticipantDAO.getData(participant, "address"));
-        System.out.println(ParticipantDAO.getData(participant, "tell"));
-        System.out.println(ParticipantDAO.getData(participant, "attend"));
-        System.out.println(ParticipantDAO.getData(participant, "gift"));
+        User user = new User();
+        System.out.println(participant.getMailAddress());
+
 
     }
 }

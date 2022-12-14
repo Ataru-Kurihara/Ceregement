@@ -56,10 +56,10 @@
         <h2><%= request.getAttribute("address")%></h2><br>
         <h2>電話番号: <%= request.getAttribute("phonenumber")%></h2>
         <button type="button" name="revision">
-            <a href="funnelRegister.jsp">修正</a>
+            <a href="FunnelRegister">修正</a>
         </button>
         <button type="button" name="registaration">
-            <a href="funnelRegistered.jsp">登録</a>
+            <a href="FunnelRegistered">登録</a>
         </button>
 </body>
 </html>
