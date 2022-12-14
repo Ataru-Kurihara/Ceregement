@@ -1,6 +1,8 @@
 import com.model.hall.Hall;
 import com.model.hall.HallDAO;
 import com.model.organizer.Organizer;
+import com.model.participant.Participant;
+import com.model.participant.ParticipantDAO;
 import com.model.user.User;
 import com.model.user.UserDAO;
 
@@ -20,6 +22,12 @@ public class dbTest {
     final private static String driverClassName = "org.postgresql.Driver";
     public static void main(String[] args) throws SQLException {
         Organizer organizer = new Organizer();
-        System.out.println(organizer.getId());
+        Participant participant = new Participant();
+        System.out.println(ParticipantDAO.getData(participant, "name"));
+        System.out.println(ParticipantDAO.getData(participant, "address"));
+        System.out.println(ParticipantDAO.getData(participant, "tell"));
+        System.out.println(ParticipantDAO.getData(participant, "attend"));
+        System.out.println(ParticipantDAO.getData(participant, "gift"));
+
     }
 }

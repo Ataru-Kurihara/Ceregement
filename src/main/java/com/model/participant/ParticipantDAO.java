@@ -40,29 +40,22 @@ public class ParticipantDAO {
         }
     }
 
-    public static List<String> getData(Participant participant) {
+    public static List<String> getData(Participant participant, String value) {
         Connection connection;
         PreparedStatement preparedStatement;
-        String sql = "select name, address,tell, attend, gift from ceregementdb.public.participant where id = ?";
-        String name = "", address = "", tell = "", attend = "", gift = "";
+        String sql = "select " + value + " from ceregementdb.public.participant where id = ?";
+        String result = "";
         List<String> data = new ArrayList<>();
         try {
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(url, dbUser, password);
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, participant.getMailAddress());
+            preparedStatement.setString(1, "11111");
+//            preparedStatement.setString(1, participant.getMailAddress());
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                name = resultSet.getString("name");
-                address = resultSet.getString("address");
-                tell = resultSet.getString("tell");
-                attend = resultSet.getString("attend");
-                gift = resultSet.getString("gift");
-                data.add(name);
-                data.add(address);
-                data.add(tell);
-                data.add(attend);
-                data.add(gift);
+                result = resultSet.getString(value);
+                data.add(result);
             }
             preparedStatement.close();
             connection.close();

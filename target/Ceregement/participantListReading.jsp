@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.model.participant.Participant" %>
+<%@ page import="com.model.participant.ParticipantDAO" %><%--
   Created by IntelliJ IDEA.
   User: ataru
   Date: 2022/12/03
@@ -54,6 +55,13 @@
     <title>participantListReading</title>
 </head>
 <body>
+<%
+    Participant participant = new Participant();
+    String name = "";
+    for (String n: ParticipantDAO.getData(participant, "name")) {
+
+    }
+%>
 <h1>CeregementId: ABCDEFG 参列者情報一覧</h1>
 <table>
     <tr>
@@ -72,7 +80,7 @@
     </tr>
 </table>
 <button type="button" name="back">
-    <a href="organizerReadingSelection.jsp">戻る</a>
+    <a href="OrganizerReadingSelection">戻る</a>
 </button>
 </body>
 </html>
