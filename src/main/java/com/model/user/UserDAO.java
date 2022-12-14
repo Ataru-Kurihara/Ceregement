@@ -102,7 +102,7 @@ public class UserDAO {
 	public static boolean checkMail(User user) throws SQLException {
 		boolean result = false;
 		Connection connection;
-		String sql = "select * from public.user where mailaddress=?";
+		String sql = "SELECT * FROM public.user WHERE mailaddress=?";
 		try {
 			Class.forName(driverClassName);
 			connection = DriverManager.getConnection(url, dbUser, password);

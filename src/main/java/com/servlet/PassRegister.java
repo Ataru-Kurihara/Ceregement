@@ -60,7 +60,7 @@ public class PassRegister extends HttpServlet {
 				if (result) {
 					session.setAttribute("email", false);
 					request.setAttribute("error", "メールアドレスが重複してます");
-					getServletContext().getRequestDispatcher("/passRegister.jsp").forward(request, response);
+					getServletContext().getRequestDispatcher("/emailRegister.jsp").forward(request, response);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -80,10 +80,11 @@ public class PassRegister extends HttpServlet {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			session.setAttribute("newUser", user);
 			user.setPassword(passwordHash);
 			u_dao.insert(user);
 			System.out.println("パスワード登録完了画面に遷移します");
+			user.setPassword(password);
+			session.setAttribute("newUser", user);
 			getServletContext().getRequestDispatcher("/passRegistered.jsp").forward(request, response);
 		}
 	}
