@@ -38,8 +38,6 @@ public class UserDAO {
 		return result;
 	}
 
-
-
 	public static String getSecretIdRegNumber(User user, String num) {
 		String id = "";
 		Connection connection;
@@ -99,5 +97,28 @@ public class UserDAO {
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static boolean checkMail(User user) throws SQLException {
+		boolean result = false;
+		Connection connection;
+		String sql = "SELECT * FROM public.user WHERE mailaddress=?";
+		try {
+			Class.forName(driverClassName);
+			connection = DriverManager.getConnection(url, dbUser, password);
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setString(1, user.getMailAddress());
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+			if (resultSet.next())
+				result = true;
+
+			resultSet.close();
+			connection.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }
