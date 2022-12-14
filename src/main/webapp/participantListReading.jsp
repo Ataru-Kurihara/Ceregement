@@ -1,4 +1,8 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="com.model.participant.Participant" %>
+<%@ page import="com.model.participant.ParticipantDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.model.user.User" %><%--
   Created by IntelliJ IDEA.
   User: ataru
   Date: 2022/12/03
@@ -54,22 +58,45 @@
     <title>participantListReading</title>
 </head>
 <body>
+<%
+    User user = new User();
+    List<String> data = ParticipantDAO.getData(user);
+    session.setAttribute("data", data);
+%>
+
 <h1>CeregementId: ABCDEFG 参列者情報一覧</h1>
 <table>
+        <tr>
+            <th>氏名</th>
+            <th>住所</th>
+            <th>電話番号</th>
+            <th>出席情報</th>
+            <th>香典など</th>
+        </tr>
     <tr>
-        <th>氏名</th>
-        <th>住所</th>
-        <th>電話番号</th>
-        <th>出席情報</th>
-        <th>香典など</th>
+        <c:forEach var="data" items="${data}">
+            <td><c:out value="${data}" /></td>
+        </c:forEach>
     </tr>
-    <tr>
-        <th>佐藤　太郎</th>
-        <th>東京都</th>
-        <th>090-111-1111</th>
-        <th>出席</th>
-        <th>香典3000円</th>
-    </tr>
+
+<%--    <tr>--%>
+<%--        <c:forEach var="name" items="${nameList}">--%>
+<%--            <td><c:out value="${name}" /></td>--%>
+<%--        </c:forEach>--%>
+<%--        <c:forEach var="address" items="${addressList}">--%>
+<%--            <td><c:out value="${address}" /></td>--%>
+<%--        </c:forEach>--%>
+<%--    </tr>--%>
+<%--        <c:forEach var="tell" items="${tellList}">--%>
+<%--            <th><c:out value="${tell}" /></th>--%>
+<%--        </c:forEach>--%>
+<%--        <c:forEach var="attend" items="${attendList}">--%>
+<%--            <th><c:out value="${attend}" /></th>--%>
+<%--        </c:forEach>--%>
+<%--        <c:forEach var="gift" items="${giftList}">--%>
+<%--            <th><c:out value="${gift}" /></th>--%>
+<%--        </c:forEach>--%>
+
 </table>
 <button type="button" name="back">
     <a href="OrganizerReadingSelection">戻る</a>

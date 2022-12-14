@@ -1,5 +1,7 @@
 package com.model.participant;
 
+import com.model.user.User;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Connection;
@@ -40,17 +42,20 @@ public class ParticipantDAO {
         }
     }
 
-    public static List<String> getData(Participant participant) {
+    public static List<String> getData(User user) {
         Connection connection;
         PreparedStatement preparedStatement;
-        String sql = "select name, address,tell, attend, gift from ceregementdb.public.participant where id = ?";
+        String sql = "select name, address, tell, attend, gift from ceregementdb.public.participant where mailaddress = ?";
         String name = "", address = "", tell = "", attend = "", gift = "";
         List<String> data = new ArrayList<>();
+
         try {
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(url, dbUser, password);
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, participant.getMailAddress());
+            preparedStatement.setString(1, user.getMailAddress());
+
+//            preparedStatement.setString(1, "bbb@com");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 name = resultSet.getString("name");
@@ -71,4 +76,29 @@ public class ParticipantDAO {
         }
         return data;
     }
+
+//    public static List<String> getData(Participant participant, String value) {
+//        Connection connection;
+//        PreparedStatement preparedStatement;
+//        String sql = "select " + value + " from ceregementdb.public.participant where id = ?";
+//        String result = "";
+//        List<String> data = new ArrayList<>();
+//        try {
+//            Class.forName(driverClassName);
+//            connection = DriverManager.getConnection(url, dbUser, password);
+//            preparedStatement = connection.prepareStatement(sql);
+//            preparedStatement.setString(1, "11111");
+////            preparedStatement.setString(1, participant.getMailAddress());
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            while (resultSet.next()) {
+//                result = resultSet.getString(value);
+//                data.add(result);
+//            }
+//            preparedStatement.close();
+//            connection.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return data;
+//    }
 }
