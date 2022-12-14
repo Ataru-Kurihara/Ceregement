@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import com.model.user.User;
 import com.model.user.UserDAO;
 
@@ -31,7 +33,10 @@ public class Login extends HttpServlet {
         UserDAO dao = new UserDAO();
 //        user.setSecretId(request.getParameter("secretId"));
         user.setMailAddress(request.getParameter("mailAddress"));
-        user.setPassword(request.getParameter("passWord"));
+        String password = request.getParameter("passWord");
+        String secretId = UserDAO.getSecretIdRegNumber(user, "secretid");
+        String passwordHash = DigestUtils.sha256Hex(password + secretId);
+        user.setPassword(passwordHash);
         String regNumber = UserDAO.getSecretIdRegNumber(user, "regnumber");
 
         boolean result = false;
