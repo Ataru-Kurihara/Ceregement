@@ -76,13 +76,13 @@
 <body>
   <h1>選択してください</h1>
   <button type="button" name="funnelInformation">
-      <a href="FunnelReading">葬儀情報</a>
+      <a href="funnelReading.jsp">葬儀情報</a>
   </button>
   <button type="button" name="participantInformation">
-      <a href="ParticipantListReading">参列者情報</a>
+      <a href="participantListReading.jsp">参列者情報</a>
   </button>
   <button type="button" name="back">
-    <a href="OrganizerSelection">戻る</a>
+    <a href="organizerSelection.jsp">戻る</a>
   </button>
 </body>
 </html>
