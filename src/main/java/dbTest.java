@@ -27,12 +27,12 @@ public class dbTest {
         Participant participant = new Participant();
         User user = new User();
         int index = ParticipantDAO.getMailAddress().size();
-        String[][] list = new String[1][];
         List<List<String>> lists = new ArrayList<>();
+
         System.out.println(index);
         for (String mailaddress: ParticipantDAO.getMailAddress()) {
-            System.out.println(ParticipantDAO.s(mailaddress, participant));
-            lists.add(ParticipantDAO.s(mailaddress, participant));
+            System.out.println(ParticipantDAO.getData(mailaddress, participant));
+            lists.add(ParticipantDAO.getData(mailaddress, participant));
         }
         for (List<String> list1: lists) {
             for (String data: list1) {

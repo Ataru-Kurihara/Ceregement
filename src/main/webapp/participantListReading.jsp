@@ -66,7 +66,7 @@
     request.setAttribute("mailaddresses", mailaddresses);
     List<List<String>> lists = new ArrayList<>();
     for (String mailaddress: mailaddresses) {
-        lists.add(ParticipantDAO.s(mailaddress, participant));
+        lists.add(ParticipantDAO.getData(mailaddress, participant));
         request.setAttribute("data", participant.getData());
     }
     request.setAttribute("lists", lists);

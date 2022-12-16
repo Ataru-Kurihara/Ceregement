@@ -65,16 +65,12 @@
     List<String> mailaddresses = ParticipantDAO.getMailAddress();
     request.setAttribute("mailaddresses", mailaddresses);
     List<List<String>> lists = new ArrayList<>();
-    List<String> names = new ArrayList<>();
     for (String mailaddress: mailaddresses) {
-        lists.add(ParticipantDAO.s(mailaddress, participant));
+        lists.add(ParticipantDAO.getData(mailaddress, participant));
         request.setAttribute("data", participant.getData());
-
-        names.add(participant.getFullName());
     }
     request.setAttribute("lists", lists);
-    request.setAttribute("names", names);
-    System.out.println();
+
 %>
 
 <h1>CeregementId: ABCDEFG 参列者情報一覧</h1>
