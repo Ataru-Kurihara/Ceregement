@@ -42,20 +42,103 @@ public class ParticipantDAO {
         }
     }
 
-    public static List<String> getData(User user) {
+//    public static List<String> getData(User user) {
+//        Connection connection;
+//        PreparedStatement preparedStatement;
+//        String sql = "select value from ceregementdb.public.participant where id = ?";
+//        String name = "", address = "", tell = "", attend = "", gift = "";
+//        List<String> data = new ArrayList<>();
+//
+//        try {
+//            Class.forName(driverClassName);
+//            connection = DriverManager.getConnection(url, dbUser, password);
+//            preparedStatement = connection.prepareStatement(sql);
+//            preparedStatement.setString(1, user.getMailAddress());
+//
+////            preparedStatement.setString(1, "bbb@com");
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            while (resultSet.next()) {
+//                name = resultSet.getString("name");
+//                address = resultSet.getString("address");
+//                tell = resultSet.getString("tell");
+//                attend = resultSet.getString("attend");
+//                gift = resultSet.getString("gift");
+//                data.add(name);
+//                data.add(address);
+//                data.add(tell);
+//                data.add(attend);
+//                data.add(gift);
+//            }
+//            preparedStatement.close();
+//            connection.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return data;
+//    }
+    public static List<String> getMailAddress() {
         Connection connection;
         PreparedStatement preparedStatement;
-        String sql = "select name, address, tell, attend, gift from ceregementdb.public.participant where mailaddress = ?";
-        String name = "", address = "", tell = "", attend = "", gift = "";
-        List<String> data = new ArrayList<>();
-
+        String sql = "select mailaddress from ceregementdb.public.participant";
+        List<String> mailAddresses = new ArrayList<>();
+        String mailaddress = "";
         try {
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(url, dbUser, password);
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, user.getMailAddress());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                mailaddress = resultSet.getString("mailaddress");
+                mailAddresses.add(mailaddress);
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mailAddresses;
+    }
 
-//            preparedStatement.setString(1, "bbb@com");
+    public static List<String> getData(Participant participant, String value, String id) {
+        Connection connection;
+        PreparedStatement preparedStatement;
+        String sql = "select " + value + " from ceregementdb.public.participant where id = ?";
+        String result = "";
+        List<String> data = new ArrayList<>();
+        try {
+            Class.forName(driverClassName);
+            connection = DriverManager.getConnection(url, dbUser, password);
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, id);
+//            preparedStatement.setString(1, participant.getMailAddress());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                result = resultSet.getString(value);
+                data.add(result);
+            }
+            preparedStatement.close();
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+
+    public static List<String> s(String mailaddress, Participant participant) {
+        Connection connection;
+        PreparedStatement preparedStatement;
+
+        String sql = "select name, address, tell, attend, gift from ceregementdb.public.participant where mailaddress = ?";
+        String name = "", address = "", tell = "", attend = "", gift = "";
+        List<String> data = new ArrayList<>();
+        List<List<String>> d = new ArrayList<>();
+        String[][] a;
+        try {
+            Class.forName(driverClassName);
+            connection = DriverManager.getConnection(url, dbUser, password);
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, mailaddress);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 name = resultSet.getString("name");
@@ -68,7 +151,9 @@ public class ParticipantDAO {
                 data.add(tell);
                 data.add(attend);
                 data.add(gift);
+                d.add(data);
             }
+            participant.setData(d);
             preparedStatement.close();
             connection.close();
         } catch (Exception e) {
@@ -76,29 +161,4 @@ public class ParticipantDAO {
         }
         return data;
     }
-
-//    public static List<String> getData(Participant participant, String value) {
-//        Connection connection;
-//        PreparedStatement preparedStatement;
-//        String sql = "select " + value + " from ceregementdb.public.participant where id = ?";
-//        String result = "";
-//        List<String> data = new ArrayList<>();
-//        try {
-//            Class.forName(driverClassName);
-//            connection = DriverManager.getConnection(url, dbUser, password);
-//            preparedStatement = connection.prepareStatement(sql);
-//            preparedStatement.setString(1, "11111");
-////            preparedStatement.setString(1, participant.getMailAddress());
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//            while (resultSet.next()) {
-//                result = resultSet.getString(value);
-//                data.add(result);
-//            }
-//            preparedStatement.close();
-//            connection.close();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return data;
-//    }
 }

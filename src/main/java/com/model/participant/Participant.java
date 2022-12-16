@@ -1,6 +1,10 @@
 package com.model.participant;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Participant {
+    private List<List<String>> data;
     private String id;
     private String mailAddress;
     private String fullName;
@@ -19,8 +23,10 @@ public class Participant {
         detailAddress = "";
         gift = "";
         attend = "";
+        data = new ArrayList<>();
     }
-
+    public void setData(List<List<String>> data) {this.data = data;}
+    public List<List<String>> getData() {return data;}
     public void setId(String id) {this.id = id;}
     public String getId() {return id;}
     public void setMailAddress(String mailAddress) {this.mailAddress = mailAddress;}

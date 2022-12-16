@@ -6,8 +6,10 @@ import com.model.participant.ParticipantDAO;
 import com.model.user.User;
 import com.model.user.UserDAO;
 
+import javax.servlet.http.HttpSession;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.model.hall.HallDAO.getCeregementId;
@@ -24,7 +26,23 @@ public class dbTest {
         Organizer organizer = new Organizer();
         Participant participant = new Participant();
         User user = new User();
-        System.out.println(participant.getMailAddress());
+        int index = ParticipantDAO.getMailAddress().size();
+        String[][] list = new String[1][];
+        List<List<String>> lists = new ArrayList<>();
+        System.out.println(index);
+        for (String mailaddress: ParticipantDAO.getMailAddress()) {
+            System.out.println(ParticipantDAO.s(mailaddress, participant));
+            lists.add(ParticipantDAO.s(mailaddress, participant));
+        }
+        for (List<String> list1: lists) {
+            for (String data: list1) {
+                System.out.println(data);
+            }
+        }
+        System.out.println(lists);
+
+
+
 
 
     }
