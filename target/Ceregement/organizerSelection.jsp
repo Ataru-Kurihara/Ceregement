@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <title>organizerSelection</title>
     <style>
         body {
             background: linear-gradient(white, mediumpurple);
@@ -15,16 +16,11 @@
             font-family: sans-serif;
             text-align: center;
         }
-        h1{
-            font-size: 300%;
-            text-align: center;
-        }
         a {
             font-size: 250%;
-            display: block;
+        }
+        button {
             margin: auto;
-            position: relative;
-            aligin: center;
             width: 200px;
             height: 60px;
             border: 2px solid #000;
@@ -34,36 +30,10 @@
             box-shadow: 4px 4px 0 #000;
         }
 
-        a:hover {
+        button:hover {
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
-    </style>
-    <title>organizerSelection</title>
-
-    <style>
-
-        body{
-            background: linear-gradient(white,mediumpurple);
-            background-size:cover;
-            font-family:sans-serif;
-            text-align:center;
-        }
-
-        h1 {
-            font-family: 'Homemade Apple', cursive;
-            font-size: 300%;
-            color: black;
-            text-align: center;
-        }
-
-        a {
-            font-size: 250%;
-        }
-
-
-
-
     </style>
 </head>
 <body>
