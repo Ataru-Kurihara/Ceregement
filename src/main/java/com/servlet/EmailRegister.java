@@ -125,7 +125,7 @@ public class EmailRegister extends HttpServlet {
 			}
 			if (!state) {
 				System.out.println("重複したemailが入力");
-				error = "登録されているメールアドレスが入されました。";
+				error = "登録されているメールアドレスが入力されました。";
 			}
 		}
 

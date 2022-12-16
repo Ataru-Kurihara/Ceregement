@@ -55,10 +55,10 @@ public class Login extends HttpServlet {
         if (result) {
             session.setAttribute("user", user);
 //            System.out.println(regNumber);
-//            getServletContext().getRequestDispatcher("/organizerSelection.jsp").forward(request, response);
             if (Objects.equals(regNumber, "0")) {
                 System.out.println(regNumber);
                 response.sendRedirect("/Ceregement/OrganizerSelection");
+//               getServletContext().getRequestDispatcher("/organizerSelection.jsp").forward(request, response);
             }if (Objects.equals(regNumber, "1")){
                 System.out.println(regNumber);
                 response.sendRedirect("/Ceregement/ParticipantSelection");
