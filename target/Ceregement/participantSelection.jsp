@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
+    <title>participantSelection</title>
     <style>
         body {
             background: linear-gradient(white, mediumpurple);
@@ -35,7 +35,6 @@
             box-shadow: -10px -4px 0 #000;
         }
     </style>
-    <title>participantSelection</title>
 </head>
 <body>
 <h1>選択してください</h1>
