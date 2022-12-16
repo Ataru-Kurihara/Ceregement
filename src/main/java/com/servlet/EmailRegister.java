@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.model.tempUser.TempUserDAO;
+import com.model.user.UserDAO;
 
 @WebServlet("/EmailRegister")
 public class EmailRegister extends HttpServlet {
@@ -31,7 +32,7 @@ public class EmailRegister extends HttpServlet {
 	final String from = "nagahama.tdu24@gmail.com";//送信元
 	// メールの設定
 	final String name = "nagahama.tdu24@gmail.com";//誰が
-	final String password = "srfxjaxcqbmlwlre";
+	final String password = "dcfdbsifyjqjfpxc";
 	final String charset = "UTF-8";
 	final String encoding = "base64";
 	final String host = "smtp.gmail.com";
@@ -39,6 +40,7 @@ public class EmailRegister extends HttpServlet {
 	final String starttls = "true";
 
 	String regNumber = "";
+	String ceregementId = "";
 
 	public EmailRegister() {
 		super();
@@ -47,12 +49,18 @@ public class EmailRegister extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		regNumber = request.getParameter("regNumber");
+		ceregementId = request.getParameter("ceregementid");
 
-		if (Objects.isNull(regNumber)) {
-			regNumber = "1";
+		if ((Objects.isNull(regNumber)) || (!regNumber.equals("0") && !regNumber.equals("1"))) {
+			regNumber = "0";
 		}
-		if (!regNumber.equals("0") && !regNumber.equals("1")) {
-			regNumber = "1";
+
+		if (Objects.isNull(ceregementId)) {
+			try {
+				ceregementId = Integer.toString(UserDAO.checkIndex());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 
 		getServletContext().getRequestDispatcher("/emailRegister.jsp").forward(request, response);
@@ -79,7 +87,9 @@ public class EmailRegister extends HttpServlet {
 				+ "Create?email="
 				+ email
 				+ "&regNumber="
-				+ regNumber;
+				+ regNumber
+				+ "&ceregementId="
+				+ ceregementId;
 
 		//入力されたemail
 		System.out.println(email);

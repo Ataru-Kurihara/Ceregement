@@ -29,6 +29,7 @@ public class Create extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String regNumber = request.getParameter("regNumber");
+		String ceregementId = request.getParameter("ceregementId");
 
 		boolean result = false;
 
@@ -40,6 +41,7 @@ public class Create extends HttpServlet {
 			System.out.println("idは入力されている");
 			temp.setEmail(email);//email情報を保存
 			temp.setRegNumber(regNumber);
+			temp.setCeregementId(ceregementId);
 		}
 
 		if (result) {
