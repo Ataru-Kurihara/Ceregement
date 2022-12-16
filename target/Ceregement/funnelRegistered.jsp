@@ -72,5 +72,6 @@
 <button type="button" name="menu">
     <a href="organizerSelection.jsp">メニューへ</a>
 </button>
+
 </body>
 </html>

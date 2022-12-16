@@ -2,7 +2,8 @@
 <%@ page import="com.model.participant.Participant" %>
 <%@ page import="com.model.participant.ParticipantDAO" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.model.user.User" %><%--
+<%@ page import="com.model.user.User" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: ataru
   Date: 2022/12/03
@@ -66,25 +67,42 @@
 </head>
 <body>
 <%
-    User user = new User();
-    List<String> data = ParticipantDAO.getData(user);
-    session.setAttribute("data", data);
+    Participant participant = new Participant();
+    request.setAttribute("participant", participant);
+    List<String> mailaddresses = ParticipantDAO.getMailAddress();
+    request.setAttribute("mailaddresses", mailaddresses);
+    List<List<String>> lists = new ArrayList<>();
+    for (String mailaddress: mailaddresses) {
+        lists.add(ParticipantDAO.getData(mailaddress, participant));
+        request.setAttribute("data", participant.getData());
+    }
+    request.setAttribute("lists", lists);
+
 %>
 
 <h1>CeregementId: ABCDEFG 参列者情報一覧</h1>
 <table>
-        <tr>
-            <th>氏名</th>
-            <th>住所</th>
-            <th>電話番号</th>
-            <th>出席情報</th>
-            <th>香典など</th>
-        </tr>
     <tr>
-        <c:forEach var="data" items="${data}">
-            <td><c:out value="${data}" /></td>
-        </c:forEach>
+        <th>氏名</th>
+        <th>住所</th>
+        <th>電話番号</th>
+        <th>出席情報</th>
+        <th>香典など</th>
     </tr>
+
+
+    <c:forEach var="list" items="${lists}">
+        <tr>
+            <c:forEach var="data" items="${list}">
+                    <th>
+                        <c:out value="${data}"/>
+                    </th>
+            </c:forEach>
+        </tr>
+    </c:forEach>
+
+
+
 
 <%--    <tr>--%>
 <%--        <c:forEach var="name" items="${nameList}">--%>

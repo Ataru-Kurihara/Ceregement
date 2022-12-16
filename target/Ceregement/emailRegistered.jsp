@@ -3,7 +3,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
     <style>
 
         body {
@@ -63,7 +62,6 @@
     <head>
         <title>emailRegistered</title>
     </head>
-
 <body>
 <p>
     メールが送信されました。<br> メールに記載のURLからログインし, 登録を完了させてください。

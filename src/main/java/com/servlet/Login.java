@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.model.participant.Participant;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import com.model.user.User;
@@ -31,8 +32,10 @@ public class Login extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         User user = new User();
         UserDAO dao = new UserDAO();
+        Participant participant = new Participant();
 //        user.setSecretId(request.getParameter("secretId"));
         user.setMailAddress(request.getParameter("mailAddress"));
+        participant.setMailAddress(request.getParameter("mailAddress"));
         String password = request.getParameter("passWord");
         String secretId = UserDAO.getSecretIdRegNumber(user, "secretid");
         String passwordHash = DigestUtils.sha256Hex(password + secretId);

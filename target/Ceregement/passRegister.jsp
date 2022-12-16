@@ -10,6 +10,7 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 <head>
 
 
+
     <style>
         body {
             background: linear-gradient(white, mediumpurple);
@@ -52,7 +53,7 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 		}
     </style>
 
-    <title>passRegister</title>
+<title>passRegister</title>
 
 <meta charset="UTF-8">
 <title>passRegister</title>
@@ -64,6 +65,16 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 	<p>アカウントを登録します</p>
 	<h1>
 		あなたのidは:<%=id%>です
+
+	</p>
+	<%
+	if (session.getAttribute("pass") != null && !(Boolean) session.getAttribute("pass")
+			&& request.getAttribute("passError") != null) {
+		out.println("<p>");
+		out.println(request.getAttribute("passError"));
+		out.println("</p>");
+	}
+	%>
 	</h1>
 	<form action="PassRegister" method="post">
 		<dl>

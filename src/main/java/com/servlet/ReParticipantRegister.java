@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/ReParticipantRegister")
 public class ReParticipantRegister extends HttpServlet {
@@ -19,7 +20,7 @@ public class ReParticipantRegister extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String mailaddress = "";
         String fullname = "", firstname = "", lastname = "";
-        String address = "", postalcode = "";
+        String address = "", postalcode = "", place = "";
         String tel = "";
         String attendSelection = "";
         String funeralGift = "";
@@ -28,7 +29,9 @@ public class ReParticipantRegister extends HttpServlet {
         lastname = request.getParameter("lastname");
         firstname = request.getParameter("firstname");
         fullname = lastname + " " + firstname;
-        address = request.getParameter("postcode") + " " + request.getParameter("address");
+        postalcode = request.getParameter("postcode");
+        place = request.getParameter("address");
+        address = postalcode + " " + place;
         tel = request.getParameter("tel");
         attendSelection = request.getParameter("attendSelection");
         funeralGift = request.getParameter("funeralGift");
@@ -51,9 +54,18 @@ public class ReParticipantRegister extends HttpServlet {
         participant.setGift(funeralGift);
         participant.setId(id);
         ParticipantDAO.addData(participant);
+//        String message = null;
+//        if (mailaddress == null || lastname == null || firstname == null || postalcode == null || place == null || tel == null || attendSelection == null || funeralGift == null) {
+//            message = "フォーム画面から入力してください";
+//            request.setAttribute("errormsg", message);
+//        } else if (mailaddress.equals("") || lastname.equals("") || firstname.equals("") || postalcode.equals("") || place.equals("") || tel.equals("") || attendSelection.equals("") || funeralGift.equals("")) {
+//            message = "入力されてないところがあります";
+//            request.setAttribute("errormsg", message);
+//        }else {
+//            getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
+//        }
 
 
-        getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
