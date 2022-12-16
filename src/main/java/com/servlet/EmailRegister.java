@@ -49,14 +49,16 @@ public class EmailRegister extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		regNumber = request.getParameter("regNumber");
-		ceregementId = request.getParameter("ceregementid");
+		ceregementId = request.getParameter("ceregementId");
 
 		if ((Objects.isNull(regNumber)) || (!regNumber.equals("0") && !regNumber.equals("1"))) {
 			regNumber = "0";
 		}
 
-		if (Objects.isNull(ceregementId)) {
+		if (ceregementId == null || ceregementId.isEmpty()) {
 			try {
+				System.out.println("EmailRegister.java");
+				System.out.println("ceregementIdはnullでした");
 				ceregementId = Integer.toString(UserDAO.checkIndex());
 			} catch (SQLException e) {
 				e.printStackTrace();
