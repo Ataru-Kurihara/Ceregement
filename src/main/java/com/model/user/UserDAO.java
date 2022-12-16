@@ -79,7 +79,7 @@ public class UserDAO {
 
 	public void insert(User u) {
 		Connection connection;
-		String sql = "INSERT INTO public.user (secretid, mailAddress, password, regNumber) VALUES (?, ?, ?, ?)";
+		String sql = "INSERT INTO public.user (secretid, mailAddress, password, regNumber, id) VALUES (?, ?, ?, ?, ?)";
 
 		try {
 			Class.forName(driverClassName);
@@ -91,6 +91,7 @@ public class UserDAO {
 			pstmt.setString(2, u.getMailAddress());
 			pstmt.setString(3, u.getPassword());
 			pstmt.setInt(4, regNumber);
+			pstmt.setString(5, u.getCeregementId());
 			pstmt.executeUpdate();
 			System.out.println("UserDAO.javaでINSERT実行");
 			connection.close();

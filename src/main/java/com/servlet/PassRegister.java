@@ -35,6 +35,7 @@ public class PassRegister extends HttpServlet {
 		HttpSession session = request.getSession();
 		String email = ((TempUser) session.getAttribute("temp")).getEmail();
 		String regNumber = ((TempUser) session.getAttribute("temp")).getRegNumber();
+		String ceregementId = ((TempUser) session.getAttribute("temp")).getCeregementId();
 		User user = new User();
 		UserDAO u_dao = new UserDAO();
 		boolean result = false;
@@ -53,6 +54,7 @@ public class PassRegister extends HttpServlet {
 			user.setMailAddress(email);
 			user.setPassword(password);
 			user.setRegNumber(regNumber);
+			user.setCeregementId(ceregementId);
 
 			//入力された内容が登録されているかをチェック
 			try {

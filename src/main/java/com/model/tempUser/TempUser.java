@@ -4,10 +4,12 @@ public class TempUser {
 
 	private String id;
 	private String regNumber;
+	private String ceregementId;
 
 	public TempUser() {
 		id = "";
 		regNumber = "";
+		ceregementId = "";
 	}
 
 	public String getEmail() {
@@ -24,6 +26,14 @@ public class TempUser {
 
 	public void setRegNumber(String regNumber) {
 		this.regNumber = regNumber;
+	}
+
+	public String getCeregementId() {
+		return ceregementId;
+	}
+
+	public void setCeregementId(String ceregementId) {
+		this.ceregementId = ceregementId;
 	}
 
 }

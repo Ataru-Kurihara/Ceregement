@@ -8,12 +8,14 @@ public class User implements Serializable {
 	private String mailAddress;
 	private String passWord;
 	private String regNumber;
+	private String ceregementid;
 
 	public User() {
 		secretId = "";
 		mailAddress = "";
 		passWord = "";
 		regNumber = "";
+		ceregementid = "";
 	}
 
 	public String getSecretId() {
@@ -32,6 +34,10 @@ public class User implements Serializable {
 		return regNumber;
 	}
 
+	public String getCeregementId() {
+		return ceregementid;
+	}
+
 	public void setSecretId(String secretId) {
 		this.secretId = secretId;
 	}
@@ -46,5 +52,9 @@ public class User implements Serializable {
 
 	public void setRegNumber(String regNumber) {
 		this.regNumber = regNumber;
+	}
+
+	public void setCeregementId(String ceregementid) {
+		this.ceregementid = ceregementid;
 	}
 }
