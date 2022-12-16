@@ -70,7 +70,7 @@
 <h2 href="http://localhost:8080/Ceregement/EmailRegister?regNumber=0">http://localhost:8080/Ceregement/EmailRegister?regNumber=0</h2>
 <br>
 <button type="button" name="menu">
-    <a href="OrganizerSelection">メニューへ</a>
+    <a href="organizerSelection.jsp">メニューへ</a>
 </button>
 </body>
 </html>

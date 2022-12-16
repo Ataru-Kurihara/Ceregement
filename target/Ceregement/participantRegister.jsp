@@ -46,8 +46,9 @@
     <h1>参列者情報を入力してください</h1>
     <p1>※項目は必須入力です</p1>
     <h2>※氏名</h2>
-    <p2>(姓)</p2>
+
     <form method="get" action="ReParticipantRegister">
+        <p2>(姓)</p2>
         <input type="text" name="lastname">
         <p2>(名)</p2>
         <input type="text" name="firstname"><br>
@@ -68,7 +69,7 @@
         <input type="text" name="funeralGift">
         <br>
         <input type="submit" name="registration" value="登録">
-            <a href="ReParticipantRegister"></a>
+            <a href="reParticipantRegister.jsp"></a>
         </input>
         <br>
     </form>
