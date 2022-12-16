@@ -17,10 +17,14 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
             font-family: sans-serif;
             text-align: center;
         }
-        a {
-            font-size: 250%;
+        p {
+            font-size: 300%;
         }
+		h1{
+			font-size: 250%;
+		}
        button {
+		   font-size: 250%;
             width: 200px;
             height: 60px;
             border: 2px solid #000;
@@ -34,6 +38,18 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
+		dl {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+		}
+		dt {
+			width: 90%;
+		}
+
+		dd {
+			width: 250%;
+		}
     </style>
 
     <title>passRegister</title>
@@ -46,9 +62,9 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 <body>
 
 	<p>アカウントを登録します</p>
-	<p>
+	<h1>
 		あなたのidは:<%=id%>です
-	</p>
+	</h1>
 	<form action="PassRegister" method="post">
 		<dl>
 			<dt>パスワード</dt>

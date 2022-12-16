@@ -25,6 +25,10 @@
             font-size: 200%;
         }
 
+        td{
+            position: center;
+        }
+
         button {
             position: relative;
             aligin: center;
