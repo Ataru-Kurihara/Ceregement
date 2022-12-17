@@ -39,17 +39,11 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
-		dl {
-			display: flex;
-			flex-wrap: wrap;
-			width: 100%;
-		}
-		dt {
-			width: 90%;
-		}
-
-		dd {
-			width: 250%;
+		p{
+			border: 2px red solid;
+			font-weight: bold;
+			font-size: 300%;
+			color: red;
 		}
     </style>
 
@@ -67,20 +61,23 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 		あなたのidは:<%=id%>です
 
 	</p>
-	<%
-	if (session.getAttribute("pass") != null && !(Boolean) session.getAttribute("pass")
-			&& request.getAttribute("passError") != null) {
-		out.println("<p>");
-		out.println(request.getAttribute("passError"));
-		out.println("</p>");
-	}
-	%>
+		<%
+			if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")
+					&& request.getAttribute("error") != null) {
+		%>
+		<p>
+			<%
+				out.println(request.getAttribute("error"));
+			%>
+		</p>
+		<%
+			}
+		%>
 	</h1>
 	<form action="PassRegister" method="post">
 		<dl>
-			<dt>パスワード</dt>
 			<dd>
-				<input type="password" name="password" />
+			<dt>パスワード <input type="password" name="password" /></dt>
 			</dd>
 		</dl>
 		<button type="submit" name="passRegister">登録</button>

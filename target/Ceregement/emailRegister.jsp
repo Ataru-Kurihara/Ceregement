@@ -80,6 +80,13 @@
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
+
+        p{
+            border: 2px red solid;
+            font-weight: bold;
+            font-size: 300%;
+            color: red;
+        }
     </Style>
 </head>
 
@@ -88,20 +95,24 @@
 <%
     if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")
             && request.getAttribute("error") != null) {
-        out.println("<p>");
+%>
+<p>
+    <%
         out.println(request.getAttribute("error"));
-        out.println("</p>");
+    %>
+</p>
+<%
     }
 %>
 <ul>
     <h2>新しく登録するメールアドレスを入力してください。</h2>
     <h2>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</h2>
 </ul>
-<form action="emailRegistered.jsp" method="post">
-    <p>ID(メールアドレス)
+<form action="EmailRegister" method="post">
+    <h3>ID(メールアドレス)
         <input type="text" name="email" placeholder="xxx@example.com">
-    </p>
-    <button type="submit" name="emailRegistered">送信</button>
+    </h3>
+    <button type="submit" name="EmailRegister">送信</button>
 </form>
 <div class="button">
     <a href="login.jsp">戻る</a>
