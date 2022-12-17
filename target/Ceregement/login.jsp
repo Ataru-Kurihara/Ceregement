@@ -71,8 +71,17 @@
 
 
     </style>
+    <%--
+      Created by IntelliJ IDEA.
+      User: ataru
+      Date: 2022/11/20
+      Time: 15:40
+      To change this template use File | Settings | File Templates.
+    --%>
     <%@ page language="java" contentType="text/html; charset=UTF-8" %>
     <!DOCTYPE html>
+    <head>
+        <title>login</title>
     </head>
 <body>
 <%
@@ -89,7 +98,7 @@
     }
 %>
 <p>ログインします</p>
-<form action="login.jsp" method="post">
+<form action="Login" method="post">
     <dl>
         <dt>ユーザID(メールアドレス)</dt>
         <dd><label>
@@ -103,7 +112,7 @@
     <button type="submit" name="login">ログイン</button>
 </form>
 <div class="button">
-    <a href="emailRegister.jsp">新規登録</a>
+    <a href="EmailRegister">新規登録</a>
 </div>
 </body>
 </html>
