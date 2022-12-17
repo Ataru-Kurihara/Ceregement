@@ -29,10 +29,10 @@ import com.model.user.UserDAO;
 public class EmailRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	final String subject = "JavaMail テストメール"; //	メールの件名
-	final String from = "nagahama.tdu24@gmail.com";//送信元
+	final String from = "01nghm@gmail.com";//送信元
 	// メールの設定
-	final String name = "nagahama.tdu24@gmail.com";//誰が
-	final String password = "dcfdbsifyjqjfpxc";
+	final String name = "01nghm@gmail.com";//誰が
+	final String password = "bamfxexmfzxmduvo";
 	final String charset = "UTF-8";
 	final String encoding = "base64";
 	final String host = "smtp.gmail.com";
@@ -125,7 +125,7 @@ public class EmailRegister extends HttpServlet {
 			}
 			if (!state) {
 				System.out.println("重複したemailが入力");
-				error = "登録されているメールアドレスが入されました。";
+				error = "登録されているメールアドレスが入力されました。";
 			}
 		}
 
