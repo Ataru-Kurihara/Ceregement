@@ -36,6 +36,23 @@
             box-shadow: -10px -4px 0 #000;
         }
 
+        input[type="submit" i]{
+            font-size: 250%;
+            position: relative;
+            aligin: center;
+            width: 200px;
+            height: 60px;
+            border: 2px solid #000;
+            border-radius: 0;
+            background: #fff;
+            -webkit-box-shadow: 4px 4px 0 #000;
+            box-shadow: 4px 4px 0 #000;
+        }
+        input[type="submit" i]:hover{
+            -webkit-box-shadow: -10px -4px 0 #000;
+            box-shadow: -10px -4px 0 #000;
+        }
+
 
     </style>
     <title>funnelRegister</title>
