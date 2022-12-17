@@ -56,7 +56,6 @@
     <title>participantRegister</title>
 </head>
 <body>
-    <p1>エラー</p1>
     <h1>参列者情報を入力してください</h1>
     <p1>※項目は必須入力です</p1>
     <h2>※氏名</h2>

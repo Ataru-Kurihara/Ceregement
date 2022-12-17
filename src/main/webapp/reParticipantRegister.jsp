@@ -1,4 +1,6 @@
-<%--
+<%@ page import="com.model.participant.Participant" %>
+<%@ page import="com.model.participant.ParticipantDAO" %>
+<%@ page import="java.sql.SQLException" %><%--
   Created by IntelliJ IDEA.
   User: ataru
   Date: 2022/12/03
@@ -40,6 +42,21 @@
     <title>reParticipantRegister</title>
 </head>
 <body>
+<%--  <%--%>
+<%--    Participant participant = new Participant();--%>
+<%--    try {--%>
+<%--      if (!ParticipantDAO.check(participant)) {--%>
+<%--        String err = request.getParameter("errormsg");--%>
+<%--        request.setAttribute("msg", err);--%>
+<%--        System.out.println(err);--%>
+<%--      }--%>
+<%--    } catch (SQLException e) {--%>
+<%--      e.printStackTrace();--%>
+<%--    }--%>
+<%--  %>--%>
+<%--  <script type="text/javascript">--%>
+<%--    alert(${msg})--%>
+<%--  </script>--%>
   <h1>登録内容確認画面</h1>
   <p1>以下の内容でよろしければ、「登録する」ボタンを押してください</p1>
 <%--  cssで枠組みお願いします--%>
