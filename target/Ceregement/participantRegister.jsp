@@ -35,7 +35,12 @@
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
+<<<<<<< HEAD
         a{
+=======
+        input[type="submit" i]{
+            font-size: 250%;
+>>>>>>> master
             position: relative;
             aligin: center;
             width: 200px;
@@ -46,8 +51,12 @@
             -webkit-box-shadow: 4px 4px 0 #000;
             box-shadow: 4px 4px 0 #000;
         }
+<<<<<<< HEAD
 
         a:hover {
+=======
+        input[type="submit" i]:hover{
+>>>>>>> master
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }

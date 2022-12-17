@@ -85,13 +85,18 @@ a {
 		<a href="OrganizerSelection">戻る</a>
 	</button>
 	<%
-	if (session.getAttribute("organizer") != null
-			&& !(Boolean) session.getAttribute("organizer")
-			&& request.getAttribute("errorOrganizer") != null) {
-		out.println("<p>");
-		out.println(request.getAttribute("errorOrganizer"));
-		out.println("</p>");
-	}
+		if (session.getAttribute("organizer") != null
+				&& !(Boolean) session.getAttribute("organizer")
+				&& request.getAttribute("errorOrganizer") != null) {
+			out.println("<p>");
+			out.println(request.getAttribute("errorOrganizer"));
+			out.println("</p>");
+		}
+		if (session.getAttribute("participant") != null && !(Boolean) session.getAttribute("participant") && request.getAttribute("errorParticipant") != null) {
+			out.println("<p>");
+			out.println(request.getAttribute("errorParticipant"));
+			out.println("<p>");
+		}
 	%>
 </body>
 </html>

@@ -100,7 +100,7 @@ a {
 		<%
 		if (Objects.equals(regnumber, "0")) {
 		%>
-		<a href="organizerSelection.jsp">戻る</a>
+		<a href="OrganizerSelection">戻る</a>
 		<%
 		} else {
 		%>

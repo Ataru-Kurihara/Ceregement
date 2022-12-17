@@ -92,12 +92,7 @@ a:hover {
 </head>
 
 <body>
-
 	<h1>入力してください</h1>
-<%--	//		out.println("<p>");--%>
-<%--		//		out.println(request.getAttribute("error"));--%>
-<%--		//		out.println("</p>");--%>
-<%--	//		String msg = String.valueOf(request.getAttribute("error"));--%>
 	<%
 	if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")
 			&& request.getAttribute("error") != null) {
