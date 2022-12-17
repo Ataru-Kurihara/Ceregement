@@ -82,6 +82,7 @@ a {
 	box-shadow: 4px 4px 0 #000;
 }
 
+<<<<<<< HEAD
 a:hover {
 	-webkit-box-shadow: -10px -4px 0 #000;
 	box-shadow: -10px -4px 0 #000;
@@ -119,6 +120,49 @@ a:hover {
 		<a href="Login">戻る</a>
 	</div>
 
+=======
+        button:hover {
+            -webkit-box-shadow: -10px -4px 0 #000;
+            box-shadow: -10px -4px 0 #000;
+        }
+
+        p{
+            border: 2px red solid;
+            font-weight: bold;
+            font-size: 300%;
+            color: red;
+        }
+    </Style>
+</head>
+
+<body>
+<h1>入力してください</h1>
+<%
+    if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")
+            && request.getAttribute("error") != null) {
+%>
+<p>
+    <%
+        out.println(request.getAttribute("error"));
+    %>
+</p>
+<%
+    }
+%>
+<ul>
+    <h2>新しく登録するメールアドレスを入力してください。</h2>
+    <h2>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</h2>
+</ul>
+<form action="EmailRegister" method="post">
+    <h3>ID(メールアドレス)
+        <input type="text" name="email" placeholder="xxx@example.com">
+    </h3>
+    <button type="submit" name="EmailRegister">送信</button>
+</form>
+<div class="button">
+    <a href="login.jsp">戻る</a>
+</div>
+>>>>>>> master
 </body>
 
 </html>

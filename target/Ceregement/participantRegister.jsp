@@ -42,6 +42,7 @@
             font-size: 250%;
 >>>>>>> master
             position: relative;
+            buttom: 60px;
             aligin: center;
             width: 200px;
             height: 60px;
@@ -88,6 +89,7 @@
         <h2>贈り物</h2>
         <br>
         <input type="text" name="funeralGift">
+        <br>
         <br>
         <input type="submit" name="registration" value="登録">
             <a href="ReParticipantRegister"></a>
