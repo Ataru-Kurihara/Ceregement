@@ -41,20 +41,21 @@ public class Login extends HttpServlet {
         String passwordHash = DigestUtils.sha256Hex(password + secretId);
         user.setPassword(passwordHash);
         String regNumber = UserDAO.getSecretIdRegNumber(user, "regnumber");
-
+        System.out.println(password);
+        System.out.println(secretId);
+        System.out.println(regNumber);
         boolean result = false;
         try {
             result = UserDAO.check(user);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(result);
         HttpSession session = request.getSession();
         session.setAttribute("login", result);
         session.setAttribute("mailAddress", user.getMailAddress());
         session.setAttribute("id", UserDAO.getSecretIdRegNumber(user, "id"));
         session.setAttribute("regnumber", UserDAO.getSecretIdRegNumber(user, "regnumber"));
-        System.out.println(session.getAttribute("mailAddress"));
-        System.out.println(user.getMailAddress());
         if (result) {
             session.setAttribute("user", user);
 //            System.out.println(regNumber);

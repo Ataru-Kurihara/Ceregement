@@ -40,7 +40,7 @@
 <body>
 <h1>選択してください</h1>
 <button type="button" name="funnelInformation">
-    <a href="FunnelReading">葬儀詳細</a>
+    <a href="FunnelReading">葬儀の詳細を知りたい</a>
 </button>
 <button type="button" name="participantInformation">
     <a href="ParticipantRegister">出席登録</a>

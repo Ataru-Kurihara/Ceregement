@@ -10,48 +10,33 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 <head>
 
 
+<style>
+body {
+	background: linear-gradient(white, mediumpurple);
+	background-size: cover;
+	font-family: sans-serif;
+	text-align: center;
+}
 
-    <style>
-        body {
-            background: linear-gradient(white, mediumpurple);
-            background-size: cover;
-            font-family: sans-serif;
-            text-align: center;
-        }
-        p {
-            font-size: 300%;
-        }
-		h1{
-			font-size: 250%;
-		}
-       button {
-		   font-size: 250%;
-            width: 200px;
-            height: 60px;
-            border: 2px solid #000;
-            border-radius: 0;
-            background: #fff;
-            -webkit-box-shadow: 4px 4px 0 #000;
-            box-shadow: 4px 4px 0 #000;
-        }
+a {
+	font-size: 250%;
+}
 
-        button:hover {
-            -webkit-box-shadow: -10px -4px 0 #000;
-            box-shadow: -10px -4px 0 #000;
-        }
-		dl {
-			display: flex;
-			flex-wrap: wrap;
-			width: 100%;
-		}
-		dt {
-			width: 90%;
-		}
+button {
+	width: 200px;
+	height: 60px;
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+}
 
-		dd {
-			width: 250%;
-		}
-    </style>
+button:hover {
+	-webkit-box-shadow: -10px -4px 0 #000;
+	box-shadow: -10px -4px 0 #000;
+}
+</style>
 
 <title>passRegister</title>
 
@@ -63,9 +48,8 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 <body>
 
 	<p>アカウントを登録します</p>
-	<h1>
+	<p>
 		あなたのidは:<%=id%>です
-
 	</p>
 	<%
 	if (session.getAttribute("pass") != null && !(Boolean) session.getAttribute("pass")
@@ -75,7 +59,6 @@ String id = ((TempUser) session.getAttribute("temp")).getEmail();
 		out.println("</p>");
 	}
 	%>
-	</h1>
 	<form action="PassRegister" method="post">
 		<dl>
 			<dt>パスワード</dt>

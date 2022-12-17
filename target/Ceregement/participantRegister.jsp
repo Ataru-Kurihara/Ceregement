@@ -19,9 +19,7 @@
         h2{
             border: 2px #808080 solid;
         }
-
         button{
-            font-size: 250%;
             position: relative;
             aligin: center;
             width: 200px;
@@ -37,6 +35,22 @@
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
+        a{
+            position: relative;
+            aligin: center;
+            width: 200px;
+            height: 60px;
+            border: 2px solid #000;
+            border-radius: 0;
+            background: #fff;
+            -webkit-box-shadow: 4px 4px 0 #000;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        a:hover {
+            -webkit-box-shadow: -10px -4px 0 #000;
+            box-shadow: -10px -4px 0 #000;
+        }
     </style>
 
     <title>participantRegister</title>
@@ -45,9 +59,8 @@
     <h1>参列者情報を入力してください</h1>
     <p1>※項目は必須入力です</p1>
     <h2>※氏名</h2>
-
+    <p2>(姓)</p2>
     <form method="get" action="ReParticipantRegister">
-        <p2>(姓)</p2>
         <input type="text" name="lastname">
         <p2>(名)</p2>
         <input type="text" name="firstname"><br>
@@ -68,7 +81,7 @@
         <input type="text" name="funeralGift">
         <br>
         <input type="submit" name="registration" value="登録">
-            <a href="reParticipantRegister.jsp"></a>
+            <a href="ReParticipantRegister"></a>
         </input>
         <br>
     </form>

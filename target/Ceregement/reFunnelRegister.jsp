@@ -18,18 +18,10 @@
             font-family: sans-serif;
             text-align: center;
         }
-        p1 {
-            font-size: 200%;
-        }
-        h2{
-            border: 2px #808080 solid;
-        }
-        h3{
-            font-size: 200%;
-        }
 
-        button {
-            font-size: 250%;
+        a {
+            margin: 25% auto;
+
             width: 200px;
             height: 60px;
             border: 2px solid #000;
@@ -39,7 +31,7 @@
             box-shadow: 4px 4px 0 #000;
         }
 
-        button:hover {
+        a:hover {
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
@@ -54,7 +46,7 @@
 <body>
         <h1>登録内容確認画面</h1>
         <p1>以下の内容でよろしければ、「登録する」ボタンを押してください</p1><br>
-        <h2>故人氏名　</h2><br> <h3> <%= request.getAttribute("deceasedFullName") %></h3><br>
+        <h2>故人氏名: <%= request.getAttribute("deceasedFullName") %></h2><br>
         <h2>命日: <%= request.getAttribute("deathData")%></h2><br>
         <h2>葬儀会場: <%= request.getAttribute("funnelPlace")%></h2><br>
         <h2>葬儀会場住所: <%= request.getAttribute("funnelPlaceAddress")%></h2><br>

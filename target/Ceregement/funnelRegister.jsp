@@ -18,8 +18,23 @@
         h2{
             border: 2px #808080 solid;
         }
+        a{
+            position: relative;
+            aligin: center;
+            width: 200px;
+            height: 60px;
+            border: 2px solid #000;
+            border-radius: 0;
+            background: #fff;
+            -webkit-box-shadow: 4px 4px 0 #000;
+            box-shadow: 4px 4px 0 #000;
+        }
+
+        a:hover {
+            -webkit-box-shadow: -10px -4px 0 #000;
+            box-shadow: -10px -4px 0 #000;
+        }
         button{
-            font-size: 250%;
             position: relative;
             aligin: center;
             width: 200px;
@@ -35,8 +50,6 @@
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
-
-
     </style>
     <title>funnelRegister</title>
 </head>
@@ -45,9 +58,8 @@
     <h1>葬儀情報を入力してください</h1>
     <p>※項目は必須入力です</p>
     <h2>故人の氏名</h2>
-
+    <p2>(姓)</p2>
     <form method="get" action="ReFunnelRegister">
-        <p2>(姓)</p2>
         <input type="text" name="deceasedFamilyName">
         <p2>(名)</p2>
         <input type="text" name="deceasedFirstName" value="太郎">

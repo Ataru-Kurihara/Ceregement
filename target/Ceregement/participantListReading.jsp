@@ -26,10 +26,6 @@
             font-size: 200%;
         }
 
-        td{
-            position: center;
-        }
-
         button {
             position: relative;
             aligin: center;
@@ -56,9 +52,6 @@
         th{
             text-align: center;
             border: 2px #808080 solid;
-        }
-        tr{
-            text-align: center;
         }
     </style>
 
