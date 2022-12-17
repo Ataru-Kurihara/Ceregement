@@ -15,7 +15,7 @@
 	<h1>葬儀情報が正常に登録されました！</h1>
 	<p1>招待者の方に以下のURLを送ってください。</p1>
 	<a
-		href="http://localhost:8080/Ceregement/EmailRegister?regNumber=0&ceregementId=
+		href="http://localhost:8080/Ceregement/EmailRegister?regNumber=1&ceregementId=
 		<%=session.getAttribute("id")%>">http://localhost:8080/Ceregement/EmailRegister?regNumber=1&ceregementId=
 		<%=session.getAttribute("id")%></a>
 

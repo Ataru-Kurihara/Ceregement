@@ -92,16 +92,20 @@ a:hover {
 </head>
 
 <body>
-
 	<h1>入力してください</h1>
 	<%
 	if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")
 			&& request.getAttribute("error") != null) {
-		out.println("<p>");
-		out.println(request.getAttribute("error"));
-		out.println("</p>");
+		%>
+	<script type="text/javascript">
+		const msg = '<%= request.getAttribute("error")%>';
+		alert(msg)
+
+	</script>
+	<%
 	}
 	%>
+
 	<ul>
 		<li>新しく登録するメールアドレスを入力してください。</li>
 		<li>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</li>
