@@ -172,6 +172,7 @@
             <input type="text" name="phonenumber" value="08000000000">
         </label>
         <p2>(半角数字)</p2><br>
+        <br>
 
         <input type="submit" name="registration" value="登録">
             <a href="ReFunnelRegister"></a>
