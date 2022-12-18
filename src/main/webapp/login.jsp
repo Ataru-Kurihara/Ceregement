@@ -68,7 +68,15 @@
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
-
+        h1{
+            font-size: 300%;
+        }
+        p{
+            border: 2px red solid;
+            font-weight: bold;
+            font-size: 300%;
+            color: red;
+        }
 
     </style>
     <%--
@@ -90,15 +98,15 @@
         out.println("ユーザ名またはパスワードが違います");
         out.println("</p>");
 %>
-            <script type="text/javascript">
-                const msg = "ユーザ名またはパスワードが違います";
+<script type="text/javascript">
+    const msg = "ユーザ名またはパスワードが違います";
 
-                alert(msg)
-            </script>
+    alert(msg)
+</script>
 <%
     }
 %>
-<p>ログインします</p>
+<h1>ログインします</h1>
 <form action="Login" method="post">
     <dl>
         <dt>ユーザID(メールアドレス)</dt>

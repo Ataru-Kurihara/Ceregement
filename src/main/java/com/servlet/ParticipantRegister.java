@@ -19,6 +19,10 @@ public class ParticipantRegister extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+        getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
+    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String mailaddress = "";
         String fullname = "", firstname = "", lastname = "";
         String address = "", postalcode = "", place = "";
@@ -36,7 +40,6 @@ public class ParticipantRegister extends HttpServlet {
         tel = request.getParameter("tel");
         attendSelection = request.getParameter("attendSelection");
         funeralGift = request.getParameter("funeralGift");
-
 
         request.setAttribute("mailaddress", mailaddress);
         request.setAttribute("fullname", fullname);
@@ -56,18 +59,14 @@ public class ParticipantRegister extends HttpServlet {
         participant.setId(id);
         ParticipantDAO.addData(participant);
         session.setAttribute("participantRegister", true);
-        if (mailaddress == null || firstname == null || lastname == null||
-                 postalcode == null || place == null
-                || tel == null || attendSelection == null || funeralGift == null) {
-            request.setAttribute("errorParticipantRegistermsg", "入力されていない情報があります");
-            session.setAttribute("participantRegister", false);
-            getServletContext().getRequestDispatcher("/participantSelection.jsp").forward(request, response);
-        }else {
+        if (mailaddress != null || firstname != null || lastname != null||
+                postalcode != null || place != null
+                || tel != null || attendSelection != null || funeralGift != null) {
             getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
+        }else {
+            session.setAttribute("participantRegister", false);
+            request.setAttribute("errorParticipantRegistermsg", "入力されていない情報があります");
+            getServletContext().getRequestDispatcher("/participantSelection.jsp").forward(request, response);
         }
-    }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
     }
  }

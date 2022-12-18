@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <html>
 <head>
 	<style>
@@ -49,20 +49,20 @@
 			box-shadow: -10px -4px 0 #000;
 		}
 	</style>
-<title>funnelRegistered</title>
+	<title>funnelRegistered</title>
 </head>
 <body>
-	<h1>葬儀情報が正常に登録されました！</h1>
-	<p1>招待者の方に以下のURLを送ってください。</p1>
-	<br>
-	<br>
-	<p2
+<h1>葬儀情報が正常に登録されました！</h1>
+<p1>招待者の方に以下のURLを送ってください。</p1>
+<br>
+<br>
+<p2
 		href="http://localhost:8080/Ceregement/EmailRegister?regNumber=1&ceregementId=
 		<%=session.getAttribute("id")%>">http://localhost:8080/Ceregement/EmailRegister?regNumber=1&ceregementId=
-		<%=session.getAttribute("id")%></p2>
+	<%=session.getAttribute("id")%></p2>
 <br>
-	<button type="button" name="menu">
-		<a href="OrganizerSelection">メニューへ</a>
-	</button>
+<button type="button" name="menu">
+	<a href="OrganizerSelection">メニューへ</a>
+</button>
 </body>
 </html>
