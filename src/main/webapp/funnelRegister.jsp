@@ -58,6 +58,20 @@ button:hover {
 <title>funnelRegister</title>
 </head>
 <body>
+	<%
+		if (session.getAttribute("funeralerror") != null && !(Boolean) session.getAttribute("funeralerror")
+		&& session.getAttribute("funeralerrormsg") != null) {
+			out.println("<p>");
+			out.println(session.getAttribute("funeralerrormsg"));
+			out.println("</p>");
+	%>
+		<script type="text/javascript">
+			const msg = '<%= session.getAttribute("funeralerrormsg")%>';
+			alert(msg)
+		</script>
+	<%
+		}
+	%>
 	<h1>葬儀情報を入力してください</h1>
 	<p>※項目は必須入力です</p>
 	<h2>故人の氏名</h2>
@@ -65,7 +79,7 @@ button:hover {
 	<form method="get" action="ReFunnelRegister">
 		<input type="text" name="deceasedFamilyName" required>
 		<p2>(名)</p2>
-		<input type="text" name="deceasedFirstName" value="太郎" required>
+		<input type="text" name="deceasedFirstName"  required>
 		<br>
 		<h2>命日</h2>
 		<select name="deathYear">
