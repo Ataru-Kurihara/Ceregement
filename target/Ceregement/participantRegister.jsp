@@ -35,14 +35,8 @@
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
-<<<<<<< HEAD
         a{
-=======
-        input[type="submit" i]{
-            font-size: 250%;
->>>>>>> master
             position: relative;
-            buttom: 60px;
             aligin: center;
             width: 200px;
             height: 60px;
@@ -52,12 +46,8 @@
             -webkit-box-shadow: 4px 4px 0 #000;
             box-shadow: 4px 4px 0 #000;
         }
-<<<<<<< HEAD
 
         a:hover {
-=======
-        input[type="submit" i]:hover{
->>>>>>> master
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
@@ -66,6 +56,11 @@
     <title>participantRegister</title>
 </head>
 <body>
+    <%
+        System.out.println("参列者情報");
+        System.out.println(session.getAttribute("errormsg"));
+        System.out.println(session.getAttribute("error"));
+    %>
     <h1>参列者情報を入力してください</h1>
     <p1>※項目は必須入力です</p1>
     <h2>※氏名</h2>
@@ -89,7 +84,6 @@
         <h2>贈り物</h2>
         <br>
         <input type="text" name="funeralGift">
-        <br>
         <br>
         <input type="submit" name="registration" value="登録">
             <a href="ReParticipantRegister"></a>

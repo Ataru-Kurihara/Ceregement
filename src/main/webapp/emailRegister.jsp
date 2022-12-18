@@ -96,6 +96,9 @@ a:hover {
 	<%
 	if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")
 			&& request.getAttribute("error") != null) {
+		out.println("<p>");
+		out.println(request.getAttribute("error"));
+		out.println("</p>");
 		%>
 	<script type="text/javascript">
 		const msg = '<%= request.getAttribute("error")%>';

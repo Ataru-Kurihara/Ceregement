@@ -56,6 +56,11 @@
     <title>participantRegister</title>
 </head>
 <body>
+    <%
+        System.out.println("参列者情報");
+        System.out.println(session.getAttribute("errormsg"));
+        System.out.println(session.getAttribute("error"));
+    %>
     <h1>参列者情報を入力してください</h1>
     <p1>※項目は必須入力です</p1>
     <h2>※氏名</h2>
