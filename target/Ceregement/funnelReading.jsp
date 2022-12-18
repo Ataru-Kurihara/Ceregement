@@ -72,6 +72,12 @@ button:hover {
 a {
 	font-size: 250%;
 }
+p{
+	border: 2px red solid;
+	font-weight: bold;
+	font-size: 300%;
+	color: red;
+}
 </style>
 <title>funnelReading</title>
 </head>
