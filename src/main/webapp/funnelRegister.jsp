@@ -6,74 +6,76 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
-		 pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <html>
 <head>
-	<style>
-		body {
-			background: linear-gradient(white, mediumpurple);
-			background-size: cover;
-			font-family: sans-serif;
-			text-align: center;
-		}
+<style>
+body {
+	background: linear-gradient(white, mediumpurple);
+	background-size: cover;
+	font-family: sans-serif;
+	text-align: center;
+}
 
-		h2 {
-			border: 2px #808080 solid;
-		}
+h2 {
+	border: 2px #808080 solid;
+}
 
-		input[type="submit" i]{
-			font-size: 250%;
-			position: relative;
-			aligin: center;
-			width: 200px;
-			height: 60px;
-			border: 2px solid #000;
-			border-radius: 0;
-			background: #fff;
-			-webkit-box-shadow: 4px 4px 0 #000;
-			box-shadow: 4px 4px 0 #000;
-		}
-		input[type="submit" i]:hover{
-			-webkit-box-shadow: -10px -4px 0 #000;
-			box-shadow: -10px -4px 0 #000;
-		}
+input[type="submit" i] {
+	font-size: 250%;
+	position: relative;
+	aligin: center;
+	width: 200px;
+	height: 60px;
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+}
 
-		button {
-			font-size: 250%;
-			position: relative;
-			aligin: center;
-			width: 200px;
-			height: 60px;
-			border: 2px solid #000;
-			border-radius: 0;
-			background: #fff;
-			-webkit-box-shadow: 4px 4px 0 #000;
-			box-shadow: 4px 4px 0 #000;
-		}
+input[type="submit" i]:hover {
+	-webkit-box-shadow: -10px -4px 0 #000;
+	box-shadow: -10px -4px 0 #000;
+}
 
-		button:hover {
-			-webkit-box-shadow: -10px -4px 0 #000;
-			box-shadow: -10px -4px 0 #000;
-		}
-	</style>
-	<title>funnelRegister</title>
+button {
+	font-size: 250%;
+	position: relative;
+	aligin: center;
+	width: 200px;
+	height: 60px;
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	-webkit-box-shadow: 4px 4px 0 #000;
+	box-shadow: 4px 4px 0 #000;
+}
+
+button:hover {
+	-webkit-box-shadow: -10px -4px 0 #000;
+	box-shadow: -10px -4px 0 #000;
+}
+</style>
+<title>funnelRegister</title>
 </head>
 <body>
 	<%
-		if (request.getAttribute("funeralerror") != null && !(Boolean) request.getAttribute("funeralerror")
-		&& session.getAttribute("funeralerrormsg") != null) {
-			System.out.println(session.getAttribute("funeralerror"));
-			System.out.println(session.getAttribute("funeralerrormsg"));
-			out.println("<p>");
-			out.println(session.getAttribute("funeralerrormsg"));
-			out.println("</p>");
+	if (session.getAttribute("funeralerror") != null && !(Boolean) session.getAttribute("funeralerror")
+			&& request.getAttribute("funeralerrormsg") != null) {
+		System.out.println(session.getAttribute("funeralerror"));
+		System.out.println(request.getAttribute("funeralerrormsg"));
+		out.println("<p>");
+		out.println(request.getAttribute("funeralerrormsg"));
+		out.println("</p>");
 	%>
-		<script type="text/javascript">
-			const msg = '<%= session.getAttribute("funeralerrormsg")%>';
-			alert(msg)
-		</script>
+	<script type="text/javascript">
+			const msg = '<%=request.getAttribute("funeralerrormsg")%>
+		';
+		alert(msg)
+	</script>
 	<%
-		}
+	}
 	%>
 	<h1>葬儀情報を入力してください</h1>
 	<p>※項目は必須入力です</p>
@@ -82,8 +84,7 @@
 	<form method="post" action="FunnelRegister">
 		<input type="text" name="deceasedFamilyName" required>
 		<p2>(名)</p2>
-		<input type="text" name="deceasedFirstName"  required>
-		<br>
+		<input type="text" name="deceasedFirstName" required> <br>
 		<h2>命日</h2>
 		<select name="deathYear" required>
 			<%
@@ -91,132 +92,131 @@
 			for (int i = 0; i <= 100; i++) {
 				String year = String.format("%tY", calendar) + "年";
 				calendar.add(Calendar.YEAR, -1);
-		%>
-		<option value="<%=year%>"><%=year%></option>
-		<%
+			%>
+			<option value="<%=year%>"><%=year%></option>
+			<%
 			}
-		%>
-	</select>
-	<p2>年</p2>
-	<select name="deathMonth" required>
-		<%
+			%>
+		</select>
+		<p2>年</p2>
+		<select name="deathMonth" required>
+			<%
 			for (int i = 1; i <= 12; i++) {
 				String month = String.valueOf(i) + "月";
-		%>
-		<option value="<%=month%>"><%=month%></option>
-		<%
+			%>
+			<option value="<%=month%>"><%=month%></option>
+			<%
 			}
-		%>
-	</select>
-	<p2>月</p2>
-	<select name="deathDay" required>
-		<%
+			%>
+		</select>
+		<p2>月</p2>
+		<select name="deathDay" required>
+			<%
 			for (int i = 1; i <= 31; i++) {
 				String day = String.valueOf(i) + "日";
-		%>
-		<option value="<%=day%>"><%=day%></option>
-		<%
+			%>
+			<option value="<%=day%>"><%=day%></option>
+			<%
 			}
-		%>
-	</select>
-	<p2>日</p2>
-	<h2>葬儀会場名</h2>
-	<label> <input type="text" name="funnelPlace" value="会場名"
-				   required>
-	</label><br>
-	<h2>葬儀会場住所</h2>
-	<label> <input type="text" name="funnelPlaceAddress"
-				   value="--県--市" required>
-	</label><br>
+			%>
+		</select>
+		<p2>日</p2>
+		<h2>葬儀会場名</h2>
+		<label> <input type="text" name="funnelPlace" value="会場名"
+			required>
+		</label><br>
+		<h2>葬儀会場住所</h2>
+		<label> <input type="text" name="funnelPlaceAddress"
+			value="--県--市" required>
+		</label><br>
 
-	<h2>葬儀日時</h2>
-	<select name="funnelYear" required>
-		<%
+		<h2>葬儀日時</h2>
+		<select name="funnelYear" required>
+			<%
 			Calendar calendar1 = Calendar.getInstance();
 			for (int i = 0; i <= 100; i++) {
 				String year = String.format("%tY", calendar1) + "年";
 				calendar1.add(Calendar.YEAR, -1);
-		%>
-		<option value="<%=year%>"><%=year%></option>
-		<%
+			%>
+			<option value="<%=year%>"><%=year%></option>
+			<%
 			}
-		%>
-	</select>
-	<p2>年</p2>
-	<select name="funnelMonth">
-		<%
+			%>
+		</select>
+		<p2>年</p2>
+		<select name="funnelMonth">
+			<%
 			for (int i = 1; i <= 12; i++) {
 				String month = String.valueOf(i) + "月";
-		%>
-		<option value="<%=month%>"><%=month%></option>
-		<%
+			%>
+			<option value="<%=month%>"><%=month%></option>
+			<%
 			}
-		%>
-	</select>
-	<p2>月</p2>
-	<select name="funnelDay" required>
-		<%
+			%>
+		</select>
+		<p2>月</p2>
+		<select name="funnelDay" required>
+			<%
 			for (int i = 1; i <= 31; i++) {
 				String day = String.valueOf(i) + "日";
-		%>
-		<option value="<%=day%>"><%=day%></option>
-		<%
+			%>
+			<option value="<%=day%>"><%=day%></option>
+			<%
 			}
-		%>
-	</select>
-	<p2>日</p2>
-	<select name="funnelHour" required>
-		<%
+			%>
+		</select>
+		<p2>日</p2>
+		<select name="funnelHour" required>
+			<%
 			for (int i = 0; i <= 24; i++) {
 				String hour = String.valueOf(i) + "時";
-		%>
-		<option value="<%=hour%>"><%=hour%></option>
-		<%
+			%>
+			<option value="<%=hour%>"><%=hour%></option>
+			<%
 			}
-		%>
-	</select>
-	<p2>時</p2>
-	<select name="funnelMinute" required>
-		<%
+			%>
+		</select>
+		<p2>時</p2>
+		<select name="funnelMinute" required>
+			<%
 			for (int i = 0; i <= 59; i++) {
 				String minute = String.valueOf(i) + "分";
-		%>
-		<option value="<%=minute%>"><%=minute%></option>
-		<%
+			%>
+			<option value="<%=minute%>"><%=minute%></option>
+			<%
 			}
-		%>
-	</select>
-	<p2>分</p2>
-	<br>
-	<h2>喪主氏名</h2>
-	<p2>(姓)</p2>
-	<label> <input type="text" name="bereavementFamilyName"
-				   value="電大" required>
-	</label>
-	<p2>(名)</p2>
-	<label> <input type="text" name="bereavementFirstName"
-				   value="花子" required>
-	</label><br>
-	<h2>住所</h2>
-	<p2>〒</p2>
-	<label> <input type="text" name="postalcode" value="000-000"
-				   required>
-	</label>
-	<p2>(半角数字)</p2>
-	<br> <label> <input type="text" name="address"
-						value="--県--市" required>
-</label><br>
-	<h2>電話番号</h2>
-	<label> <input type="text" name="phonenumber"
-				   value="08000000000" required>
-	</label>
-	<p2>(半角数字)</p2>
-	<br>
-	<br> <input type="submit" name="registration" value="登録">
-	<a href="ReFunnelRegister"></a>
-</form>
-<button type="button" name="back">
-	<a href="OrganizerSelection">戻る</a>
-</button>
+			%>
+		</select>
+		<p2>分</p2>
+		<br>
+		<h2>喪主氏名</h2>
+		<p2>(姓)</p2>
+		<label> <input type="text" name="bereavementFamilyName"
+			value="電大" required>
+		</label>
+		<p2>(名)</p2>
+		<label> <input type="text" name="bereavementFirstName"
+			value="花子" required>
+		</label><br>
+		<h2>住所</h2>
+		<p2>〒</p2>
+		<label> <input type="text" name="postalcode" value="000-000"
+			required>
+		</label>
+		<p2>(半角数字)</p2>
+		<br> <label> <input type="text" name="address"
+			value="--県--市" required>
+		</label><br>
+		<h2>電話番号</h2>
+		<label> <input type="text" name="phonenumber"
+			value="08000000000" required>
+		</label>
+		<p2>(半角数字)</p2>
+		<br> <br> <input type="submit" name="registration"
+			value="登録"> <a href="ReFunnelRegister"></a>
+	</form>
+	<button type="button" name="back">
+		<a href="OrganizerSelection">戻る</a>
+	</button>
 </body>
 </html>
