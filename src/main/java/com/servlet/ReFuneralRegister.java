@@ -22,8 +22,13 @@ public class ReFuneralRegister extends HttpServlet {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		getServletContext().getRequestDispatcher("/reFunnelRegister.jsp").forward(request, response);
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String deceasedFamilyName = "", deceasedFirstName = "", deceasedFullName = "";
 		String deathYear = "", deathMonth = "", deathDay = "", deathDate = "";
@@ -84,14 +89,18 @@ public class ReFuneralRegister extends HttpServlet {
 		organizer.setTel(phonenumber);
 
 		OrganizerDAO.addData(organizer);
+		String message = "";
+		boolean state = true;
 
-		getServletContext().getRequestDispatcher("/reFunnelRegister.jsp").forward(request, response);
-
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		if (deceasedFirstName == null || deceasedFamilyName == null || deathMonth == null || deathYear == null || deathDay == null ||
+		funnelPlace == null || funnelPlaceAddress == null || funnelHour == null || funnelMinute == null || postalcode == null || bereavementFirstName == null
+		|| bereavementFamilyName == null || address == null || phonenumber == null) {
+			message = "入力されていない情報があります";
+			state = false;
+			session.setAttribute("funeralerror", state);
+			session.setAttribute("funeralerrormsg", message);
+			getServletContext().getRequestDispatcher("/organizerSelection.jsp").forward(request, response);
+		}
 		getServletContext().getRequestDispatcher("/reFunnelRegister.jsp").forward(request, response);
 	}
 }
