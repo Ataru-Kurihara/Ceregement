@@ -18,6 +18,12 @@ public class ReParticipantRegister extends HttpServlet {
     public ReParticipantRegister() {super();}
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
+
+
+    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String mailaddress = "";
         String fullname = "", firstname = "", lastname = "";
         String address = "", postalcode = "", place = "";
@@ -56,25 +62,16 @@ public class ReParticipantRegister extends HttpServlet {
         ParticipantDAO.addData(participant);
         String message = "";
         boolean state = true;
+
         if (mailaddress == null || lastname == null || firstname == null || postalcode == null || place == null || tel == null || attendSelection == null || funeralGift == null) {
-            message = "フォーム画面から入力してください";
+            message = "入力されていない情報があります";
             state = false;
-            getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
-        } else if (mailaddress.equals("") || lastname.equals("") || firstname.equals("") || postalcode.equals("") || place.equals("") || tel.equals("") || attendSelection.equals("") || funeralGift.equals("")) {
-            message = "入力されてないところがあります";
-            state = false;
+            session.setAttribute("error", state);
+            session.setAttribute("errormsg", message);
             getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
         }else {
             getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
         }
-        session.setAttribute("error", state);
-        session.setAttribute("errormsg", message);
-
-
-    }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
 
     }
 }
