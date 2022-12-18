@@ -59,8 +59,10 @@ button:hover {
 </head>
 <body>
 	<%
-		if (session.getAttribute("funeralerror") != null && !(Boolean) session.getAttribute("funeralerror")
+		if (request.getAttribute("funeralerror") != null && !(Boolean) request.getAttribute("funeralerror")
 		&& session.getAttribute("funeralerrormsg") != null) {
+			System.out.println(session.getAttribute("funeralerror"));
+			System.out.println(session.getAttribute("funeralerrormsg"));
 			out.println("<p>");
 			out.println(session.getAttribute("funeralerrormsg"));
 			out.println("</p>");
@@ -76,7 +78,7 @@ button:hover {
 	<p>※項目は必須入力です</p>
 	<h2>故人の氏名</h2>
 	<p2>(姓)</p2>
-	<form method="get" action="ReFunnelRegister">
+	<form method="post" action="FunnelRegister">
 		<input type="text" name="deceasedFamilyName" required>
 		<p2>(名)</p2>
 		<input type="text" name="deceasedFirstName"  required>
