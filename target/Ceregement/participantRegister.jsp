@@ -81,24 +81,24 @@
 <h2>※氏名</h2>
 <form method="post" action="ReParticipantRegister">
     <p2>(姓)</p2>
-    <input type="text" name="lastname">
+    <input type="text" name="lastname" required>
     <p2>(名)</p2>
-    <input type="text" name="firstname"><br>
+    <input type="text" name="firstname" required><br>
     <h2>※住所</h2>
     <p2>〒</p2>
-    <input type="text" name="postcode">
+    <input type="text" name="postcode" required>
     <p2>(半角数字)</p2><br>
-    <input type="text" name="address">
+    <input type="text" name="address" required>
     <h2>※電話番号(ハイフン無し)</h2>
-    <input type="text" name="tel">
+    <input type="text" name="tel" required>
     <p2>(半角数字)</p2><br>
     <h2>※参加情報</h2>
-    <input type="radio" name="attendSelection" value="出席"> 出席
-    <input type="radio" name="attendSelection" value="欠席"> 欠席
+    <input type="radio" name="attendSelection" value="出席" required> 出席
+    <input type="radio" name="attendSelection" value="欠席" required> 欠席
     <br>
     <h2>贈り物</h2>
     <br>
-    <input type="text" name="funeralGift">
+    <input type="text" name="funeralGift" required>
     <br>
     <br>
     <input type="submit" name="registration" value="登録">

@@ -81,15 +81,15 @@
     </style>
 </head>
 <body>
-  <h1>選択してください</h1>
-  <button type="button" name="funnelInformation">
-      <a href="FunnelRegister">葬儀の計画</a>
-  </button>
-  <button type="button" name="funnelInformation">
-      <a href="OrganizerReadingSelection">葬儀の閲覧</a>
-  </button>
-  <button type="button" name="funnelInformation">
-      <a href="Login">ログアウト</a>
-  </button>
+<h1>選択してください</h1>
+<button type="button" name="funnelInformation">
+    <a href="FunnelRegister">葬儀の計画</a>
+</button>
+<button type="button" name="funnelInformation">
+    <a href="OrganizerReadingSelection">葬儀の閲覧</a>
+</button>
+<button type="button" name="funnelInformation">
+    <a href="Login">ログアウト</a>
+</button>
 </body>
 </html>

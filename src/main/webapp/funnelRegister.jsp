@@ -59,18 +59,34 @@
 	<title>funnelRegister</title>
 </head>
 <body>
-<h1>葬儀情報を入力してください</h1>
-<p>※項目は必須入力です</p>
-<h2>故人の氏名</h2>
-<form method="get" action="ReFunnelRegister">
+	<%
+		if (request.getAttribute("funeralerror") != null && !(Boolean) request.getAttribute("funeralerror")
+		&& session.getAttribute("funeralerrormsg") != null) {
+			System.out.println(session.getAttribute("funeralerror"));
+			System.out.println(session.getAttribute("funeralerrormsg"));
+			out.println("<p>");
+			out.println(session.getAttribute("funeralerrormsg"));
+			out.println("</p>");
+	%>
+		<script type="text/javascript">
+			const msg = '<%= session.getAttribute("funeralerrormsg")%>';
+			alert(msg)
+		</script>
+	<%
+		}
+	%>
+	<h1>葬儀情報を入力してください</h1>
+	<p>※項目は必須入力です</p>
+	<h2>故人の氏名</h2>
 	<p2>(姓)</p2>
-	<input type="text" name="deceasedFamilyName" required>
-	<p2>(名)</p2>
-	<input type="text" name="deceasedFirstName" value="太郎" required>
-	<br>
-	<h2>命日</h2>
-	<select name="deathYear">
-		<%
+	<form method="post" action="FunnelRegister">
+		<input type="text" name="deceasedFamilyName" required>
+		<p2>(名)</p2>
+		<input type="text" name="deceasedFirstName"  required>
+		<br>
+		<h2>命日</h2>
+		<select name="deathYear" required>
+			<%
 			Calendar calendar = Calendar.getInstance();
 			for (int i = 0; i <= 100; i++) {
 				String year = String.format("%tY", calendar) + "年";
@@ -82,7 +98,7 @@
 		%>
 	</select>
 	<p2>年</p2>
-	<select name="deathMonth">
+	<select name="deathMonth" required>
 		<%
 			for (int i = 1; i <= 12; i++) {
 				String month = String.valueOf(i) + "月";
@@ -93,7 +109,7 @@
 		%>
 	</select>
 	<p2>月</p2>
-	<select name="deathDay">
+	<select name="deathDay" required>
 		<%
 			for (int i = 1; i <= 31; i++) {
 				String day = String.valueOf(i) + "日";
@@ -114,7 +130,7 @@
 	</label><br>
 
 	<h2>葬儀日時</h2>
-	<select name="funnelYear">
+	<select name="funnelYear" required>
 		<%
 			Calendar calendar1 = Calendar.getInstance();
 			for (int i = 0; i <= 100; i++) {
@@ -138,7 +154,7 @@
 		%>
 	</select>
 	<p2>月</p2>
-	<select name="funnelDay">
+	<select name="funnelDay" required>
 		<%
 			for (int i = 1; i <= 31; i++) {
 				String day = String.valueOf(i) + "日";
@@ -149,7 +165,7 @@
 		%>
 	</select>
 	<p2>日</p2>
-	<select name="funnelHour">
+	<select name="funnelHour" required>
 		<%
 			for (int i = 0; i <= 24; i++) {
 				String hour = String.valueOf(i) + "時";
@@ -160,7 +176,7 @@
 		%>
 	</select>
 	<p2>時</p2>
-	<select name="funnelMinute">
+	<select name="funnelMinute" required>
 		<%
 			for (int i = 0; i <= 59; i++) {
 				String minute = String.valueOf(i) + "分";
