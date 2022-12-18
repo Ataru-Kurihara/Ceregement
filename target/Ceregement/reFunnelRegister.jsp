@@ -19,9 +19,9 @@
             text-align: center;
         }
 
-        a {
+        button {
             margin: 25% auto;
-
+            font-size: 250%;
             width: 200px;
             height: 60px;
             border: 2px solid #000;
@@ -31,9 +31,13 @@
             box-shadow: 4px 4px 0 #000;
         }
 
-        a:hover {
+        button:hover {
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
+        }
+
+        h2{
+            border: 2px #808080 solid;
         }
 
 

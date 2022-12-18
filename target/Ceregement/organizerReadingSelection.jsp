@@ -70,6 +70,13 @@ a {
 	-webkit-box-shadow: -10px -4px 0 #000;
 	box-shadow: -10px -4px 0 #000;
 }
+
+p{
+	border: 2px red solid;
+	font-weight: bold;
+	font-size: 300%;
+	color: red;
+}
 </style>
 
 </head>
