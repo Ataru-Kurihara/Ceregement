@@ -91,11 +91,25 @@ a {
 			out.println("<p>");
 			out.println(request.getAttribute("errorOrganizer"));
 			out.println("</p>");
+			%>
+		<script type="text/javascript">
+			const msg = '<%= request.getAttribute("errorOrganizer")%>';
+			alert(msg)
+		</script>
+	<%
 		}
+	%>
+	<%
 		if (session.getAttribute("participant") != null && !(Boolean) session.getAttribute("participant") && request.getAttribute("errorParticipant") != null) {
 			out.println("<p>");
 			out.println(request.getAttribute("errorParticipant"));
 			out.println("<p>");
+			%>
+		<script type="text/javascript">
+			const msg = '<%= request.getAttribute("errorParticipant")%>';
+			alert(msg)
+		</script>
+	<%
 		}
 	%>
 </body>

@@ -18,7 +18,6 @@ public class FuneralRegister extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		getServletContext().getRequestDispatcher("/funnelRegister.jsp").forward(request, response);
 	}

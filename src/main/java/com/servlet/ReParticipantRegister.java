@@ -54,16 +54,21 @@ public class ReParticipantRegister extends HttpServlet {
         participant.setGift(funeralGift);
         participant.setId(id);
         ParticipantDAO.addData(participant);
-//        String message = null;
-//        if (mailaddress == null || lastname == null || firstname == null || postalcode == null || place == null || tel == null || attendSelection == null || funeralGift == null) {
-//            message = "フォーム画面から入力してください";
-//            request.setAttribute("errormsg", message);
-//        } else if (mailaddress.equals("") || lastname.equals("") || firstname.equals("") || postalcode.equals("") || place.equals("") || tel.equals("") || attendSelection.equals("") || funeralGift.equals("")) {
-//            message = "入力されてないところがあります";
-//            request.setAttribute("errormsg", message);
-//        }else {
-//            getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
-//        }
+        String message = "";
+        boolean state = true;
+        if (mailaddress == null || lastname == null || firstname == null || postalcode == null || place == null || tel == null || attendSelection == null || funeralGift == null) {
+            message = "フォーム画面から入力してください";
+            state = false;
+            getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
+        } else if (mailaddress.equals("") || lastname.equals("") || firstname.equals("") || postalcode.equals("") || place.equals("") || tel.equals("") || attendSelection.equals("") || funeralGift.equals("")) {
+            message = "入力されてないところがあります";
+            state = false;
+            getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
+        }else {
+            getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
+        }
+        session.setAttribute("error", state);
+        session.setAttribute("errormsg", message);
 
 
     }
