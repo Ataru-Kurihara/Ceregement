@@ -52,12 +52,18 @@ button:hover {
 		あなたのidは:<%=id%>です
 	</p>
 	<%
-	if (session.getAttribute("pass") != null && !(Boolean) session.getAttribute("pass")
-			&& request.getAttribute("passError") != null) {
-		out.println("<p>");
-		out.println(request.getAttribute("passError"));
-		out.println("</p>");
-	}
+		if (session.getAttribute("pass") != null && !(Boolean) session.getAttribute("pass")
+				&& request.getAttribute("passError") != null) {
+			out.println("<p>");
+			out.println(request.getAttribute("passError"));
+			out.println("</p>");
+	%>
+		<script type="text/javascript">
+			const msg = '<%= request.getAttribute("passError")%>';
+			alert(msg)
+		</script>
+	<%
+		}
 	%>
 	<form action="PassRegister" method="post">
 		<dl>

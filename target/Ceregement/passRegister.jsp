@@ -22,7 +22,6 @@ a {
 	font-size: 250%;
 }
 
-<<<<<<< HEAD
 button {
 	width: 200px;
 	height: 60px;
@@ -38,19 +37,6 @@ button:hover {
 	box-shadow: -10px -4px 0 #000;
 }
 </style>
-=======
-        button:hover {
-            -webkit-box-shadow: -10px -4px 0 #000;
-            box-shadow: -10px -4px 0 #000;
-        }
-		p{
-			border: 2px red solid;
-			font-weight: bold;
-			font-size: 300%;
-			color: red;
-		}
-    </style>
->>>>>>> master
 
 <title>passRegister</title>
 
@@ -65,34 +51,25 @@ button:hover {
 	<p>
 		あなたのidは:<%=id%>です
 	</p>
-<<<<<<< HEAD
 	<%
-	if (session.getAttribute("pass") != null && !(Boolean) session.getAttribute("pass")
-			&& request.getAttribute("passError") != null) {
-		out.println("<p>");
-		out.println(request.getAttribute("passError"));
-		out.println("</p>");
-	}
+		if (session.getAttribute("pass") != null && !(Boolean) session.getAttribute("pass")
+				&& request.getAttribute("passError") != null) {
+			out.println("<p>");
+			out.println(request.getAttribute("passError"));
+			out.println("</p>");
 	%>
-=======
-		<%
-			if (session.getAttribute("email") != null && !(Boolean) session.getAttribute("email")
-					&& request.getAttribute("error") != null) {
-		%>
-		<p>
-			<%
-				out.println(request.getAttribute("error"));
-			%>
-		</p>
-		<%
-			}
-		%>
-	</h1>
->>>>>>> master
+		<script type="text/javascript">
+			const msg = '<%= request.getAttribute("passError")%>';
+			alert(msg)
+		</script>
+	<%
+		}
+	%>
 	<form action="PassRegister" method="post">
 		<dl>
+			<dt>パスワード</dt>
 			<dd>
-			<dt>パスワード <input type="password" name="password" /></dt>
+				<input type="password" name="password" />
 			</dd>
 		</dl>
 		<button type="submit" name="passRegister">登録</button>

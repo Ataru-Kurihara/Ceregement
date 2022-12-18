@@ -116,10 +116,10 @@ button:hover {
 		<h2>葬儀日時</h2>
 		<select name="funnelYear">
 			<%
-			Calendar calendar1 = Calendar.getInstance();
-			for (int i = 0; i <= 100; i++) {
-				String year = String.format("%tY", calendar1) + "年";
-				calendar1.add(Calendar.YEAR, -1);
+				Calendar calendar1 = Calendar.getInstance();
+				for (int i = 0; i <= 100; i++) {
+					String year = String.format("%tY", calendar1) + "年";
+					calendar1.add(Calendar.YEAR, -1);
 			%>
 			<option value="<%=year%>"><%=year%></option>
 			<%
