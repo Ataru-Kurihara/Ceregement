@@ -18,54 +18,58 @@ import com.model.user.UserDAO;
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    public Login() {
-        super();
-    }
+	private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
-    }
+	public Login() {
+		super();
+	}
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        request.setCharacterEncoding("UTF-8");
-        User user = new User();
-        UserDAO dao = new UserDAO();
-//        user.setSecretId(request.getParameter("secretId"));
-        user.setMailAddress(request.getParameter("mailAddress"));
-        String password = request.getParameter("passWord");
-        String secretId = UserDAO.getSecretIdRegNumber(user, "secretid");
-        String passwordHash = DigestUtils.sha256Hex(password + secretId);
-        user.setPassword(passwordHash);
-        String regNumber = UserDAO.getSecretIdRegNumber(user, "regnumber");
-        System.out.println(password);
-        System.out.println(secretId);
-        System.out.println(regNumber);
-        boolean result = false;
-        try {
-            result = UserDAO.check(user);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        System.out.println(result);
-        HttpSession session = request.getSession();
-        session.setAttribute("login", result);
-        session.setAttribute("mailAddress", user.getMailAddress());
-        session.setAttribute("id", UserDAO.getSecretIdRegNumber(user, "id"));
-        session.setAttribute("regnumber", UserDAO.getSecretIdRegNumber(user, "regnumber"));
-        if (result) {
-            session.setAttribute("user", user);
-//            System.out.println(regNumber);
-            if (Objects.equals(regNumber, "0")) {
-                System.out.println(regNumber);
-                response.sendRedirect("/Ceregement/OrganizerSelection");
-//               getServletContext().getRequestDispatcher("/organizerSelection.jsp").forward(request, response);
-            }if (Objects.equals(regNumber, "1")){
-                System.out.println(regNumber);
-                response.sendRedirect("/Ceregement/ParticipantSelection");
-            }
-        } else {
-            getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
-        }
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		User user = new User();
+		UserDAO dao = new UserDAO();
+		//        user.setSecretId(request.getParameter("secretId"));
+		user.setMailAddress(request.getParameter("mailAddress"));
+		String password = request.getParameter("passWord");
+		String secretId = UserDAO.getSecretIdRegNumber(user, "secretid");
+		String passwordHash = DigestUtils.sha256Hex(password + secretId);
+		user.setPassword(passwordHash);
+		String regNumber = UserDAO.getSecretIdRegNumber(user, "regnumber");
+		System.out.println(password);
+		System.out.println(secretId);
+		System.out.println(regNumber);
+		boolean result = false;
+		try {
+			result = UserDAO.check(user);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(result);
+		HttpSession session = request.getSession();
+		session.setAttribute("login", result);
+		session.setAttribute("mailAddress", user.getMailAddress());
+		session.setAttribute("id", UserDAO.getSecretIdRegNumber(user, "id"));
+		session.setAttribute("regnumber", UserDAO.getSecretIdRegNumber(user, "regnumber"));
+		if (result) {
+			session.setAttribute("user", user);
+			//            System.out.println(regNumber);
+			if (Objects.equals(regNumber, "0")) {
+				System.out.println(regNumber);
+				response.sendRedirect("/Ceregement/OrganizerSelection");
+				//				getServletContext().getRequestDispatcher("/organizerSelection.jsp").forward(request, response);
+			}
+			if (Objects.equals(regNumber, "1")) {
+				System.out.println(regNumber);
+				response.sendRedirect("/Ceregement/ParticipantSelection");
+			}
+		} else {
+			getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+		}
+	}
 }

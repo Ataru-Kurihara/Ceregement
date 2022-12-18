@@ -1,10 +1,5 @@
 package com.servlet;
 
-import com.model.hall.Hall;
-import com.model.hall.HallDAO;
-import com.model.organizer.Organizer;
-import com.model.organizer.OrganizerDAO;
-
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -13,6 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.model.hall.Hall;
+import com.model.hall.HallDAO;
+import com.model.organizer.Organizer;
+import com.model.organizer.OrganizerDAO;
 
 @WebServlet("/FunnelRegister")
 public class FuneralRegister extends HttpServlet {
@@ -92,16 +92,26 @@ public class FuneralRegister extends HttpServlet {
 		OrganizerDAO.addData(organizer);
 		String message = "";
 		boolean state = true;
-		if (deceasedFirstName == null || deceasedFamilyName == null || deathMonth == null || deathYear == null || deathDay == null ||
-				funnelPlace == null || funnelPlaceAddress == null || funnelHour == null || funnelMinute == null || postalcode == null || bereavementFirstName == null
-				|| bereavementFamilyName == null || address == null || phonenumber == null) {
+		session.setAttribute("funeralerror", state);
+		if ((deceasedFirstName == null || deceasedFamilyName == null || deathMonth == null || deathYear == null
+				|| deathDay == null ||
+				funnelPlace == null || funnelPlaceAddress == null || funnelHour == null || funnelMinute == null
+				|| postalcode == null || bereavementFirstName == null
+				|| bereavementFamilyName == null || address == null || phonenumber == null)
+				|| (deceasedFirstName.isEmpty() || deceasedFamilyName.isEmpty() || deathMonth.isEmpty()
+						|| deathYear.isEmpty()
+						|| deathDay.isEmpty() ||
+						funnelPlace.isEmpty() || funnelPlaceAddress.isEmpty() || funnelHour.isEmpty()
+						|| funnelMinute.isEmpty()
+						|| postalcode.isEmpty() || bereavementFirstName.isEmpty()
+						|| bereavementFamilyName.isEmpty() || address.isEmpty() || phonenumber.isEmpty())) {
 			message = "入力されていない情報があります";
 			state = false;
+			session.setAttribute("funeralerror", state);
+			request.setAttribute("funeralerrormsg", message);
 			getServletContext().getRequestDispatcher("/funnelRegister.jsp").forward(request, response);
 		} else {
 			getServletContext().getRequestDispatcher("/reFunnelRegister.jsp").forward(request, response);
 		}
-		session.setAttribute("funeralerror", state);
-		request.setAttribute("funeralerrormsg", message);
 	}
 }
