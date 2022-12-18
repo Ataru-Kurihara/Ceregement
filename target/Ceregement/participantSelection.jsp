@@ -48,5 +48,20 @@
 <button type="button" name="back">
     <a href="Login">ログアウト</a>
 </button>
+<%
+    if (session.getAttribute("participantRegister") != null
+            && !(Boolean) session.getAttribute("participantRegister")
+            && request.getAttribute("errorParticipantRegistermsg") != null) {
+        out.println("<p>");
+        out.println(request.getAttribute("errorParticipantRegistermsg"));
+        out.println("</p>");
+%>
+<script type="text/javascript">
+    const msg = '<%= request.getAttribute("errorParticipantRegistermsg")%>';
+    alert(msg)
+</script>
+<%
+    }
+%>
 </body>
 </html>

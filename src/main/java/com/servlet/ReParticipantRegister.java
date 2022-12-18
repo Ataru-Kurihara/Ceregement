@@ -24,54 +24,6 @@ public class ReParticipantRegister extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String mailaddress = "";
-        String fullname = "", firstname = "", lastname = "";
-        String address = "", postalcode = "", place = "";
-        String tel = "";
-        String attendSelection = "";
-        String funeralGift = "";
-        HttpSession session = request.getSession();
-        mailaddress = session.getAttribute("mailAddress").toString();
-        lastname = request.getParameter("lastname");
-        firstname = request.getParameter("firstname");
-        fullname = lastname + " " + firstname;
-        postalcode = request.getParameter("postcode");
-        place = request.getParameter("address");
-        address = postalcode + " " + place;
-        tel = request.getParameter("tel");
-        attendSelection = request.getParameter("attendSelection");
-        funeralGift = request.getParameter("funeralGift");
-
-
-        request.setAttribute("mailaddress", mailaddress);
-        request.setAttribute("fullname", fullname);
-        request.setAttribute("address", address);
-        request.setAttribute("tel", tel);
-        request.setAttribute("attendSelection", attendSelection);
-        request.setAttribute("funeralGift", funeralGift);
-
-        Participant participant = new Participant();
-        String id = session.getAttribute("id").toString();
-        participant.setMailAddress(mailaddress);
-        participant.setFullName(fullname);
-        participant.setDetailAddress(address);
-        participant.setTel(tel);
-        participant.setAttend(attendSelection);
-        participant.setGift(funeralGift);
-        participant.setId(id);
-        ParticipantDAO.addData(participant);
-        String message = "";
-        boolean state = true;
-
-        if (mailaddress == null || lastname == null || firstname == null || postalcode == null || place == null || tel == null || attendSelection == null || funeralGift == null) {
-            message = "入力されていない情報があります";
-            state = false;
-            session.setAttribute("error", state);
-            session.setAttribute("errormsg", message);
-            getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
-        }else {
-            getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
-        }
-
+        getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
     }
 }

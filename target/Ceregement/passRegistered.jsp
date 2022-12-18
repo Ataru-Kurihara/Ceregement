@@ -3,61 +3,67 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ page import="com.model.user.User"%>
 <%
-String email = ((User) session.getAttribute("newUser")).getMailAddress();
-String password = ((User) session.getAttribute("newUser")).getPassword();
+	String email = ((User) session.getAttribute("newUser")).getMailAddress();
+	String password = ((User) session.getAttribute("newUser")).getPassword();
 %>
 <html>
 
 <head>
 
 
-  <style>
-    body {
-      background: linear-gradient(white, mediumpurple);
-      background-size: cover;
-      font-family: sans-serif;
-      text-align: center;
-    }
+	<style>
+		body {
+			background: linear-gradient(white, mediumpurple);
+			background-size: cover;
+			font-family: sans-serif;
+			text-align: center;
+		}
 
-    .button {
-      margin: 25% auto;
+		.button {
+			margin: 25% auto;
+			font-size: 200%;
+			width: 250px;
+			height: 60px;
+			border: 2px solid #000;
+			border-radius: 0;
+			background: #fff;
+			-webkit-box-shadow: 4px 4px 0 #000;
+			box-shadow: 4px 4px 0 #000;
+		}
 
-      width: 200px;
-      height: 60px;
-      border: 2px solid #000;
-      border-radius: 0;
-      background: #fff;
-      -webkit-box-shadow: 4px 4px 0 #000;
-      box-shadow: 4px 4px 0 #000;
-    }
-
-    .button:hover {
-      -webkit-box-shadow: -10px -4px 0 #000;
-      box-shadow: -10px -4px 0 #000;
-    }
+		.button:hover {
+			-webkit-box-shadow: -10px -4px 0 #000;
+			box-shadow: -10px -4px 0 #000;
+		}
+		h1{
+			font-size: 300%;
+		}
+		p{
+			font-size: 200%;
+		}
 
 
-  </style>
+	</style>
 
-    <title>passRegistered</title>
+	<title>passRegistered</title>
 </head>
 
 <body>
-	<h1>パスワード登録完了画面</h1>
-	<br>
-	<p>
-		パスワードを登録しました<br>
-	</p>
-	<p>トップページに戻り、ログインを行ってください。</p>
-	<p>
-		ID(メールアドレス):<%=email%>
-	</p>
-	<p>
-		パスワード:<%=password%>
-	</p>
-	<div class="button">
-		<a href="Login">ログイン画面へ</a>
-	</div>
+<h1>パスワード登録完了画面</h1>
+<br>
+<p>
+	パスワードを登録しました<br>
+</p>
+<p>トップページに戻り、ログインを行ってください。</p>
+<p>
+	ID(メールアドレス):<%=email%>
+</p>
+<p>
+	パスワード:<%=password%>
+</p>
+<div class="button">
+	<a href="Login">ログイン画面へ</a>
+</div>
 </body>
 
 </html>

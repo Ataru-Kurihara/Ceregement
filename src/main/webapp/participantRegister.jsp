@@ -56,24 +56,11 @@
     <title>participantRegister</title>
 </head>
 <body>
-    <%
-        if (session.getAttribute("error") != null && !(Boolean) session.getAttribute("error") && session.getAttribute("error") != null) {
-            out.println("<p>");
-            out.println(session.getAttribute("errormsg"));
-            out.println("</p>");
-    %>
-    <script type="text/javascript">
-        const msg = '<%= session.getAttribute("errormsg")%>';
-        alert(msg)
-    </script>
-    <%
-        }
-    %>
     <h1>参列者情報を入力してください</h1>
     <p1>※項目は必須入力です</p1>
     <h2>※氏名</h2>
     <p2>(姓)</p2>
-    <form method="post" action="ReParticipantRegister">
+    <form method="post" action="ParticipantRegister">
         <input type="text" name="lastname">
         <p2>(名)</p2>
         <input type="text" name="firstname"><br>

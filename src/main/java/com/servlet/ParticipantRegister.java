@@ -19,7 +19,52 @@ public class ParticipantRegister extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
+        String mailaddress = "";
+        String fullname = "", firstname = "", lastname = "";
+        String address = "", postalcode = "", place = "";
+        String tel = "";
+        String attendSelection = "";
+        String funeralGift = "";
+        HttpSession session = request.getSession();
+        mailaddress = session.getAttribute("mailAddress").toString();
+        lastname = request.getParameter("lastname");
+        firstname = request.getParameter("firstname");
+        fullname = lastname + " " + firstname;
+        postalcode = request.getParameter("postcode");
+        place = request.getParameter("address");
+        address = postalcode + " " + place;
+        tel = request.getParameter("tel");
+        attendSelection = request.getParameter("attendSelection");
+        funeralGift = request.getParameter("funeralGift");
+
+
+        request.setAttribute("mailaddress", mailaddress);
+        request.setAttribute("fullname", fullname);
+        request.setAttribute("address", address);
+        request.setAttribute("tel", tel);
+        request.setAttribute("attendSelection", attendSelection);
+        request.setAttribute("funeralGift", funeralGift);
+
+        Participant participant = new Participant();
+        String id = session.getAttribute("id").toString();
+        participant.setMailAddress(mailaddress);
+        participant.setFullName(fullname);
+        participant.setDetailAddress(address);
+        participant.setTel(tel);
+        participant.setAttend(attendSelection);
+        participant.setGift(funeralGift);
+        participant.setId(id);
+        ParticipantDAO.addData(participant);
+        session.setAttribute("participantRegister", true);
+        if (mailaddress == null || firstname == null || lastname == null||
+                 postalcode == null || place == null
+                || tel == null || attendSelection == null || funeralGift == null) {
+            request.setAttribute("errorParticipantRegistermsg", "入力されていない情報があります");
+            session.setAttribute("participantRegister", false);
+            getServletContext().getRequestDispatcher("/participantSelection.jsp").forward(request, response);
+        }else {
+            getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
+        }
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
