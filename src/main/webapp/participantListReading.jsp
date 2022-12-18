@@ -87,9 +87,9 @@
     <c:forEach var="list" items="${lists}">
         <tr>
             <c:forEach var="data" items="${list}">
-                    <th>
-                        <c:out value="${data}"/>
-                    </th>
+                <th>
+                    <c:out value="${data}"/>
+                </th>
             </c:forEach>
         </tr>
     </c:forEach>
@@ -97,23 +97,23 @@
 
 
 
-<%--    <tr>--%>
-<%--        <c:forEach var="name" items="${nameList}">--%>
-<%--            <td><c:out value="${name}" /></td>--%>
-<%--        </c:forEach>--%>
-<%--        <c:forEach var="address" items="${addressList}">--%>
-<%--            <td><c:out value="${address}" /></td>--%>
-<%--        </c:forEach>--%>
-<%--    </tr>--%>
-<%--        <c:forEach var="tell" items="${tellList}">--%>
-<%--            <th><c:out value="${tell}" /></th>--%>
-<%--        </c:forEach>--%>
-<%--        <c:forEach var="attend" items="${attendList}">--%>
-<%--            <th><c:out value="${attend}" /></th>--%>
-<%--        </c:forEach>--%>
-<%--        <c:forEach var="gift" items="${giftList}">--%>
-<%--            <th><c:out value="${gift}" /></th>--%>
-<%--        </c:forEach>--%>
+    <%--    <tr>--%>
+    <%--        <c:forEach var="name" items="${nameList}">--%>
+    <%--            <td><c:out value="${name}" /></td>--%>
+    <%--        </c:forEach>--%>
+    <%--        <c:forEach var="address" items="${addressList}">--%>
+    <%--            <td><c:out value="${address}" /></td>--%>
+    <%--        </c:forEach>--%>
+    <%--    </tr>--%>
+    <%--        <c:forEach var="tell" items="${tellList}">--%>
+    <%--            <th><c:out value="${tell}" /></th>--%>
+    <%--        </c:forEach>--%>
+    <%--        <c:forEach var="attend" items="${attendList}">--%>
+    <%--            <th><c:out value="${attend}" /></th>--%>
+    <%--        </c:forEach>--%>
+    <%--        <c:forEach var="gift" items="${giftList}">--%>
+    <%--            <th><c:out value="${gift}" /></th>--%>
+    <%--        </c:forEach>--%>
 
 </table>
 <button type="button" name="back">

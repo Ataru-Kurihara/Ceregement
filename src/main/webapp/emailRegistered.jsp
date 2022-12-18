@@ -4,43 +4,48 @@
 <html>
 <head>
 
-<style>
-body {
-	background: linear-gradient(white, mediumpurple);
-	background-size: cover;
-	font-family: sans-serif;
-	text-align: center;
-}
+	<style>
+		body {
+			background: linear-gradient(white, mediumpurple);
+			background-size: cover;
+			font-family: sans-serif;
+			text-align: center;
+		}
+		h1{
+			font-size: 300%;
+		}
 
-a {
-	font-size: 250%;
-}
+		p {
+			font-size: 200%;
+		}
 
-button {
-	margin: 25% auto;
-	width: 200px;
-	height: 60px;
-	border: 2px solid #000;
-	border-radius: 0;
-	background: #fff;
-	-webkit-box-shadow: 4px 4px 0 #000;
-	box-shadow: 4px 4px 0 #000;
-}
+		a {
+			font-size: 250%;
+			margin: 25% auto;
+			width: 200px;
+			height: 60px;
+			border: 2px solid #000;
+			border-radius: 0;
+			background: #fff;
+			-webkit-box-shadow: 4px 4px 0 #000;
+			box-shadow: 4px 4px 0 #000;
+		}
 
-button:hover {
-	-webkit-box-shadow: -10px -4px 0 #000;
-	box-shadow: -10px -4px 0 #000;
-}
-</style>
-<head>
-<title>emailRegistered</title>
-</head>
+		a:hover {
+			-webkit-box-shadow: -10px -4px 0 #000;
+			box-shadow: -10px -4px 0 #000;
+		}
+	</style>
+	<head>
+		<title>emailRegistered</title>
+	</head>
 
 <body>
-	<p>
-		メールが送信されました。<br> メールに記載のURLからログインし、<br> 登録を完了させてください。
-	</p>
-	<a href="EmailRegister">メールアドレス入力画面へ</a>
+<h1>メールが送信されました</h1>
+<br>
+<p>メールに記載のURLからログインし、登録を完了させてください。</p>
+<p>メールが受信できない場合は、再度メールアドレス入力をしてください。</p>
+<a href="EmailRegister">メールアドレス入力画面へ</a>
 </body>
 
 </html>

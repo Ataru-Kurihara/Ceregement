@@ -19,9 +19,12 @@
       text-align: center;
     }
 
-    a{
-      margin: 25% auto;
+    h2 {
+      border: 2px #808080 solid;
+    }
 
+    button {
+      font-size: 250%;
       width: 200px;
       height: 60px;
       border: 2px solid #000;
@@ -31,7 +34,7 @@
       box-shadow: 4px 4px 0 #000;
     }
 
-    a:hover {
+    button:hover {
       -webkit-box-shadow: -10px -4px 0 #000;
       box-shadow: -10px -4px 0 #000;
     }
@@ -39,7 +42,7 @@
 
   </style>
 
-    <title>reParticipantRegister</title>
+  <title>reParticipantRegister</title>
 </head>
 <body>
 <%--  <%--%>
@@ -57,21 +60,30 @@
 <%--  <script type="text/javascript">--%>
 <%--    alert(${msg})--%>
 <%--  </script>--%>
-  <h1>登録内容確認画面</h1>
-  <p1>以下の内容でよろしければ、「登録する」ボタンを押してください</p1>
+<h1>登録内容確認画面</h1>
+<p1>以下の内容でよろしければ、「登録する」ボタンを押してください</p1>
 <%--  cssで枠組みお願いします--%>
-  <div class="box">　
-    <p2>氏名: <%= request.getAttribute("fullname")%></p2><br>　
-    <p2>住所: 〒<%= request.getAttribute("address")%></p2><br>
-    <p2>電話番号: <%= request.getAttribute("tel")%></p2><br>
-    <p2>参加情報: <%= request.getAttribute("attendSelection")%></p2><br>
-    <p2>贈り物: <%= request.getAttribute("funeralGift")%></p2>
-  </div>
-  <button type="button" name="revision">
-      <a href="ParticipantRegister">修正</a>
-  </button>
-  <button type="button" name="registration">
-      <a href="ParticipantRegistered">登録</a>
-  </button>
+<div class="box">　
+  <h2>氏名: <%= request.getAttribute("fullname")%>
+  </h2>
+  <br>　
+  <h2>住所: 〒<%= request.getAttribute("address")%>
+  </h2>
+  <br>
+  <h2>電話番号: <%= request.getAttribute("tel")%>
+  </h2>
+  <br>
+  <h2>参加情報: <%= request.getAttribute("attendSelection")%>
+  </h2>
+  <br>
+  <h2>贈り物: <%= request.getAttribute("funeralGift")%>
+  </h2>
+</div>
+<button type="button" name="revision">
+  <a href="ParticipantRegister">修正</a>
+</button>
+<button type="button" name="registration">
+  <a href="ParticipantRegistered">登録</a>
+</button>
 </body>
 </html>

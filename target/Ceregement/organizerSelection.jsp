@@ -61,7 +61,7 @@
             font-size: 250%;
         }
 
-        .button {
+        button {
             margin: auto;
             width: 200px;
             height: 60px;
@@ -72,7 +72,7 @@
             box-shadow: 4px 4px 0 #000;
         }
 
-        .button:hover {
+        button:hover {
             -webkit-box-shadow: -10px -4px 0 #000;
             box-shadow: -10px -4px 0 #000;
         }
