@@ -58,6 +58,9 @@
             font-size: 300%;
             color: red;
         }
+        p1{
+            color: red;
+        }
     </style>
 
     <title>participantRegister</title>

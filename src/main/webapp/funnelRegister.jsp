@@ -20,6 +20,7 @@
 			font-size: 300%;
 		}
 		p1{
+			color: red;
 			font-size: 200%;
 		}
 		h2 {
@@ -87,7 +88,6 @@
 	}
 %>
 <h1>葬儀情報を入力してください</h1>
-<p1>※項目は必須入力です</p1>
 <h2>故人の氏名</h2>
 <form method="post" action="FunnelRegister">
 	<form method="post" action="FunnelRegister">
