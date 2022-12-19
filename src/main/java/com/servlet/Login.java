@@ -61,8 +61,8 @@ public class Login extends HttpServlet {
 			//            System.out.println(regNumber);
 			if (Objects.equals(regNumber, "0")) {
 				System.out.println(regNumber);
-				//				response.sendRedirect("/Ceregement/OrganizerSelection");
-				getServletContext().getRequestDispatcher("/organizerSelection.jsp").forward(request, response);
+				response.sendRedirect("/Ceregement/OrganizerSelection");
+				//				getServletContext().getRequestDispatcher("/organizerSelection.jsp").forward(request, response);
 			}
 			if (Objects.equals(regNumber, "1")) {
 				System.out.println(regNumber);
