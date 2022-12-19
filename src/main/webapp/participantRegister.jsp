@@ -82,16 +82,16 @@
 <h2>※氏名</h2>
 <form method="post" action="ParticipantRegister">
     <p2>(姓)</p2>
-    <input type="text" name="lastname">
+    <input type="text" name="lastname" maxlength="64">
     <p2>(名)</p2>
-    <input type="text" name="firstname"><br>
+    <input type="text" name="firstname" maxlength="64"><br>
     <h2>※住所</h2>
     <p2>〒</p2>
-    <input type="text" name="postcode">
+    <input type="text" name="postcode" maxlength="64">
     <p2>(半角数字)</p2><br>
-    <input type="text" name="address">
+    <input type="text" name="address" maxlength="64">
     <h2>※電話番号(ハイフン無し)</h2>
-    <input type="text" name="tel">
+    <input type="text" name="tel" maxlength="64">
     <p2>(半角数字)</p2><br>
     <h2>※参加情報</h2>
     <input type="radio" name="attendSelection" value="出席"> 出席
@@ -99,7 +99,7 @@
     <br>
     <h2>贈り物</h2>
     <br>
-    <input type="text" name="funeralGift">
+    <input type="text" name="funeralGift" maxlength="64">
     <br>
     <br>
     <input type="submit" name="registration" value="登録">

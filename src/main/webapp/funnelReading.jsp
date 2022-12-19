@@ -106,11 +106,11 @@
 	<%
 		if (Objects.equals(regnumber, "0")) {
 	%>
-	<a href="OrganizerSelection">戻る</a>
+				<a href="OrganizerSelection">戻る</a>
 	<%
 	} else {
 	%>
-	<a href="ParticipantSelection">戻る</a>
+				<a href="ParticipantSelection">戻る</a>
 	<%
 		}
 	%>

@@ -30,7 +30,7 @@ public class FuneralReading extends HttpServlet {
 		} else {
 			session.setAttribute("organizer", false);
 			request.setAttribute("errorOrganizer", "葬儀情報を登録してください。");
-			getServletContext().getRequestDispatcher("/organizerReadingSelection.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/participantSelection.jsp").forward(request, response);
 		}
 
 	}

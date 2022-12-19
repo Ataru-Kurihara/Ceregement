@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
 		UserDAO dao = new UserDAO();
 		//        user.setSecretId(request.getParameter("secretId"));
 		user.setMailAddress(request.getParameter("mailAddress"));
-		String password = request.getParameter("passWord");
+		String password = request.getParameter("password");
 		String secretId = UserDAO.getSecretIdRegNumber(user, "secretid");
 		String passwordHash = DigestUtils.sha256Hex(password + secretId);
 		user.setPassword(passwordHash);
