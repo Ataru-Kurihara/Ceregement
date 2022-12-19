@@ -115,8 +115,10 @@
 	<h2>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</h2>
 </ul>
 <form action="EmailRegister" method="post">
+	<div>
 	<h3>ID(メールアドレス)</h3>
 	<input type="text" name="email" placeholder="xxx@example.com" maxlength="64">
+	</div>
 	<br>
 	<br>
 	<button type="submit" name="EmailRegistered">送信</button>
