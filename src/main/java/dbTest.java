@@ -26,11 +26,11 @@ public class dbTest {
         Organizer organizer = new Organizer();
         Participant participant = new Participant();
         User user = new User();
-        int index = ParticipantDAO.getMailAddress().size();
+        int index = ParticipantDAO.getMailAddress("22222").size();
         List<List<String>> lists = new ArrayList<>();
 
         System.out.println(index);
-        for (String mailaddress: ParticipantDAO.getMailAddress()) {
+        for (String mailaddress: ParticipantDAO.getMailAddress("22222")) {
             System.out.println(ParticipantDAO.getData(mailaddress, participant));
             lists.add(ParticipantDAO.getData(mailaddress, participant));
         }
