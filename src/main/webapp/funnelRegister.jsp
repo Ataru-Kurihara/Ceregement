@@ -63,15 +63,12 @@ button:hover {
 	<%
 	if (session.getAttribute("funeralerror") != null && !(Boolean) session.getAttribute("funeralerror")
 			&& request.getAttribute("funeralerrormsg") != null) {
-		System.out.println(session.getAttribute("funeralerror"));
-		System.out.println(request.getAttribute("funeralerrormsg"));
 		out.println("<p>");
 		out.println(request.getAttribute("funeralerrormsg"));
 		out.println("</p>");
 	%>
 	<script type="text/javascript">
-			const msg = '<%=request.getAttribute("funeralerrormsg")%>
-		';
+			const msg = '<%=request.getAttribute("funeralerrormsg")%>';
 		alert(msg)
 	</script>
 	<%
@@ -82,11 +79,11 @@ button:hover {
 	<h2>故人の氏名</h2>
 	<p2>(姓)</p2>
 	<form method="post" action="FunnelRegister">
-		<input type="text" name="deceasedFamilyName" required>
+		<input type="text" name="deceasedFamilyName">
 		<p2>(名)</p2>
-		<input type="text" name="deceasedFirstName" required> <br>
+		<input type="text" name="deceasedFirstName"> <br>
 		<h2>命日</h2>
-		<select name="deathYear" required>
+		<select name="deathYear">
 			<%
 			Calendar calendar = Calendar.getInstance();
 			for (int i = 0; i <= 100; i++) {
@@ -99,7 +96,7 @@ button:hover {
 			%>
 		</select>
 		<p2>年</p2>
-		<select name="deathMonth" required>
+		<select name="deathMonth">
 			<%
 			for (int i = 1; i <= 12; i++) {
 				String month = String.valueOf(i) + "月";
@@ -110,7 +107,7 @@ button:hover {
 			%>
 		</select>
 		<p2>月</p2>
-		<select name="deathDay" required>
+		<select name="deathDay">
 			<%
 			for (int i = 1; i <= 31; i++) {
 				String day = String.valueOf(i) + "日";
@@ -122,16 +119,15 @@ button:hover {
 		</select>
 		<p2>日</p2>
 		<h2>葬儀会場名</h2>
-		<label> <input type="text" name="funnelPlace" value="会場名"
-			required>
+		<label> <input type="text" name="funnelPlace" value="会場名">
 		</label><br>
 		<h2>葬儀会場住所</h2>
 		<label> <input type="text" name="funnelPlaceAddress"
-			value="--県--市" required>
+			value="--県--市">
 		</label><br>
 
 		<h2>葬儀日時</h2>
-		<select name="funnelYear" required>
+		<select name="funnelYear">
 			<%
 			Calendar calendar1 = Calendar.getInstance();
 			for (int i = 0; i <= 100; i++) {
@@ -155,7 +151,7 @@ button:hover {
 			%>
 		</select>
 		<p2>月</p2>
-		<select name="funnelDay" required>
+		<select name="funnelDay">
 			<%
 			for (int i = 1; i <= 31; i++) {
 				String day = String.valueOf(i) + "日";
@@ -166,7 +162,7 @@ button:hover {
 			%>
 		</select>
 		<p2>日</p2>
-		<select name="funnelHour" required>
+		<select name="funnelHour">
 			<%
 			for (int i = 0; i <= 24; i++) {
 				String hour = String.valueOf(i) + "時";
@@ -177,7 +173,7 @@ button:hover {
 			%>
 		</select>
 		<p2>時</p2>
-		<select name="funnelMinute" required>
+		<select name="funnelMinute">
 			<%
 			for (int i = 0; i <= 59; i++) {
 				String minute = String.valueOf(i) + "分";
@@ -192,24 +188,23 @@ button:hover {
 		<h2>喪主氏名</h2>
 		<p2>(姓)</p2>
 		<label> <input type="text" name="bereavementFamilyName"
-			value="電大" required>
+			value="電大">
 		</label>
 		<p2>(名)</p2>
 		<label> <input type="text" name="bereavementFirstName"
-			value="花子" required>
+			value="花子">
 		</label><br>
 		<h2>住所</h2>
 		<p2>〒</p2>
-		<label> <input type="text" name="postalcode" value="000-000"
-			required>
+		<label> <input type="text" name="postalcode" value="000-000">
 		</label>
 		<p2>(半角数字)</p2>
 		<br> <label> <input type="text" name="address"
-			value="--県--市" required>
+			value="--県--市">
 		</label><br>
 		<h2>電話番号</h2>
 		<label> <input type="text" name="phonenumber"
-			value="08000000000" required>
+			value="08000000000">
 		</label>
 		<p2>(半角数字)</p2>
 		<br> <br> <input type="submit" name="registration"

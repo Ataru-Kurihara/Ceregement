@@ -89,7 +89,7 @@ public class FuneralRegister extends HttpServlet {
 		organizer.setAddress(address);
 		organizer.setTel(phonenumber);
 
-		OrganizerDAO.addData(organizer);
+
 		String message = "";
 		boolean state = true;
 		session.setAttribute("funeralerror", state);
@@ -111,6 +111,7 @@ public class FuneralRegister extends HttpServlet {
 			request.setAttribute("funeralerrormsg", message);
 			getServletContext().getRequestDispatcher("/funnelRegister.jsp").forward(request, response);
 		} else {
+			OrganizerDAO.addData(organizer);
 			getServletContext().getRequestDispatcher("/reFunnelRegister.jsp").forward(request, response);
 		}
 	}

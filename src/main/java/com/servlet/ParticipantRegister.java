@@ -57,16 +57,20 @@ public class ParticipantRegister extends HttpServlet {
         participant.setAttend(attendSelection);
         participant.setGift(funeralGift);
         participant.setId(id);
-        ParticipantDAO.addData(participant);
         session.setAttribute("participantRegister", true);
-        if (mailaddress != null || firstname != null || lastname != null||
-                postalcode != null || place != null
-                || tel != null || attendSelection != null || funeralGift != null) {
-            getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
-        }else {
+
+        if ((mailaddress == null || firstname == null || lastname == null ||
+                postalcode == null || place == null
+                || tel == null || attendSelection == null || funeralGift == null)
+        || (mailaddress.isEmpty() || firstname.isEmpty() || lastname.isEmpty() ||
+                postalcode.isEmpty() || place.isEmpty() || tel.isEmpty()
+                || attendSelection.isEmpty() || funeralGift.isEmpty())) {
             session.setAttribute("participantRegister", false);
             request.setAttribute("errorParticipantRegistermsg", "入力されていない情報があります");
-            getServletContext().getRequestDispatcher("/participantSelection.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/participantRegister.jsp").forward(request, response);
+        }else {
+            ParticipantDAO.addData(participant);
+            getServletContext().getRequestDispatcher("/reParticipantRegister.jsp").forward(request, response);
         }
     }
  }
