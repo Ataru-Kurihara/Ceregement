@@ -62,7 +62,8 @@
 <%
     Participant participant = new Participant();
     request.setAttribute("participant", participant);
-    List<String> mailaddresses = ParticipantDAO.getMailAddress();
+    String id = session.getAttribute("id").toString();
+    List<String> mailaddresses = ParticipantDAO.getMailAddress(id);
     request.setAttribute("mailaddresses", mailaddresses);
     List<List<String>> lists = new ArrayList<>();
     for (String mailaddress: mailaddresses) {
@@ -73,7 +74,7 @@
 
 %>
 
-<h1>CeregementId: ABCDEFG 参列者情報一覧</h1>
+<h1>CeregementId: <%=id%> 参列者情報一覧</h1>
 <table>
     <tr>
         <th>氏名</th>

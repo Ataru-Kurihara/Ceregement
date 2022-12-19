@@ -38,16 +38,17 @@ public class ParticipantDAO {
             e.printStackTrace();
         }
     }
-    public static List<String> getMailAddress() {
+    public static List<String> getMailAddress(String id) {
         Connection connection;
         PreparedStatement preparedStatement;
-        String sql = "select mailaddress from ceregementdb.public.participant";
+        String sql = "select mailaddress from ceregementdb.public.participant where id = ?";
         List<String> mailAddresses = new ArrayList<>();
         String mailaddress = "";
         try {
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(url, dbUser, password);
             preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 mailaddress = resultSet.getString("mailaddress");

@@ -21,7 +21,7 @@ public class ParticipantListReading extends HttpServlet {
         ParticipantDAO p_dao = new ParticipantDAO();
         session.setAttribute("participant", true);
         try {
-            if (p_dao.check((String) session.getAttribute("mailAddress"))) {
+            if (p_dao.check((String) session.getAttribute("id"))) {
                 getServletContext().getRequestDispatcher("/participantListReading.jsp").forward(request, response);
             } else {
                 session.setAttribute("participant", false);
