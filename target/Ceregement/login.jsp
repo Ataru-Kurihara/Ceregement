@@ -87,7 +87,33 @@
             font-size: 300%;
             color: red;
         }
-
+        button1 {
+            display: inline-block;
+            padding: 0.1em;
+            width: 50px;
+            height: 22px;
+            position: relative;
+            top: 3px;
+            border: solid 1px #000000;
+            background-color: #CCCCCC;
+        }
+        div {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        div dt {
+            min-width:9em;
+        }
+        div dd {
+            margin: revert;
+        }
+        dt{
+            font-size: 150%;
+        }
     </style>
     <%--
       Created by IntelliJ IDEA.
@@ -119,15 +145,18 @@
 <h1>ログインします</h1>
 <form action="Login" method="post">
     <dl>
-        <dt>ユーザID(メールアドレス)</dt>
-        <dd><label>
-            <input type="text" name="mailAddress"/>
-        </label></dd>
-        <dt>パスワード</dt>
-        <dd><label>
-            <input type="password" name="password" id="password"/>
-        </label></dd>
-        <button1 id="btn_passview">表示</button1>
+        <div>
+            <dt>ユーザID(メールアドレス)</dt>
+            <dd><label>
+                <input type="text" name="mailAddress"/>
+            </label></dd>
+        </div>
+        <div>
+            <dt>      パスワード                 </dt>
+            <dd><label>
+                <input type="password" name="password" id="password"/>
+            </label><button1 id="btn_passview">表示</button1></dd>
+        </div>
 
     </dl>
     <button type="submit" name="login">ログイン</button>

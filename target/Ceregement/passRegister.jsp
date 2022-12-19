@@ -8,8 +8,6 @@
 %>
 
 <head>
-
-
 	<style>
 		body {
 			background: linear-gradient(white, mediumpurple);
@@ -62,7 +60,35 @@
 			font-size: 150%;
 			color: red;
 		}
-
+		button1 {
+			font-size: 50%;
+			display: inline-block;
+			padding: 0.1em;
+			width: 50px;
+			height: 22px;
+			position: relative;
+			top: 3px;
+			border: solid 1px #000000;
+			background-color: #CCCCCC;
+		}
+		div {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+		div dt {
+			min-width:0em;
+		}
+		div dd {
+			margin: revert;
+		}
+		dt{
+			top: 50px;
+			font-size: 80%;
+		}
 	</style>
 
 	<title>passRegister</title>

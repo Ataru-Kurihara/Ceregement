@@ -29,7 +29,8 @@
 			text-align: center;
 		}
 
-		.button {
+		button {
+			font-size: 250%;
 			display: block;
 			margin: auto;
 			position: relative;
@@ -43,11 +44,10 @@
 			box-shadow: 4px 4px 0 #000;
 		}
 
-		.button:hover {
+		button:hover {
 			-webkit-box-shadow: -10px -4px 0 #000;
 			box-shadow: -10px -4px 0 #000;
 		}
-
 		a {
 			font-size: 250%;
 			display: block;
@@ -66,6 +66,20 @@
 		a:hover {
 			-webkit-box-shadow: -10px -4px 0 #000;
 			box-shadow: -10px -4px 0 #000;
+		}
+		div {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+		div dt {
+			min-width:9em;
+		}
+		div dd {
+			margin: revert;
 		}
 		p{
 			border: 2px red solid;
@@ -101,8 +115,12 @@
 	<h2>ご入力いただいたメールアドレス宛てにパスワード登録フォームのURLが届きます。</h2>
 </ul>
 <form action="EmailRegister" method="post">
+	<div>
 	<h3>ID(メールアドレス)</h3>
 	<input type="text" name="email" placeholder="xxx@example.com" maxlength="64">
+	</div>
+	<br>
+	<br>
 	<button type="submit" name="EmailRegistered">送信</button>
 </form>
 <div class="button">
