@@ -91,12 +91,22 @@
 <h2>故人の氏名</h2>
 <form method="post" action="FunnelRegister">
 	<p2>(姓)</p2>
+<<<<<<< HEAD
+	<form method="post" action="FunnelRegister">
+		<input type="text" name="deceasedFamilyName" maxlength="64">
+		<p2>(名)</p2>
+		<input type="text" name="deceasedFirstName" maxlength="64"> <br>
+		<h2>命日</h2>
+		<select name="deathYear">
+			<%
+=======
 	<input type="text" name="deceasedFamilyName">
 	<p2>(名)</p2>
 	<input type="text" name="deceasedFirstName"> <br>
 	<h2>命日</h2>
 	<select name="deathYear">
 		<%
+>>>>>>> master
 			Calendar calendar = Calendar.getInstance();
 			for (int i = 0; i <= 100; i++) {
 				String year = String.format("%tY", calendar) + "年";
@@ -127,6 +137,18 @@
 		<option value="<%=day%>"><%=day%></option>
 		<%
 			}
+<<<<<<< HEAD
+			%>
+		</select>
+		<p2>日</p2>
+		<h2>葬儀会場名</h2>
+		<label> <input type="text" name="funnelPlace" value="会場名" maxlength="64">
+		</label><br>
+		<h2>葬儀会場住所</h2>
+		<label> <input type="text" name="funnelPlaceAddress"
+			value="--県--市" maxlength="64">
+		</label><br>
+=======
 		%>
 	</select>
 	<p2>日</p2>
@@ -137,6 +159,7 @@
 	<label> <input type="text" name="funnelPlaceAddress"
 				   value="--県--市">
 	</label><br>
+>>>>>>> master
 
 	<h2>葬儀日時</h2>
 	<select name="funnelYear">
@@ -193,6 +216,36 @@
 		<option value="<%=minute%>"><%=minute%></option>
 		<%
 			}
+<<<<<<< HEAD
+			%>
+		</select>
+		<p2>分</p2>
+		<br>
+		<h2>喪主氏名</h2>
+		<p2>(姓)</p2>
+		<label> <input type="text" name="bereavementFamilyName" maxlength="64">
+		</label>
+		<p2>(名)</p2>
+		<label> <input type="text" name="bereavementFirstName" maxlength="64">
+		</label><br>
+		<h2>住所</h2>
+		<p2>〒</p2>
+		<label> <input type="text" name="postalcode" maxlength="64">
+		</label>
+		<p2>(半角数字)</p2>
+		<br> <label> <input type="text" name="address" maxlength="64">
+		</label><br>
+		<h2>電話番号</h2>
+		<label> <input type="text" name="phonenumber" maxlength="64">
+		</label>
+		<p2>(半角数字)</p2>
+		<br> <br> <input type="submit" name="registration"
+			value="登録"> <a href="ReFunnelRegister"></a>
+	</form>
+	<button type="button" name="back">
+		<a href="OrganizerSelection">戻る</a>
+	</button>
+=======
 		%>
 	</select>
 	<p2>分</p2>
@@ -225,5 +278,6 @@
 <button type="button" name="back">
 	<a href="OrganizerSelection">戻る</a>
 </button>
+>>>>>>> master
 </body>
 </html>

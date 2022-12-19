@@ -102,7 +102,7 @@
 </ul>
 <form action="EmailRegister" method="post">
 	<h3>ID(メールアドレス)</h3>
-	<input type="text" name="email" placeholder="xxx@example.com">
+	<input type="text" name="email" placeholder="xxx@example.com" maxlength="64">
 	<button type="submit" name="EmailRegistered">送信</button>
 </form>
 <div class="button">

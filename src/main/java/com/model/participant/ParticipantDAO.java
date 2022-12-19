@@ -96,15 +96,15 @@ public class ParticipantDAO {
         return data;
     }
 
-    public boolean check(String mailaddress) throws SQLException {
+    public boolean check(String id) throws SQLException {
         boolean result = false;
         Connection connection;
-        String sql = "select * from ceregementdb.public.participant where mailaddress = ?";
+        String sql = "select * from ceregementdb.public.participant where id = ?";
         try {
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(url, dbUser, password);
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, mailaddress);
+            preparedStatement.setString(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next())
                 result = true;

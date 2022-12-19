@@ -63,6 +63,16 @@
             -webkit-box-shadow: 4px 4px 0 #000;
             box-shadow: 4px 4px 0 #000;
         }
+        .button1 {
+            font-size: 50%;
+            width: 100px;
+            height: 30px;
+            border: 2px solid #000;
+            border-radius: 0;
+            background: #fff;
+            -webkit-box-shadow: 4px 4px 0 #000;
+            box-shadow: 4px 4px 0 #000;
+        }
 
         .button:hover {
             -webkit-box-shadow: -10px -4px 0 #000;
@@ -115,13 +125,30 @@
         </label></dd>
         <dt>パスワード</dt>
         <dd><label>
-            <input type="password" name="passWord"/>
+            <input type="password" name="password" id="password"/>
         </label></dd>
+        <button1 id="btn_passview">表示</button1>
+
     </dl>
     <button type="submit" name="login">ログイン</button>
 </form>
 <div class="button">
     <a href="EmailRegister">新規登録</a>
 </div>
+
+<script type="text/javascript">
+    let btn_passview = document.getElementById("btn_passview");
+    let password = document.getElementById("password");
+    btn_passview.addEventListener("click", (e)=>{
+        e.preventDefault();
+        if (password.type === 'password') {
+            password.type = 'text';
+            btn_passview.textContent = '非表示';
+        } else {
+            password.type = 'password';
+            btn_passview.textContent = '表示';
+        }
+    })
+</script>
 </body>
 </html>
