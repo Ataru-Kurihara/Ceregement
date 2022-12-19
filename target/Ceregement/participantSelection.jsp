@@ -62,6 +62,7 @@
         out.println(request.getAttribute("errorParticipantRegistermsg"));
         out.println("</p>");
 %>
+
 <script type="text/javascript">
     const msg = '<%= request.getAttribute("errorParticipantRegistermsg")%>';
     alert(msg)

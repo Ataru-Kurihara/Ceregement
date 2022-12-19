@@ -23,13 +23,13 @@ public class FuneralReading extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		HallDAO h_dao = new HallDAO();
-		session.setAttribute("organizer", true);
+		session.setAttribute("participantRegister", true);
 
 		if (h_dao.check((String) session.getAttribute("id"))) {
 			getServletContext().getRequestDispatcher("/funnelReading.jsp").forward(request, response);
 		} else {
-			session.setAttribute("organizer", false);
-			request.setAttribute("errorOrganizer", "葬儀情報を登録してください。");
+			session.setAttribute("participantRegister", false);
+			request.setAttribute("errorParticipantRegistermsg", "葬儀情報を登録されていません。");
 			getServletContext().getRequestDispatcher("/participantSelection.jsp").forward(request, response);
 		}
 

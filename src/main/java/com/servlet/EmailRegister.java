@@ -90,7 +90,7 @@ public class EmailRegister extends HttpServlet {
 				+ email
 				+ "&regNumber="
 				+ regNumber
-				+ "&ceregementId="
+				+ "&id="
 				+ ceregementId;
 
 		//入力されたemail
