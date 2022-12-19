@@ -62,7 +62,35 @@
 			font-size: 150%;
 			color: red;
 		}
-
+		button1 {
+			font-size: 50%;
+			display: inline-block;
+			padding: 0.1em;
+			width: 50px;
+			height: 22px;
+			position: relative;
+			top: 3px;
+			border: solid 1px #000000;
+			background-color: #CCCCCC;
+		}
+		div {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+		div dt {
+			min-width:0em;
+		}
+		div dd {
+			margin: revert;
+		}
+		dt{
+			top: 50px;
+			font-size: 80%;
+		}
 	</style>
 
 	<title>passRegister</title>
@@ -94,11 +122,13 @@
 %>
 <form action="PassRegister" method="post">
 	<dl>
-		<dt>パスワード</dt>
-		<dd>
-			<input type="password" id="password" name="password" maxlength="64"/>
-			<button1 id="btn_passview">表示</button1>
-		</dd>
+		<div>
+			<dt>パスワード</dt>
+			<dd>
+				<input type="password" id="password" name="password" maxlength="64"/>
+				<button1 id="btn_passview">表示</button1>
+			</dd>
+		</div>
 	</dl>
 	<button type="submit" name="passRegister">登録</button>
 </form>

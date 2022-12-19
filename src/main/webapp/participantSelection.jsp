@@ -44,16 +44,6 @@
     <title>participantSelection</title>
 </head>
 <body>
-<h1>選択してください</h1>
-<button type="button" name="funnelInformation">
-    <a href="FunnelReading">葬儀の詳細を知りたい</a>
-</button>
-<button type="button" name="participantInformation">
-    <a href="ParticipantRegister">出席登録</a>
-</button>
-<button type="button" name="back">
-    <a href="Login">ログアウト</a>
-</button>
 <%
     if (session.getAttribute("participantRegister") != null
             && !(Boolean) session.getAttribute("participantRegister")
@@ -70,5 +60,15 @@
 <%
     }
 %>
+<h1>選択してください</h1>
+<button type="button" name="funnelInformation">
+    <a href="FunnelReading">葬儀の詳細を知りたい</a>
+</button>
+<button type="button" name="participantInformation">
+    <a href="ParticipantRegister">出席登録</a>
+</button>
+<button type="button" name="back">
+    <a href="Login">ログアウト</a>
+</button>
 </body>
 </html>
