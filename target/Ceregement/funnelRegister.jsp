@@ -90,8 +90,8 @@
 <p1>※項目は必須入力です</p1>
 <h2>故人の氏名</h2>
 <form method="post" action="FunnelRegister">
-	<p2>(姓)</p2>
 	<form method="post" action="FunnelRegister">
+		<p2>(姓)</p2>
 		<input type="text" name="deceasedFamilyName" maxlength="64">
 		<p2>(名)</p2>
 		<input type="text" name="deceasedFirstName" maxlength="64"> <br>
