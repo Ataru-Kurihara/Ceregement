@@ -64,41 +64,42 @@
 </head>
 <body>
 <%
-    if (session.getAttribute("error") != null && !(Boolean) session.getAttribute("error") && session.getAttribute("error") != null) {
+    if (session.getAttribute("participantRegister") != null && !(Boolean) session.getAttribute("participantRegister")
+            && request.getAttribute("errorParticipantRegistermsg") != null) {
         out.println("<p>");
-        out.println(session.getAttribute("errormsg"));
+        out.println(request.getAttribute("errorParticipantRegistermsg"));
         out.println("</p>");
 %>
-<script type="text/javascript">
-    const msg = '<%= session.getAttribute("errormsg")%>';
-    alert(msg)
-</script>
+        <script type="text/javascript">
+            const msg = '<%= request.getAttribute("errorParticipantRegistermsg")%>';
+            alert(msg)
+        </script>
 <%
     }
 %>
 <h1>参列者情報を入力してください</h1>
 <p1>※項目は必須入力です</p1>
 <h2>※氏名</h2>
-<form method="post" action="ReParticipantRegister">
+<form method="post" action="ParticipantRegister">
     <p2>(姓)</p2>
-    <input type="text" name="lastname" required>
+    <input type="text" name="lastname">
     <p2>(名)</p2>
-    <input type="text" name="firstname" required><br>
+    <input type="text" name="firstname"><br>
     <h2>※住所</h2>
     <p2>〒</p2>
-    <input type="text" name="postcode" required>
+    <input type="text" name="postcode">
     <p2>(半角数字)</p2><br>
-    <input type="text" name="address" required>
+    <input type="text" name="address">
     <h2>※電話番号(ハイフン無し)</h2>
-    <input type="text" name="tel" required>
+    <input type="text" name="tel">
     <p2>(半角数字)</p2><br>
     <h2>※参加情報</h2>
-    <input type="radio" name="attendSelection" value="出席" required> 出席
-    <input type="radio" name="attendSelection" value="欠席" required> 欠席
+    <input type="radio" name="attendSelection" value="出席"> 出席
+    <input type="radio" name="attendSelection" value="欠席"> 欠席
     <br>
     <h2>贈り物</h2>
     <br>
-    <input type="text" name="funeralGift" required>
+    <input type="text" name="funeralGift">
     <br>
     <br>
     <input type="submit" name="registration" value="登録">
