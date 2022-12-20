@@ -114,6 +114,10 @@
         dt{
             font-size: 150%;
         }
+        input[type='password'],
+        label {
+            margin-left: 7rem;
+        }
     </style>
     <%--
       Created by IntelliJ IDEA.
@@ -152,7 +156,7 @@
             </label></dd>
         </div>
         <div>
-            <dt>      パスワード                 </dt>
+            <dt>パスワード</dt>
             <dd><label>
                 <input type="password" name="password" id="password"/>
             </label><button1 id="btn_passview">表示</button1></dd>

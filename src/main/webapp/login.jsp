@@ -114,6 +114,10 @@
         dt{
             font-size: 150%;
         }
+        input[type='password'],
+        label {
+            margin-left: 7rem;
+        }
     </style>
     <%--
       Created by IntelliJ IDEA.
