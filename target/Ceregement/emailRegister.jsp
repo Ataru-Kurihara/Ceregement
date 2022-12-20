@@ -116,8 +116,8 @@
 </ul>
 <form action="EmailRegister" method="post">
 	<div>
-	<h3>ID(メールアドレス)</h3>
-	<input type="text" name="email" placeholder="xxx@example.com" maxlength="64">
+		<h3>ID(メールアドレス)</h3>
+		<input type="text" name="email" placeholder="xxx@example.com" maxlength="64">
 	</div>
 	<br>
 	<br>
