@@ -19,19 +19,35 @@ public class HallDAO {
 	public static void addData(Hall hall) {
 		Connection connection;
 		PreparedStatement preparedStatement;
-		String sql = "insert into public.hall values(?, ?, ?, ?, ?, ?)";
+		String sql_insert = "insert into public.hall values(?, ?, ?, ?, ?, ?)";
+		String sql_update = "UPDATE public.hall SET id=?, deadname=?, deathday=?, address=?, hallname=?, funeralday=? WHERE id=?";
+		boolean result = false;
 		try {
 			Class.forName(driverClassName);
 			connection = DriverManager.getConnection(url, dbUser, password);
-			preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, hall.getId());
-			preparedStatement.setString(2, hall.getDeadName());
-			preparedStatement.setString(3, hall.getDeathDay());
-			preparedStatement.setString(4, hall.getAddress());
-			preparedStatement.setString(5, hall.getHallName());
-			preparedStatement.setString(6, hall.getFuneralDay());
-			preparedStatement.executeUpdate();
-			preparedStatement.close();
+			result = check(hall.getId());
+			if (result) {
+				preparedStatement = connection.prepareStatement(sql_update);
+				preparedStatement.setString(1, hall.getId());
+				preparedStatement.setString(2, hall.getDeadName());
+				preparedStatement.setString(3, hall.getDeathDay());
+				preparedStatement.setString(4, hall.getAddress());
+				preparedStatement.setString(5, hall.getHallName());
+				preparedStatement.setString(6, hall.getFuneralDay());
+				preparedStatement.setString(7, hall.getId());
+				preparedStatement.executeUpdate();
+				preparedStatement.close();
+			} else {
+				preparedStatement = connection.prepareStatement(sql_insert);
+				preparedStatement.setString(1, hall.getId());
+				preparedStatement.setString(2, hall.getDeadName());
+				preparedStatement.setString(3, hall.getDeathDay());
+				preparedStatement.setString(4, hall.getAddress());
+				preparedStatement.setString(5, hall.getHallName());
+				preparedStatement.setString(6, hall.getFuneralDay());
+				preparedStatement.executeUpdate();
+				preparedStatement.close();
+			}
 			connection.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -88,7 +104,7 @@ public class HallDAO {
 		return ceregementID;
 	}
 
-	public boolean check(String id) {
+	public static boolean check(String id) {
 		boolean result = false;
 		Connection connection;
 		String sql = "SELECT * FROM public.hall WHERE id = ?";

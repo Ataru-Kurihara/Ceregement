@@ -1,10 +1,10 @@
 package com.model.participant;
 
-import com.model.user.User;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,28 +64,28 @@ public class ParticipantDAO {
 
 
 
-    public static List<String> getData(String mailaddress, Participant participant) {
+    public static List<String> getData(String mailAddress, Participant participant) {
         Connection connection;
         PreparedStatement preparedStatement;
 
-        String sql = "select name, address, tell, attend, gift from ceregementdb.public.participant where mailaddress = ?";
-        String name = "", address = "", tell = "", attend = "", gift = "";
+        String sql = "select name, address, tel, attend, gift from ceregementdb.public.participant where mailaddress = ?";
+        String name = "", address = "", tel = "", attend = "", gift = "";
         List<String> data = new ArrayList<String>();
         try {
             Class.forName(driverClassName);
             connection = DriverManager.getConnection(url, dbUser, password);
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, mailaddress);
+            preparedStatement.setString(1, mailAddress);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 name = resultSet.getString("name");
                 address = resultSet.getString("address");
-                tell = resultSet.getString("tell");
+                tel = resultSet.getString("tel");
                 attend = resultSet.getString("attend");
                 gift = resultSet.getString("gift");
                 data.add(name);
                 data.add(address);
-                data.add(tell);
+                data.add(tel);
                 data.add(attend);
                 data.add(gift);
             }

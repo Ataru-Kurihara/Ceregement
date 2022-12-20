@@ -82,15 +82,13 @@ public class EmailRegister extends HttpServlet {
 		String email = request.getParameter("email"); //	入力されたメールアドレス
 		String to = email;//送信先
 		// メールの内容
-		String content = "あなたの入力したメールアドレスは\n"
-				+ email
-				+ "です。\n"
+		String content = "こちらのURLからパスワードを入力してください\n"
 				+ "http://localhost:8080/Ceregement/"
 				+ "Create?email="
 				+ email
 				+ "&regNumber="
 				+ regNumber
-				+ "&id="
+				+ "&ceregementId="
 				+ ceregementId;
 
 		//入力されたemail

@@ -80,15 +80,12 @@ public class FuneralRegister extends HttpServlet {
 		hall.setHallName(funnelPlace);
 		hall.setFuneralDay(funnelTime);
 
-		HallDAO.addData(hall);
-
 		Organizer organizer = new Organizer();
 		organizer.setId(id);
 		organizer.setPostalcode(postalcode);
 		organizer.setName(bereavementFullName);
 		organizer.setAddress(address);
 		organizer.setTel(phonenumber);
-
 
 		String message = "";
 		boolean state = true;
@@ -111,6 +108,7 @@ public class FuneralRegister extends HttpServlet {
 			request.setAttribute("funeralerrormsg", message);
 			getServletContext().getRequestDispatcher("/funnelRegister.jsp").forward(request, response);
 		} else {
+			HallDAO.addData(hall);
 			OrganizerDAO.addData(organizer);
 			getServletContext().getRequestDispatcher("/reFunnelRegister.jsp").forward(request, response);
 		}
