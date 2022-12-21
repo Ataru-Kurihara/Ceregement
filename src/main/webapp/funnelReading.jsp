@@ -96,7 +96,7 @@
 <h2>喪主氏名</h2>
 <p1><%=organizerName%></p1>
 <h2>住所</h2>
-<p1>〒<%=organizerPostalCode%>></p1>
+<p1>〒<%=organizerPostalCode%></p1>
 <br>
 <p1><%=organizerAddress%></p1>
 <h2>電話番号</h2>
