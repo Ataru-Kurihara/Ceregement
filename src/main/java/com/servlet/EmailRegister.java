@@ -28,7 +28,7 @@ import com.model.user.UserDAO;
 @WebServlet("/EmailRegister")
 public class EmailRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	final String subject = "JavaMail テストメール"; //	メールの件名
+	final String subject = "パスワード設定メール"; //	メールの件名
 	final String from = "01nghm@gmail.com";//送信元
 	// メールの設定
 	final String name = "01nghm@gmail.com";//誰が
